@@ -1,0 +1,14 @@
+{
+    "name": "webdriver_io_basics",
+    "version": "0.0.1",
+    "scripts": {
+        "test": "./node_modules/.bin/wdio wdio.conf.js"
+    },
+    "devDependencies": {
+        "wdio-jasmine-framework": "^0.3.2",
+        "wdio-selenium-standalone-service": "0.0.9",
+        "webdriverio": "^4.8.0",
+        "ts-node": "^3.3.0",
+        "typescript": "^2.5.3"
+    }
+}
