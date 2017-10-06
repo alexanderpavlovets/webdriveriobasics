@@ -1,6 +1,6 @@
 # installed npm dependencies
 node_modules/
-# compiled js and debug files
-*.js
-*.js.map
+# compiled js and debug files - *.js and *.js.map - are needed to be added again 
+
+
 
