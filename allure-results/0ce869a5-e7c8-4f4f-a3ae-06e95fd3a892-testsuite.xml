@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1507547184817' stop='1507547185331'>
+    <name>1</name>
+    <title>1</title>
+    <test-cases>
+        <test-case start='1507547184818' status='passed' stop='1507547185330'>
+            <name>1</name>
+            <title>1</title>
+            <labels/>
+            <parameters>
+                <parameter kind='environment-variable' name='capabilities' value='{"maxInstances":1,"browserName":"chrome"}'/>
+                <parameter kind='environment-variable' name='spec files' value='["C:\\Users\\olpav\\Desktop\\JS automation\\webdriverio\\specs\\first.js"]'/>
+            </parameters>
+            <steps>
+                <step start='1507547184821' status='passed' stop='1507547185325'>
+                    <name>POST /wd/hub/session/27f1f9dc1930e6e585b090faae0ec49b/url</name>
+                    <title>POST /wd/hub/session/27f1f9dc1930e6e585b090faae0ec49b/url</title>
+                    <attachments>
+                        <attachment title='Request' source='1b407878-91c7-4e95-92df-ca7bd6c054fd-attachment.json' type='application/json' size='59'/>
+                        <attachment title='Response' source='7edf8070-efef-474d-a806-fb038854c6e4-attachment.json' type='application/json' size='91'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

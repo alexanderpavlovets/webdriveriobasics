@@ -1,6 +1,14 @@
 # installed npm dependencies
 node_modules/
-# compiled js and debug files - *.js and *.js.map - are needed to be added again 
 
+# compiled js and debug files:
+*.js
+*.js.map
 
+# config file of wdio should be available in the remote repo:
+!wdio.conf.js
+
+# all allure files: 
+allure-report/
+allure-results/
 

@@ -32,7 +32,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 2,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -42,8 +42,7 @@ exports.config = {
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
-        maxInstances: 5,
-        //
+        maxInstances: 1,
         browserName: 'chrome'
     }],
     //
@@ -118,7 +117,12 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: http://webdriver.io/guide/testrunner/reporters.html
-    reporters: ['dot'],
+    reporters: ['dot', 'allure'],
+    reporterOptions: {
+        allure: {
+            outputDir: './allure-results'
+        }
+    },
     //
     // Options to be passed to Jasmine.
     jasmineNodeOpts: {
@@ -164,9 +168,9 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    before: function () {
-        require('ts-node/register')
-    },
+    // before: function () {
+    //     require('ts-node/register')
+    // },
     //
     /**
      * Hook that gets executed before the suite starts
