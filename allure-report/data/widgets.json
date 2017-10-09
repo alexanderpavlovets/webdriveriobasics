@@ -1,75 +1,42 @@
 {
   "summary" : {
     "reportName" : "Allure Report",
-    "testRuns" : [ ],
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 2,
+      "passed" : 1,
       "unknown" : 0,
       "total" : 2
     },
     "time" : {
-      "start" : 1507557308570,
-      "stop" : 1507557313641,
-      "duration" : 5071,
-      "minDuration" : 563,
-      "maxDuration" : 596,
-      "sumDuration" : 1159
+      "minDuration" : 141,
+      "maxDuration" : 921,
+      "sumDuration" : 1062,
+      "start" : 1507562048920,
+      "stop" : 1507562050000,
+      "duration" : 1080
     }
   },
   "environment" : [ {
     "values" : [ "{\"maxInstances\":1,\"browserName\":\"chrome\"}" ],
     "name" : "capabilities"
   }, {
-    "values" : [ "[\"C:\\\\Users\\\\olpav\\\\Desktop\\\\JS automation\\\\webdriverio\\\\specs\\\\first.js\"]" ],
+    "values" : [ "[\"C:\\\\Users\\\\olpav\\\\Desktop\\\\JS automation\\\\webdriverio\\\\specs\\\\example.js\"]" ],
     "name" : "spec files"
   } ],
-  "suites" : {
-    "total" : 2,
-    "items" : [ {
-      "uid" : "5cb724c3f6ed79528df2bd63289a5f8a",
-      "name" : "2",
-      "statistic" : {
-        "failed" : 0,
-        "broken" : 0,
-        "skipped" : 0,
-        "passed" : 1,
-        "unknown" : 0,
-        "total" : 1
-      }
-    }, {
-      "uid" : "a3b7d4b2517aed6a8c73b90f2777f6dd",
-      "name" : "1",
-      "statistic" : {
-        "failed" : 0,
-        "broken" : 0,
-        "skipped" : 0,
-        "passed" : 1,
-        "unknown" : 0,
-        "total" : 1
-      }
-    } ]
-  },
   "history-trend" : [ {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 2,
-      "unknown" : 0,
-      "total" : 2
-    }
+    "failed" : 0,
+    "broken" : 1,
+    "skipped" : 0,
+    "passed" : 1,
+    "unknown" : 0,
+    "total" : 2
   } ],
   "behaviors" : {
-    "total" : 2,
-    "items" : [ ]
-  },
-  "executors" : [ ],
-  "categories" : {
     "total" : 0,
     "items" : [ ]
   },
+  "executors" : [ ],
   "launches" : [ ]
 }

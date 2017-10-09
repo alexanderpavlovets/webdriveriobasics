@@ -1,5 +1,72 @@
 {
-  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
-  "name" : "categories",
-  "children" : [ ]
+  "statistic" : {
+    "failed" : 0,
+    "broken" : 1,
+    "skipped" : 0,
+    "passed" : 0,
+    "unknown" : 0,
+    "total" : 1
+  },
+  "time" : {
+    "minDuration" : 141,
+    "maxDuration" : 141,
+    "sumDuration" : 141,
+    "start" : 1507562049859,
+    "stop" : 1507562050000,
+    "duration" : 141
+  },
+  "children" : [ {
+    "uid" : "917bf77f645b1513",
+    "name" : "Test defects",
+    "time" : {
+      "minDuration" : 141,
+      "maxDuration" : 141,
+      "sumDuration" : 141,
+      "start" : 1507562049859,
+      "stop" : 1507562050000,
+      "duration" : 141
+    },
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "type" : "TestGroupNode",
+    "children" : [ {
+      "uid" : "4d51d26242c57262",
+      "name" : "Expected true to be false.",
+      "time" : {
+        "minDuration" : 141,
+        "maxDuration" : 141,
+        "sumDuration" : 141,
+        "start" : 1507562049859,
+        "stop" : 1507562050000,
+        "duration" : 141
+      },
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 1,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 1
+      },
+      "type" : "TestGroupNode",
+      "children" : [ {
+        "uid" : "41337cdb95184b05",
+        "name" : "2",
+        "time" : {
+          "start" : 1507562049859,
+          "stop" : 1507562050000,
+          "duration" : 141
+        },
+        "status" : "broken",
+        "flaky" : true,
+        "type" : "TestCaseNode"
+      } ]
+    } ]
+  } ]
 }
