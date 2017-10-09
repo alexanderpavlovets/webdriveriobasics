@@ -4,7 +4,10 @@
     "scripts": {
         "tsc": "tsc",
         "pretest": "npm run tsc",
-        "test": "wdio"
+        "test": "wdio",
+        "posttest": "npm run report",
+        "prereport": "allure generate --clean",
+        "report": "allure open"
     },
     "devDependencies": {
         "@types/jasmine": "^2.6.0",
