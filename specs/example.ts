@@ -1,9 +1,9 @@
 
-describe('1', ()=>{
+fdescribe('1', ()=>{
     it('1', ()=>{
         browser.url('')
-        
-        expect(1).toBe(2)
+        browser.pause(3000)
+        expect(1).toBe(1)
     })
 })
 

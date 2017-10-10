@@ -1,37 +1,5 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "name" : "categories",
-  "children" : [ {
-    "name" : "Test defects",
-    "children" : [ {
-      "name" : "Expected 1 to be 2.",
-      "children" : [ {
-        "name" : "1",
-        "uid" : "3d9a1aa8089e18f2",
-        "parentUid" : "e6fe88db4c82846c6c69075fcfaa6914",
-        "status" : "broken",
-        "time" : {
-          "start" : 1507633118982,
-          "stop" : 1507633119568,
-          "duration" : 586
-        },
-        "flaky" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "2",
-        "uid" : "1662e0967695f9b1",
-        "parentUid" : "e6fe88db4c82846c6c69075fcfaa6914",
-        "status" : "broken",
-        "time" : {
-          "start" : 1507633119585,
-          "stop" : 1507633119894,
-          "duration" : 309
-        },
-        "flaky" : true,
-        "parameters" : [ ]
-      } ],
-      "uid" : "e6fe88db4c82846c6c69075fcfaa6914"
-    } ],
-    "uid" : "bdbf199525818fae7a8651db9eafe741"
-  } ]
+  "children" : [ ]
 }

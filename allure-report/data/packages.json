@@ -5,15 +5,15 @@
     "name" : "1",
     "children" : [ {
       "name" : "1",
-      "uid" : "3d9a1aa8089e18f2",
+      "uid" : "69dd18180dc07cad",
       "parentUid" : "6eca62c0bad7a4d3546824ded510eb31",
-      "status" : "broken",
+      "status" : "passed",
       "time" : {
-        "start" : 1507633118982,
-        "stop" : 1507633119568,
-        "duration" : 586
+        "start" : 1507643322104,
+        "stop" : 1507643326367,
+        "duration" : 4263
       },
-      "flaky" : false,
+      "flaky" : true,
       "parameters" : [ ]
     } ],
     "uid" : "6eca62c0bad7a4d3546824ded510eb31"
@@ -21,13 +21,13 @@
     "name" : "2",
     "children" : [ {
       "name" : "2",
-      "uid" : "1662e0967695f9b1",
+      "uid" : "f0ed9f2845123805",
       "parentUid" : "60d75a0b5909a624113df2a0885cf3fd",
-      "status" : "broken",
+      "status" : "unknown",
       "time" : {
-        "start" : 1507633119585,
-        "stop" : 1507633119894,
-        "duration" : 309
+        "start" : 1507643326381,
+        "stop" : 0,
+        "duration" : -1507643326381
       },
       "flaky" : true,
       "parameters" : [ ]
