@@ -1,83 +1,29 @@
 {
-  "statistic" : {
-    "failed" : 0,
-    "broken" : 1,
-    "skipped" : 0,
-    "passed" : 1,
-    "unknown" : 0,
-    "total" : 2
-  },
-  "time" : {
-    "minDuration" : 141,
-    "maxDuration" : 921,
-    "sumDuration" : 1062,
-    "start" : 1507562048920,
-    "stop" : 1507562050000,
-    "duration" : 1080
-  },
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
   "children" : [ {
-    "uid" : "b8e67aea1342912b",
-    "name" : "Default hostname",
+    "name" : "1",
+    "uid" : "3d9a1aa8089e18f2",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "broken",
     "time" : {
-      "minDuration" : 141,
-      "maxDuration" : 921,
-      "sumDuration" : 1062,
-      "start" : 1507562048920,
-      "stop" : 1507562050000,
-      "duration" : 1080
+      "start" : 1507633118982,
+      "stop" : 1507633119568,
+      "duration" : 586
     },
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 1,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 2
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "2",
+    "uid" : "1662e0967695f9b1",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "broken",
+    "time" : {
+      "start" : 1507633119585,
+      "stop" : 1507633119894,
+      "duration" : 309
     },
-    "type" : "TestGroupNode",
-    "children" : [ {
-      "uid" : "e7595036c26cbb79",
-      "name" : "Default thread",
-      "time" : {
-        "minDuration" : 141,
-        "maxDuration" : 921,
-        "sumDuration" : 1062,
-        "start" : 1507562048920,
-        "stop" : 1507562050000,
-        "duration" : 1080
-      },
-      "statistic" : {
-        "failed" : 0,
-        "broken" : 1,
-        "skipped" : 0,
-        "passed" : 1,
-        "unknown" : 0,
-        "total" : 2
-      },
-      "type" : "TestGroupNode",
-      "children" : [ {
-        "uid" : "83bc29799aac525d",
-        "name" : "1",
-        "time" : {
-          "start" : 1507562048920,
-          "stop" : 1507562049841,
-          "duration" : 921
-        },
-        "status" : "passed",
-        "flaky" : true,
-        "type" : "TestCaseNode"
-      }, {
-        "uid" : "41337cdb95184b05",
-        "name" : "2",
-        "time" : {
-          "start" : 1507562049859,
-          "stop" : 1507562050000,
-          "duration" : 141
-        },
-        "status" : "broken",
-        "flaky" : true,
-        "type" : "TestCaseNode"
-      } ]
-    } ]
+    "flaky" : true,
+    "parameters" : [ ]
   } ]
 }

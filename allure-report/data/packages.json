@@ -1,83 +1,37 @@
 {
-  "statistic" : {
-    "failed" : 0,
-    "broken" : 1,
-    "skipped" : 0,
-    "passed" : 1,
-    "unknown" : 0,
-    "total" : 2
-  },
-  "time" : {
-    "minDuration" : 141,
-    "maxDuration" : 921,
-    "sumDuration" : 1062,
-    "start" : 1507562048920,
-    "stop" : 1507562050000,
-    "duration" : 1080
-  },
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
   "children" : [ {
-    "uid" : "6976c48807fcad9d",
     "name" : "1",
-    "time" : {
-      "minDuration" : 921,
-      "maxDuration" : 921,
-      "sumDuration" : 921,
-      "start" : 1507562048920,
-      "stop" : 1507562049841,
-      "duration" : 921
-    },
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "type" : "TestGroupNode",
     "children" : [ {
-      "uid" : "83bc29799aac525d",
       "name" : "1",
-      "time" : {
-        "start" : 1507562048920,
-        "stop" : 1507562049841,
-        "duration" : 921
-      },
-      "status" : "passed",
-      "flaky" : true,
-      "type" : "TestCaseNode"
-    } ]
-  }, {
-    "uid" : "7fa93a4666210638",
-    "name" : "2",
-    "time" : {
-      "minDuration" : 141,
-      "maxDuration" : 141,
-      "sumDuration" : 141,
-      "start" : 1507562049859,
-      "stop" : 1507562050000,
-      "duration" : 141
-    },
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 1,
-      "skipped" : 0,
-      "passed" : 0,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "type" : "TestGroupNode",
-    "children" : [ {
-      "uid" : "41337cdb95184b05",
-      "name" : "2",
-      "time" : {
-        "start" : 1507562049859,
-        "stop" : 1507562050000,
-        "duration" : 141
-      },
+      "uid" : "3d9a1aa8089e18f2",
+      "parentUid" : "6eca62c0bad7a4d3546824ded510eb31",
       "status" : "broken",
+      "time" : {
+        "start" : 1507633118982,
+        "stop" : 1507633119568,
+        "duration" : 586
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "6eca62c0bad7a4d3546824ded510eb31"
+  }, {
+    "name" : "2",
+    "children" : [ {
+      "name" : "2",
+      "uid" : "1662e0967695f9b1",
+      "parentUid" : "60d75a0b5909a624113df2a0885cf3fd",
+      "status" : "broken",
+      "time" : {
+        "start" : 1507633119585,
+        "stop" : 1507633119894,
+        "duration" : 309
+      },
       "flaky" : true,
-      "type" : "TestCaseNode"
-    } ]
+      "parameters" : [ ]
+    } ],
+    "uid" : "60d75a0b5909a624113df2a0885cf3fd"
   } ]
 }

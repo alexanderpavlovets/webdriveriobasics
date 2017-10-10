@@ -3,9 +3,9 @@
     "version": "0.0.1",
     "scripts": {
         "tsc": "tsc",
+        "wdio": "wdio",
         "pretest": "npm run tsc",
-        "test": "wdio",
-        "posttest": "npm run report",
+        "test": "npm-run-all wdio report --continue-on-error",
         "prereport": "allure generate --clean",
         "report": "allure open"
     },
@@ -19,5 +19,8 @@
         "wdio-jasmine-framework": "^0.3.2",
         "wdio-selenium-standalone-service": "0.0.9",
         "webdriverio": "^4.8.0"
+    },
+    "dependencies": {
+        "npm-run-all": "^4.1.1"
     }
 }

@@ -1,72 +1,37 @@
 {
-  "statistic" : {
-    "failed" : 0,
-    "broken" : 1,
-    "skipped" : 0,
-    "passed" : 0,
-    "unknown" : 0,
-    "total" : 1
-  },
-  "time" : {
-    "minDuration" : 141,
-    "maxDuration" : 141,
-    "sumDuration" : 141,
-    "start" : 1507562049859,
-    "stop" : 1507562050000,
-    "duration" : 141
-  },
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
   "children" : [ {
-    "uid" : "917bf77f645b1513",
     "name" : "Test defects",
-    "time" : {
-      "minDuration" : 141,
-      "maxDuration" : 141,
-      "sumDuration" : 141,
-      "start" : 1507562049859,
-      "stop" : 1507562050000,
-      "duration" : 141
-    },
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 1,
-      "skipped" : 0,
-      "passed" : 0,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "type" : "TestGroupNode",
     "children" : [ {
-      "uid" : "4d51d26242c57262",
-      "name" : "Expected true to be false.",
-      "time" : {
-        "minDuration" : 141,
-        "maxDuration" : 141,
-        "sumDuration" : 141,
-        "start" : 1507562049859,
-        "stop" : 1507562050000,
-        "duration" : 141
-      },
-      "statistic" : {
-        "failed" : 0,
-        "broken" : 1,
-        "skipped" : 0,
-        "passed" : 0,
-        "unknown" : 0,
-        "total" : 1
-      },
-      "type" : "TestGroupNode",
+      "name" : "Expected 1 to be 2.",
       "children" : [ {
-        "uid" : "41337cdb95184b05",
-        "name" : "2",
-        "time" : {
-          "start" : 1507562049859,
-          "stop" : 1507562050000,
-          "duration" : 141
-        },
+        "name" : "1",
+        "uid" : "3d9a1aa8089e18f2",
+        "parentUid" : "e6fe88db4c82846c6c69075fcfaa6914",
         "status" : "broken",
+        "time" : {
+          "start" : 1507633118982,
+          "stop" : 1507633119568,
+          "duration" : 586
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "2",
+        "uid" : "1662e0967695f9b1",
+        "parentUid" : "e6fe88db4c82846c6c69075fcfaa6914",
+        "status" : "broken",
+        "time" : {
+          "start" : 1507633119585,
+          "stop" : 1507633119894,
+          "duration" : 309
+        },
         "flaky" : true,
-        "type" : "TestCaseNode"
-      } ]
-    } ]
+        "parameters" : [ ]
+      } ],
+      "uid" : "e6fe88db4c82846c6c69075fcfaa6914"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
   } ]
 }

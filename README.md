@@ -1,3 +1,4 @@
 # webdriveriobasics
 * TS is added, Allure 2 is added 
-* if test is failed - allure isn't started - posttest script isn't working 
+* | - parallel run of npm scriptsю || - one by one run of npm scripts/ Won't work on MAC - using 'npm-run-all'
+* devDependencies vs Dependencies - read it !!! 

@@ -1,21 +1,22 @@
 {
   "summary" : {
     "reportName" : "Allure Report",
+    "testRuns" : [ ],
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
+      "broken" : 2,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 2
     },
     "time" : {
-      "minDuration" : 141,
-      "maxDuration" : 921,
-      "sumDuration" : 1062,
-      "start" : 1507562048920,
-      "stop" : 1507562050000,
-      "duration" : 1080
+      "start" : 1507633118982,
+      "stop" : 1507633119894,
+      "duration" : 912,
+      "minDuration" : 309,
+      "maxDuration" : 586,
+      "sumDuration" : 895
     }
   },
   "environment" : [ {
@@ -25,18 +26,61 @@
     "values" : [ "[\"C:\\\\Users\\\\olpav\\\\Desktop\\\\JS automation\\\\webdriverio\\\\specs\\\\example.js\"]" ],
     "name" : "spec files"
   } ],
+  "suites" : {
+    "total" : 2,
+    "items" : [ {
+      "uid" : "a3b7d4b2517aed6a8c73b90f2777f6dd",
+      "name" : "1",
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 1,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 1
+      }
+    }, {
+      "uid" : "5cb724c3f6ed79528df2bd63289a5f8a",
+      "name" : "2",
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 1,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 1
+      }
+    } ]
+  },
   "history-trend" : [ {
-    "failed" : 0,
-    "broken" : 1,
-    "skipped" : 0,
-    "passed" : 1,
-    "unknown" : 0,
-    "total" : 2
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 2,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 2
+    }
   } ],
   "behaviors" : {
-    "total" : 0,
+    "total" : 2,
     "items" : [ ]
   },
   "executors" : [ ],
+  "categories" : {
+    "total" : 1,
+    "items" : [ {
+      "uid" : "bdbf199525818fae7a8651db9eafe741",
+      "name" : "Test defects",
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 2,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 2
+      }
+    } ]
+  },
   "launches" : [ ]
 }
