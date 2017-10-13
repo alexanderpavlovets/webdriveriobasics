@@ -1,12 +1,13 @@
 // Abstract class Page
-
 export abstract class Page{
-    name: string
-    constructor(name){
-        this.name = name
+
+    constructor(){
+
     }
 
     open(){
-        console.log('opened' + this.name)
+        browser.url('')
     }
 }
+
+

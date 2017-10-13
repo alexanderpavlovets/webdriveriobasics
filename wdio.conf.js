@@ -71,7 +71,7 @@ exports.config = {
     //
     // Set a base URL in order to shorten url command calls. If your url parameter starts
     // with "/", then the base url gets prepended.
-    baseUrl: 'http://www.protractortest.org/testapp/ng1/#/form',
+    baseUrl: 'http://streamtv.net.ua/base/',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -128,7 +128,7 @@ exports.config = {
     jasmineNodeOpts: {
         //
         // Jasmine default timeout
-        defaultTimeoutInterval: 10000,
+        defaultTimeoutInterval: 20000,
         //
         // The Jasmine framework allows interception of each assertion in order to log the state of the application
         // or website depending on the result. For example, it is pretty handy to take a screenshot every time
@@ -168,10 +168,21 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    // before: function () {
-    //     require('ts-node/register')
-    // },
-    //
+
+    
+    before: function () {
+        // setting implicit wait for 3 seconds
+        browser.timeouts('implicit', 3000)
+        //require('ts-node/register')
+        // This function will make lazy element search via $ - provided by J.K. - need to understand and test. 
+        // const orig$ = $;
+        // $ = new Proxy($, {
+        //     apply(target, thisArg, argumentsList) {
+        //         return orig$.apply(target, argumentsList)
+        //     }
+        // })
+    },
+    
     /**
      * Hook that gets executed before the suite starts
      * @param {Object} suite suite details
