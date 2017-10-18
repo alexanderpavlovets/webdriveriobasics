@@ -5,7 +5,7 @@
         "tsc": "tsc",
         "wdio": "wdio",
         "pretest": "npm run tsc",
-        "test": "npm-run-all wdio --continue-on-error",
+        "test": "npm-run-all wdio",
         "prereport": "allure generate --clean",
         "report": "allure open"
     },

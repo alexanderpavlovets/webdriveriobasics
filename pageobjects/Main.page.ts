@@ -10,7 +10,3 @@ export class MainPage extends Page{
         return browser.waitForVisible('ul .nav,.nav-tabs', 3000)
     }
 }
-
-interface IPage {
-
-}
