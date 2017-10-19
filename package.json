@@ -1,6 +1,9 @@
 {
     "name": "webdriver_io_basics",
     "version": "0.0.1",
+    "description": "This is WebDriverIO investigation project",
+    "license": "ISC",
+    "keywords": [],
     "scripts": {
         "tsc": "tsc",
         "wdio": "wdio",
@@ -13,12 +16,12 @@
         "@types/jasmine": "^2.6.0",
         "@types/webdriverio": "^4.8.6",
         "allure-commandline": "^2.3.5",
-        "ts-node": "^3.3.0",
         "typescript": "^2.5.3",
         "wdio-allure-reporter": "^0.1.2",
         "wdio-jasmine-framework": "^0.3.2",
         "wdio-selenium-standalone-service": "0.0.9",
-        "webdriverio": "^4.8.0"
+        "webdriverio": "^4.8.0",
+        "pg-promise": "^6.3.6"
     },
     "dependencies": {
         "npm-run-all": "^4.1.1"

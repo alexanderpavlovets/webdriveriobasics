@@ -1,9 +1,9 @@
 import { LoginPage } from '../pageobjects/Login.page' //importing the LoginPage class
-import { MainPage } from '../pageobjects/Main.page' //importing the MainPage class, in order to assert if it is opened
-
-let loginPage = new LoginPage() //creating instance of the Login page
 
 describe('Login Page ', () => {
+    
+    let loginPage = new LoginPage() //creating instance of the Login page
+
     it('Is openeing properly after base URL provided', () => {
         loginPage.open()
         expect(LoginPage.isOpened()).toBeTruthy('Primary panel isn\'t visible. Login page isn\'t opened')
@@ -17,8 +17,15 @@ describe('Login Page ', () => {
 
     it('Logging in after correct credentials are provided', ()=> {
         loginPage.open()
-        loginPage.login()
-        expect(MainPage.isOpened()).toBeTruthy('Header isn\'t visible. Login page isn\'t opened')
+        expect(loginPage.login()).toBeTruthy('Header isn\'t visible. Login page isn\'t opened')
     })
+
+    it('Shows an error, when invalid credentials are provided', ()=>{
+        loginPage.open()
+        loginPage.loginWithRandomCredentials()
+        expect(loginPage.primaryPanelHeader.getText()).toContain('Incorrect credentials','Error message isn\'t correct after invalid credentials are provided')
+    })
+
+    
 })
 

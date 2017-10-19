@@ -1,4 +1,6 @@
 import {Page} from './Page.page' // importing abstact class Page for inheritance 
+import { MainPage } from '../pageobjects/Main.page' //importing the MainPage class, in order to assert if it is opened
+import {randomFiveCharString} from '../helpers/random_string_generator' // importing random string generator. 
 
 
 export class LoginPage extends Page{
@@ -6,6 +8,8 @@ export class LoginPage extends Page{
      super()
     }
 
+
+    //static methods of LoginPage class
     static isOpened() :boolean{
         return browser.waitForVisible('.panel,.panel-primary', 3000)
     }
@@ -20,10 +24,18 @@ export class LoginPage extends Page{
     get loginButton()           {return browser.$('button[ng-click="Login()"]')}
     
     
-
-    login(){
+    // methods of LoginPage class
+    login(): boolean {
         this.loginField.setValue('auto')
         this.passwordField.setValue('test')
         this.loginButton.click()
+        return MainPage.isOpened()
     }
+
+    loginWithRandomCredentials(): void{
+        this.loginField.setValue(randomFiveCharString())
+        this.passwordField.setValue(randomFiveCharString())
+        this.loginButton.click()
+    }
+
 }

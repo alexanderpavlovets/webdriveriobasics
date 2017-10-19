@@ -173,7 +173,6 @@ exports.config = {
     before: function () {
         // setting implicit wait for 3 seconds
         browser.timeouts('implicit', 3000)
-        //require('ts-node/register')
         // This function will make lazy element search via $ - provided by J.K. - need to understand and test. 
         // const orig$ = $;
         // $ = new Proxy($, {
