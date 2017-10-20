@@ -4,7 +4,9 @@ describe('Login Page ', () => {
     
     let loginPage = new LoginPage() //creating instance of the Login page
 
-    it('Is openeing properly after base URL provided', () => {
+    fit('Is openeing properly after base URL provided', () => {
+        // loginPage.open()
+        // browser.$('ASDKLFJSDL') // add impliciti wait for 10 sec and see that element is searched. Lazy isn't working
         loginPage.open()
         expect(LoginPage.isOpened()).toBeTruthy('Primary panel isn\'t visible. Login page isn\'t opened')
     })
@@ -26,6 +28,6 @@ describe('Login Page ', () => {
         expect(loginPage.primaryPanelHeader.getText()).toContain('Incorrect credentials','Error message isn\'t correct after invalid credentials are provided')
     })
 
-    
+
 })
 

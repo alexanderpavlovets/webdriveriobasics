@@ -16,13 +16,16 @@ export class LoginPage extends Page{
 
 
     //setting elements via get, in order to make lazy search of the elements
-    get primaryPanel()          {return browser.$('.panel,.panel-primary')}
+    get primaryPanel()          {return browser.$('.panel-primary')}
     get primaryPanelHeader()    {return this.primaryPanel.$('.panel-heading')}
     get loginForm()             {return this.primaryPanel.$('form[name="loginform"]')}
     get loginField()            {return this.loginForm.$('input[placeholder = "Login"]')}
     get passwordField()         {return this.loginForm.$('input[placeholder = "Password"]')}
     get loginButton()           {return browser.$('button[ng-click="Login()"]')}
     
+    // gavno = console.log('Created and object\'s item')
+    // get gavno1(){return console.log('I am in the getter - i am like lazy :)')}
+
     
     // methods of LoginPage class
     login(): boolean {
