@@ -16,11 +16,12 @@ export class MainPage extends Page{
     // define header with navigation tabs
     get navigationTabsContainer()   {return browser.$('ul.nav-tabs')}
 
-    // define left-side header's elements - search and "newWrestler" button
+    // define left-side header's elements - search input, "newWrestler" button and "Loading" indicator
     get searchAndNewContainer()     {return browser.$('form div:nth-child(1)')}
     get searchField()               {return this.searchAndNewContainer.$('input')}
     get searchButton()              {return this.searchAndNewContainer.$('button[type="submit"]')}
     get newWrestlerButton()         {return this.searchAndNewContainer.$('button[type="button"]')}
+    get loadingIndicator()          {return this.searchAndNewContainer.$('div.spinner-loader')}
 
     // define right-side filters menu 
     get filtersContainer()          {return browser.$('form div:nth-child(2)')}
@@ -32,6 +33,8 @@ export class MainPage extends Page{
     get stylesFilter()              {return this.filtersContainer.$('select[ng-model="filters.fstyle"]')}
 
     // define "results per page" picker, and pagination
-    get resultsPerPage()            {return}
+    get paginationContainer()       {return browser.$('div.paging')}
+    get shownResultsPerPageFilter() {return this.paginationContainer.$('select[ng-model="perPage"]')}
+    get pagesArray()                {return this.paginationContainer.$$('a').slice(2,-2)} // removing << < > >> pointers
 
 }

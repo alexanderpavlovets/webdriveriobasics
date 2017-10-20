@@ -22,9 +22,6 @@ export class LoginPage extends Page{
     get loginField()            {return this.loginForm.$('input[placeholder = "Login"]')}
     get passwordField()         {return this.loginForm.$('input[placeholder = "Password"]')}
     get loginButton()           {return browser.$('button[ng-click="Login()"]')}
-    
-    // gavno = console.log('Created and object\'s item')
-    // get gavno1(){return console.log('I am in the getter - i am like lazy :)')}
 
     
     // methods of LoginPage class
