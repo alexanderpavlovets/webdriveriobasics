@@ -1,4 +1,6 @@
-import {Page} from './Page.page' // importing abstact class Page for inheritance 
+import { Page } from './Page.page' // importing abstact class Page for inheritance 
+import { LoginPage } from './Login.page';
+
 
 export class MainPage extends Page{
     constructor(){
@@ -15,6 +17,7 @@ export class MainPage extends Page{
     // setting elements via get, in order to make lazy search of the elements:
     // define header with navigation tabs
     get navigationTabsContainer()   {return browser.$('ul.nav-tabs')}
+    get currentAmountOfOpenedTabs() {return this.navigationTabsContainer.$$('li')}
 
     // define left-side header's elements - search input, "newWrestler" button and "Loading" indicator
     get searchAndNewContainer()     {return browser.$('form div:nth-child(1)')}
@@ -37,4 +40,20 @@ export class MainPage extends Page{
     get shownResultsPerPageFilter() {return this.paginationContainer.$('select[ng-model="perPage"]')}
     get pagesArray()                {return this.paginationContainer.$$('a').slice(2,-2)} // removing << < > >> pointers
 
+
+    // Methods of MainPage class
+    open(): void {
+        let loginPage = new LoginPage()
+        loginPage.open()
+        loginPage.login() ? console.log('Login success, Main page is opened') : console.log('Login failed!')
+    }
+
+    openFormToCreateWrestler(): boolean { // rewrite this shit!!!! Add elements like a human ! 
+        let amountOfTabsBeforeOpeningForm = this.navigationTabsContainer.$$('li').length // checking amount of initially opened tabs
+        this.newWrestlerButton.click()
+        let amountOfTabsAfterFormIsOpened = this.navigationTabsContainer.$$('li').length // checking amount of opened tabs, when +1 tab should appear
+        let names: string[] = this.navigationTabsContainer.$$('li').map((x) => x.getText())
+        console.log(names)
+        return amountOfTabsAfterFormIsOpened - amountOfTabsBeforeOpeningForm === 1
+    }
 }

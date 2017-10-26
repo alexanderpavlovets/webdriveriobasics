@@ -11,4 +11,5 @@ node_modules/*
 # all allure files: 
 allure-report/*
 allure-results/*
+errorShots/*
 

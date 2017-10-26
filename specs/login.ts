@@ -1,6 +1,6 @@
 import { LoginPage } from '../pageobjects/Login.page' //importing the LoginPage class
 
-describe('Login Page ', () => {
+xdescribe('Login Page ', () => {
     
     let loginPage = new LoginPage() //creating instance of the Login page
 
