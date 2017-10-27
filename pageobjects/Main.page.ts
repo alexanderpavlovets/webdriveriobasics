@@ -17,7 +17,11 @@ export class MainPage extends Page{
     // setting elements via get, in order to make lazy search of the elements:
     // define header with navigation tabs
     get navigationTabsContainer()   {return browser.$('ul.nav-tabs')}
-    get currentAmountOfOpenedTabs() {return this.navigationTabsContainer.$$('li')}
+    get openedTabsLIs()             {return this.navigationTabsContainer.$$('li')}
+    get lastOpenedTab()             {return this.openedTabsLIs[this.openedTabsLIs.length - 1]}
+    get firstTabWrestlers()         {return this.openedTabsLIs[0]}
+    get currentAmountOfOpenedTabs() {return this.openedTabsLIs.length}
+    
 
     // define left-side header's elements - search input, "newWrestler" button and "Loading" indicator
     get searchAndNewContainer()     {return browser.$('form div:nth-child(1)')}
@@ -41,7 +45,7 @@ export class MainPage extends Page{
     get pagesArray()                {return this.paginationContainer.$$('a').slice(2,-2)} // removing << < > >> pointers
 
 
-    // Methods of MainPage class
+    // methods of MainPage class
     open(): void {
         let loginPage = new LoginPage()
         loginPage.open()
@@ -49,11 +53,11 @@ export class MainPage extends Page{
     }
 
     openFormToCreateWrestler(): boolean { // rewrite this shit!!!! Add elements like a human ! 
-        let amountOfTabsBeforeOpeningForm = this.navigationTabsContainer.$$('li').length // checking amount of initially opened tabs
+        let tabsOpenedInitially = this.currentAmountOfOpenedTabs // checking amount of initially opened tabs
         this.newWrestlerButton.click()
-        let amountOfTabsAfterFormIsOpened = this.navigationTabsContainer.$$('li').length // checking amount of opened tabs, when +1 tab should appear
-        let names: string[] = this.navigationTabsContainer.$$('li').map((x) => x.getText())
-        console.log(names)
-        return amountOfTabsAfterFormIsOpened - amountOfTabsBeforeOpeningForm === 1
+        let tabsAmountAfterCreationFormIsOpened = this.currentAmountOfOpenedTabs// checking amount of opened tabs, when +1 tab should appear
+        let nameOfLastOpenedTab = this.lastOpenedTab.getText() // getting text of last opened tab - should be "New Wrestler"
+        // return true if tabs amount increased by 1 and new opened tab has "NewWrestler" title
+        return tabsAmountAfterCreationFormIsOpened - tabsOpenedInitially === 1 && nameOfLastOpenedTab === 'New Wrestler'
     }
 }
