@@ -1,6 +1,6 @@
 import { Page } from './Page.page' // importing abstact class Page for inheritance 
 import { MainPage } from '../pageobjects/Main.page' //importing the MainPage class, in order to assert if it is opened
-import { randomFiveCharString } from '../helpers/random_string_generator' // importing random string generator. 
+import { randomFiveCharString } from '../helpers/random_generator' // importing random string generator
 
 
 export class LoginPage extends Page {
@@ -10,8 +10,9 @@ export class LoginPage extends Page {
 
 
     //static methods of LoginPage class
-    static isOpened(): boolean {
-        return browser.waitForVisible('.panel,.panel-primary', 3000)
+    static isOpened(): boolean { 
+        let loginForm = browser.$('.panel,.panel-primary')
+        return loginForm.waitForVisible(3000) // waiting for login form to be visible
     }
 
 
@@ -25,8 +26,9 @@ export class LoginPage extends Page {
 
 
     // methods of LoginPage class
-    open() {
-        super.open() // it is here for clear understanding, that login page opens exactly like base page
+    open(): boolean {
+        super.open()
+        return LoginPage.isOpened()
     }
 
     login(): boolean {

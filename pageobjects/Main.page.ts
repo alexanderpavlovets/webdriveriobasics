@@ -9,26 +9,28 @@ export class MainPage extends Page{
 
 
     //static methods of MainPage class
-    static isOpened() :boolean {
-        return browser.waitForVisible('ul.nav-tabs', 3000) // waiting for header to be visible 
+    static isOpened() :boolean { 
+        let header = browser.$('ul.nav-tabs')
+        return header.waitForVisible(3000)   // waiting for header to be visible
     }
 
 
     // setting elements via get, in order to make lazy search of the elements:
     // define header with navigation tabs
-    get navigationTabsContainer()   {return browser.$('ul.nav-tabs')}
-    get openedTabsLIs()             {return this.navigationTabsContainer.$$('li')}
-    get lastOpenedTab()             {return this.openedTabsLIs[this.openedTabsLIs.length - 1]}
-    get firstTabWrestlers()         {return this.openedTabsLIs[0]}
-    get currentAmountOfOpenedTabs() {return this.openedTabsLIs.length}
+    get navigationTabsContainer()   { return browser.$('ul.nav-tabs')}
+    get openedTabsLIs()             { return this.navigationTabsContainer.$$('li')}
+    get lastOpenedTab()             { return this.openedTabsLIs[this.openedTabsLIs.length - 1]}
+    get firstTabWrestlers()         { return this.openedTabsLIs[0]}
+    get currentAmountOfOpenedTabs() { return this.openedTabsLIs.length}
+    get currentActiveTab()          { return this.navigationTabsContainer.$('li.active') }
+    get loadingCurrentTabIndicator(){ return this.currentActiveTab.$('div.spinner-loader') }
     
-
     // define left-side header's elements - search input, "newWrestler" button and "Loading" indicator
     get searchAndNewContainer()     {return browser.$('form div:nth-child(1)')}
     get searchField()               {return this.searchAndNewContainer.$('input')}
     get searchButton()              {return this.searchAndNewContainer.$('button[type="submit"]')}
     get newWrestlerButton()         {return this.searchAndNewContainer.$('button[type="button"]')}
-    get loadingIndicator()          {return this.searchAndNewContainer.$('div.spinner-loader')}
+    get loadingSearchIndicator()    {return this.searchAndNewContainer.$('div.spinner-loader')}
 
     // define right-side filters menu 
     get filtersContainer()          {return browser.$('form div:nth-child(2)')}
@@ -46,13 +48,14 @@ export class MainPage extends Page{
 
 
     // methods of MainPage class
-    open(): void {
+    open(): boolean {
         let loginPage = new LoginPage()
         loginPage.open()
-        loginPage.login() ? console.log('Login success, Main page is opened') : console.log('Login failed!')
+        loginPage.login()
+        return MainPage.isOpened()
     }
 
-    openFormToCreateWrestler(): boolean { // rewrite this shit!!!! Add elements like a human ! 
+    openFormToCreateWrestler(): boolean { 
         let tabsOpenedInitially = this.currentAmountOfOpenedTabs // checking amount of initially opened tabs
         this.newWrestlerButton.click()
         let tabsAmountAfterCreationFormIsOpened = this.currentAmountOfOpenedTabs// checking amount of opened tabs, when +1 tab should appear
