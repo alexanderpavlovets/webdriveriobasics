@@ -1,6 +1,5 @@
 import { MainPage } from './Main.page' // importing MainPage class for inheritance 
 import { Wrestler } from '../objects/Wrestler'
-import { wrestlerData } from '../objects/wrestlerData'
 
 export class WrestlerPage extends MainPage {
     constructor(){
@@ -40,8 +39,28 @@ export class WrestlerPage extends MainPage {
         this.wrestler.setYearRandomly()
     }
 
+    get requiredFieldsValues() {
+        let data = {
+            lastName: this.wrestler.lastName.getValue(),
+            firstName: this.wrestler.firstName.getValue(),
+            dateOfBirth: this.wrestler.dateOfBirth.getValue(),
+            middleName: this.wrestler.middleName.getValue(),
+            region1: this.wrestler.region1.getValue(),
+            fst1: this.wrestler.fst1.getValue(),
+            style: this.wrestler.style.getValue(),
+            age: this.wrestler.age.getValue(),
+            year: this.wrestler.year.getValue()
+        }
+        return data
+    }
+
     createNewWrestlerWithRandomData() {
         this.fillRequiredFieldsRandomly()
         this.wrestler.successButton.click()
     }
+
+    clickSuccess() {
+        this.wrestler.successButton.click()
+    }
+
 }
