@@ -1,6 +1,9 @@
+// TODO: move loginPage.open() into brforeEach() - here
+// 2 first tests - no sence
+
 import { LoginPage } from '../pageobjects/Login.page' //importing the LoginPage class
 
-xdescribe('Login Page ', () => {
+describe('Login Page ', () => {
     
     let loginPage = new LoginPage() //creating instance of the Login page
 
@@ -17,15 +20,17 @@ xdescribe('Login Page ', () => {
 
     it('Logging in, after correct credentials are provided', ()=> {
         loginPage.open()
+        // loginPage.login(user)
+        // expect(MainPage.isOpned())....
         expect(loginPage.login()).toBeTruthy('Header isn\'t visible. Login page isn\'t opened')
     })
 
     it('Shows an error, when invalid credentials are provided', ()=>{
         loginPage.open()
-        loginPage.loginWithRandomCredentials()
+        loginPage.loginWithRandomCredentials() //loginPage.login(randomUser)
         expect(loginPage.primaryPanelHeader.getText()).toContain('Incorrect credentials','Error message isn\'t correct after invalid credentials are provided')
     })
 
-
+ 
 })
 

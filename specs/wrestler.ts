@@ -6,7 +6,7 @@ describe('Wrestler CRUD', ()=>{
 
     let mainPage = new MainPage() // Creating instance of MainPage class
     let wrestlerPage = new WrestlerPage() // Creating instance of wrestlerPage class
-
+//  let wrestler = dataprovider.getWrestler()
     it('"New Wrestler" tab is opened properly', ()=>{
         mainPage.open()
         expect(mainPage.openFormToCreateWrestler()).toBeTruthy('"New Wrestler" tab should be added and have equal title')
@@ -23,12 +23,13 @@ describe('Wrestler CRUD', ()=>{
     it('Wrestler page is opened after wrestler creation', ()=>{
         wrestlerPage.openForCreation()
         wrestlerPage.createNewWrestlerWithRandomData()
+        // createNewWrestler(wrestler) - it is random anyway
         expect(WrestlerPage.isOpened()).toBeTruthy('"Wrestler info" form should be visible and no loading indicator shown')
         expect(wrestlerPage.wrestler.photoAreaHeaderText).toContain('Photo', '"Photo" header should be visible on equal area')
         expect(wrestlerPage.wrestler.docsAreaHeaderText).toContain('Documents', '"Documents" header should be visible on equal area')
     })
 
-    fit('Created wrestler data should match to inserted data during creation', ()=>{
+    it('Created wrestler data should match to inserted data during creation', ()=>{
         wrestlerPage.openForCreation()
         wrestlerPage.fillRequiredFieldsRandomly()
         let dataBeforeCreation = JSON.stringify(wrestlerPage.requiredFieldsValues)
@@ -39,6 +40,6 @@ describe('Wrestler CRUD', ()=>{
                                                             'Data of created wrestler should match to inserted data during wrestler creation')
     })
 
-    it('')
+    xit('')
 
 })

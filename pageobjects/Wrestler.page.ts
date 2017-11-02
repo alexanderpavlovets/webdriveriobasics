@@ -12,7 +12,15 @@ export class WrestlerPage extends MainPage {
     static isOpened(): boolean{
         let wrestlerInfoForm = browser.$('div.col-sm-8')
         let loadingCurrentTabIndicator = browser.$('ul.nav-tabs li.active div.spinner-loader')
-        return wrestlerInfoForm.waitForVisible(3000) && loadingCurrentTabIndicator.waitForVisible(5000, true) //wait indicator to disappear for 5 seconds
+        
+        // ad as global ! And use everywhere with waits
+        const ms = 10000
+        const timeouts = {
+            s: ms,
+            m: 3 * ms,
+            l: 5 * ms
+        }
+        return wrestlerInfoForm.waitForVisible(timeouts.m) && loadingCurrentTabIndicator.waitForVisible(5000, true) //wait indicator to disappear for 5 seconds
     }
 
 
