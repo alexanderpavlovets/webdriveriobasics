@@ -1,4 +1,5 @@
 import { frameTimeout } from '../test_data/frameTimeouts' // importing frameTimeouts for custom wait of elements
+import { dataProvider } from '../test_data/dataProvider'
 
 
 export class WrestlerPage {
@@ -41,8 +42,12 @@ export class WrestlerPage {
 
 
     // methods of NewWrestlerPage class
-    fillRequiredFieldsRandomly(data) {
-
+    fillRequiredFieldsRandomly(wrestler) {
+        this.lastName.setValue(wrestler.lastName)
+        this.firstName.setValue(wrestler.firstName)
+        this.dateOfBirth.setValue(wrestler.dateOfBirth)
+        this.middleName.setValue(wrestler.middleName)
+        this.region1.selectByAttribute('label',1)
     }
 
     get requiredFieldsValues() {

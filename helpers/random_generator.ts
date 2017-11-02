@@ -14,11 +14,12 @@ export function randomFiveCharString(): string{
 export function randomDD_MM_YYYY(): string{
     let randomDateNumber: string = Math.floor((Math.random() * 31) + 1).toString() // 1-31
     let randomMonthNumber: string = Math.floor(Math.random() * 12).toString() // 0-11
-    let randomYYYY = function(): number {
-        let minYear = 1900
-        let maxYear = 2015
-        return Math.floor(Math.random() * (maxYear - minYear + 1) + minYear) // 1900-2015
-    }
+    // let randomYYYY = function(): number {
+    //     let minYear = 1900
+    //     let maxYear = 2015
+    //     return Math.floor(Math.random() * (maxYear - minYear + 1) + minYear) // 1900-2015
+    // }
+    
 
     let date = randomDateNumber.length > 1 ? randomDateNumber : '0' + randomDateNumber
     let month = randomMonthNumber.length > 1 ? randomMonthNumber : '0' + randomMonthNumber
