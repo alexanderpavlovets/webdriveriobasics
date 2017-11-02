@@ -30,12 +30,12 @@ export class LoginPage extends Page {
         super.open()
         return LoginPage.isOpened()
     }
-
+// TODO: login(user)
     login(): boolean {
         this.loginField.setValue('auto')
         this.passwordField.setValue('test')
         this.loginButton.click()
-        return MainPage.isOpened()
+        return MainPage.isOpened() // not needed
     }
 
     loginWithRandomCredentials(): void {

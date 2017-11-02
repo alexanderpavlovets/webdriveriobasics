@@ -1,5 +1,7 @@
 import { randomFiveCharString, randomDD_MM_YYYY } from '../helpers/random_generator' // importing random string generator'
 
+
+
 export let wrestlerData = {
     lastName: 'LastNameTest' + randomFiveCharString(),
     firstName: 'FirstNameTest' + randomFiveCharString(),
