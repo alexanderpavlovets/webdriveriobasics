@@ -1,5 +1,5 @@
 import { wrestlerData } from './wrestlerData'
-import { randomIntFromGivenRange } from '../helpers/random_generator'
+import { randomIntFromGivenRange } from '../../helpers/random_generator'
 
 export class Wrestler {
     constructor(){

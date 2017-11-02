@@ -1,34 +1,26 @@
-// TODO: move loginPage.open() into brforeEach() - here
-// 2 first tests - no sence
-
 import { LoginPage } from '../pageobjects/Login.page' //importing the LoginPage class
+import { MainPage } from '../pageobjects/Main.page'
+import { dataProvider } from '../test_data/dataProvider'
 
 describe('Login Page ', () => {
     
     let loginPage = new LoginPage() //creating instance of the Login page
+    let validUser = dataProvider.users.validUser // user with valid credentials
+    let randomUser = dataProvider.users.randomUser // user with random credentials
 
-    it('Is openeing properly after base URL provided', () => {
+    beforeEach(()=>{
         loginPage.open()
-        expect(LoginPage.isOpened()).toBeTruthy('Primary panel isn\'t visible. Login page isn\'t opened')
-    })
-
-    it('Has "Login and "Password" fields visible', () => {
-        loginPage.open()
-        expect(loginPage.loginField.isVisible()).toBeTruthy('hasn\'t got "Login" field visible' )
-        expect(loginPage.passwordField.isVisible()).toBeTruthy('hasn\'t got "Password" field visible')
     })
 
     it('Logging in, after correct credentials are provided', ()=> {
-        loginPage.open()
-        // loginPage.login(user)
-        // expect(MainPage.isOpned())....
-        expect(loginPage.login()).toBeTruthy('Header isn\'t visible. Login page isn\'t opened')
+        loginPage.login(validUser)
+        expect(MainPage.isOpened()).toBeTruthy('Main page should be opened it\'s header should be visible after login')
     })
 
     it('Shows an error, when invalid credentials are provided', ()=>{
-        loginPage.open()
-        loginPage.loginWithRandomCredentials() //loginPage.login(randomUser)
-        expect(loginPage.primaryPanelHeader.getText()).toContain('Incorrect credentials','Error message isn\'t correct after invalid credentials are provided')
+        loginPage.login(randomUser)
+        expect(loginPage.primaryPanelHeader.getText()).toContain('Incorrect credentials',
+                                                                'Error should be shown, after attemp to login with invalid credentials')
     })
 
  

@@ -10,7 +10,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './specs/*.js'
+        './specs/login.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -151,8 +151,9 @@ exports.config = {
      * @param {Object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
      */
-    // onPrepare: function (config, capabilities) {
-    // },
+    onPrepare: function (config, capabilities) {
+        global.customWaits = 123
+    },
     /**
      * Gets executed just before initialising the webdriver session and test framework. It allows you
      * to manipulate configurations depending on the capability or spec.
@@ -162,17 +163,16 @@ exports.config = {
      */
     // beforeSession: function (config, capabilities, specs) {
     // },
+
     /**
      * Gets executed before test execution begins. At this point you can access to all global
      * variables like `browser`. It is the perfect place to define custom commands.
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-
-    
     before: function () {
-        // setting implicit wait for 3 seconds
-        browser.timeouts('implicit', 3000)
+        // setting implicit wait for middle timeout
+        browser.timeouts('implicit', 5000)
         // This function will make lazy element search via $ - provided by J.K. - need to understand and test. 
         // const orig$ = $;
         // $ = new Proxy($, {

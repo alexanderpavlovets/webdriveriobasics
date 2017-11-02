@@ -1,6 +1,6 @@
 import { Page } from './Page.page' // importing abstact class Page for inheritance 
-import { MainPage } from '../pageobjects/Main.page' //importing the MainPage class, in order to assert if it is opened
-import { randomFiveCharString } from '../helpers/random_generator' // importing random string generator
+import { frameTimeout } from '../test_data/frameTimeouts' // importing frameTimeouts for custom wait of elements
+import { Iuser } from '../test_data/dataProvider' // importing Iuser interface for login(user) method
 
 
 export class LoginPage extends Page {
@@ -9,10 +9,10 @@ export class LoginPage extends Page {
     }
 
 
-    //static methods of LoginPage class
+    //static methods of LoginPage class - not used, maybe will be for "logOut" test
     static isOpened(): boolean { 
         let loginForm = browser.$('.panel,.panel-primary')
-        return loginForm.waitForVisible(3000) // waiting for login form to be visible
+        return loginForm.waitForVisible(frameTimeout.m) // waiting for login form to be visible
     }
 
 
@@ -26,22 +26,13 @@ export class LoginPage extends Page {
 
 
     // methods of LoginPage class
-    open(): boolean {
+    open(): void {
         super.open()
-        return LoginPage.isOpened()
-    }
-// TODO: login(user)
-    login(): boolean {
-        this.loginField.setValue('auto')
-        this.passwordField.setValue('test')
-        this.loginButton.click()
-        return MainPage.isOpened() // not needed
     }
 
-    loginWithRandomCredentials(): void {
-        this.loginField.setValue(randomFiveCharString())
-        this.passwordField.setValue(randomFiveCharString())
+    login(user: Iuser): void {
+        this.loginField.setValue(user.login)
+        this.passwordField.setValue(user.password)
         this.loginButton.click()
     }
-
 }

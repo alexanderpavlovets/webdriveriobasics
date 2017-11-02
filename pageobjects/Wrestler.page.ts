@@ -1,74 +1,63 @@
-import { MainPage } from './Main.page' // importing MainPage class for inheritance 
-import { Wrestler } from '../objects/Wrestler'
+import { frameTimeout } from '../test_data/frameTimeouts' // importing frameTimeouts for custom wait of elements
 
-export class WrestlerPage extends MainPage {
+
+export class WrestlerPage {
     constructor(){
-        super()
     }
-    wrestler = new Wrestler() // creating instance of Wrestler class
 
 
     // static methods of NewWrestler class
     static isOpened(): boolean{
         let wrestlerInfoForm = browser.$('div.col-sm-8')
         let loadingCurrentTabIndicator = browser.$('ul.nav-tabs li.active div.spinner-loader')
-        
-        // ad as global ! And use everywhere with waits
-        const ms = 10000
-        const timeouts = {
-            s: ms,
-            m: 3 * ms,
-            l: 5 * ms
-        }
-        return wrestlerInfoForm.waitForVisible(timeouts.m) && loadingCurrentTabIndicator.waitForVisible(5000, true) //wait indicator to disappear for 5 seconds
+        return wrestlerInfoForm.waitForVisible(frameTimeout.m) &&  // waiting for "Wrestler info" form to be visible
+             loadingCurrentTabIndicator.waitForVisible(frameTimeout.l, true) //wait loading indicator to disappear
     }
+
+
+    // defining elements of Wrestler page
+    get wrestlerDataForm()  { return browser.$('form[name="fWrestler"]')}
+    // "Wrestler info" form
+    get lastName()          { return this.wrestlerDataForm.$('fg-input[value="wr.lname"] input')}
+    get firstName()         { return this.wrestlerDataForm.$('fg-input[value="wr.fname"] input')}
+    get dateOfBirth()       { return this.wrestlerDataForm.$('fg-date[value="wr.dob"] input')}
+    get middleName()        { return this.wrestlerDataForm.$('fg-input[value="wr.mname"] input')}
+    get region1()           { return this.wrestlerDataForm.$('fg-select[value="wr.region1"] select')}
+    get region2()           { return this.wrestlerDataForm.$('fg-select[value="wr.region2"] select')}
+    get fst1()              { return this.wrestlerDataForm.$('fg-select[value="wr.fst1"] select')}
+    get fst2()              { return this.wrestlerDataForm.$('fg-select[value="wr.fst2"] select')}
+    get trainer1()          { return this.wrestlerDataForm.$('fg-typeahead[value="wr.trainer1"] input')}
+    get trainer2()          { return this.wrestlerDataForm.$('fg-typeahead[value="wr.trainer2"] input')}
+    get style()             { return this.wrestlerDataForm.$('fg-select[value="wr.style"] select')}
+    get age()               { return this.wrestlerDataForm.$('fg-select[value="wr.lictype"] select')}
+    get year()              { return this.wrestlerDataForm.$('fg-select[value="wr.expires"] select')}
+    get cardState()         { return this.wrestlerDataForm.$('f-select[value="wr.card_state"] select')}
+    // wrestler "V" and "X" buttons
+    get successButton()     { return this.wrestlerDataForm.$('button.btn-success')}
+    get dangerButton()      { return this.wrestlerDataForm.$('button.btn-danger')}
+    // created wrestler areas
+    get photoDiv()         { return this.wrestlerDataForm.$('div.col-sm-4[ng-hide="wr.new"]') }
+    get docsDiv()          { return this.wrestlerDataForm.$('div.col-sm-12[ng-hide="wr.new"]') }
 
 
     // methods of NewWrestlerPage class
-    openForCreation(): boolean{
-        super.open()
-        super.openFormToCreateWrestler()
-        return WrestlerPage.isOpened()
-    }
-    
-    openForExisting(){
+    fillRequiredFieldsRandomly(data) {
 
-    }
-
-    fillRequiredFieldsRandomly() {
-        this.wrestler.setLastName()
-        this.wrestler.setFirstName()
-        this.wrestler.setDOB()
-        this.wrestler.setMiddleName()
-        this.wrestler.setRegion1Randomly()
-        this.wrestler.setFST1Randomly()
-        this.wrestler.setStyleRandomly()
-        this.wrestler.setAgeRandomly()
-        this.wrestler.setYearRandomly()
     }
 
     get requiredFieldsValues() {
         let data = {
-            lastName: this.wrestler.lastName.getValue(),
-            firstName: this.wrestler.firstName.getValue(),
-            dateOfBirth: this.wrestler.dateOfBirth.getValue(),
-            middleName: this.wrestler.middleName.getValue(),
-            region1: this.wrestler.region1.getValue(),
-            fst1: this.wrestler.fst1.getValue(),
-            style: this.wrestler.style.getValue(),
-            age: this.wrestler.age.getValue(),
-            year: this.wrestler.year.getValue()
+
         }
         return data
     }
 
-    createNewWrestlerWithRandomData() {
-        this.fillRequiredFieldsRandomly()
-        this.wrestler.successButton.click()
+    createNewWrestler(wrestler) {
+
     }
 
     clickSuccess() {
-        this.wrestler.successButton.click()
+
     }
 
 }

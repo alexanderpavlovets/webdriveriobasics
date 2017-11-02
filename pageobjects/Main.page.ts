@@ -1,5 +1,5 @@
 import { Page } from './Page.page' // importing abstact class Page for inheritance 
-import { LoginPage } from './Login.page';
+import { frameTimeout } from '../test_data/frameTimeouts' // importing frameTimeouts for custom wait of elements
 
 
 export class MainPage extends Page{
@@ -11,7 +11,7 @@ export class MainPage extends Page{
     //static methods of MainPage class
     static isOpened() :boolean { 
         let header = browser.$('ul.nav-tabs')
-        return header.waitForVisible(3000)   // waiting for header to be visible
+        return header.waitForVisible(frameTimeout.m)   // waiting for header to be visible
     }
 
 
@@ -48,19 +48,11 @@ export class MainPage extends Page{
 
 
     // methods of MainPage class
-    open(): boolean {
-        let loginPage = new LoginPage()
-        loginPage.open()
-        loginPage.login()
-        return MainPage.isOpened()
+    open(): void {
+        super.open()
     }
 
-    openFormToCreateWrestler(): boolean { 
-        let tabsOpenedInitially = this.currentAmountOfOpenedTabs // checking amount of initially opened tabs
+    openNewWrestlerTab(): void { 
         this.newWrestlerButton.click()
-        let tabsAmountAfterCreationFormIsOpened = this.currentAmountOfOpenedTabs// checking amount of opened tabs, when +1 tab should appear
-        let nameOfLastOpenedTab = this.lastOpenedTab.getText() // getting text of last opened tab - should be "New Wrestler"
-        // return true if tabs amount increased by 1 and new opened tab has "NewWrestler" title
-        return tabsAmountAfterCreationFormIsOpened - tabsOpenedInitially === 1 && nameOfLastOpenedTab === 'New Wrestler'
     }
 }
