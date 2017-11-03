@@ -30,7 +30,10 @@ describe('Wrestler CRUD', ()=>{
         mainPage.openNewWrestlerTab()
         browser.pause(2000)
         console.log('before the setValue')
-        browser.$('form[name="fWrestler"] fg-input[value="wr.fname"] input').setValue(123333333)
+        browser.$('form[name="fWrestler"] fg-input[value="wr.fname"] input').setValue(123333333) // falls here!
+        // maybe try to close current tab - but not the solution, as i think
+        // debug maybe??
+        // Сука !!! Унего все вкладки светятся!!! Закрывай предыдущие ! 
         console.log('after setValue')
         browser.pause(2000)
         providedDuringCreationWrestlerData = wrestlerPage.createNewWrestler(wrestler)
@@ -47,5 +50,6 @@ describe('Wrestler CRUD', ()=>{
         providedDuringCreationWrestlerData = JSON.stringify(wrestlerPage.createNewWrestler(wrestler))
         displayedDataOfCreatedWrestler = JSON.stringify(wrestlerPage.fieldsCurrentValues)
         expect(providedDuringCreationWrestlerData === displayedDataOfCreatedWrestler).toBeTruthy()
+        // expect(1).toEqual(1) - add this check, but after problem fix
     })
 })
