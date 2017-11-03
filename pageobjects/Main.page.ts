@@ -23,17 +23,16 @@ export class MainPage extends Page{
     get firstTabWrestlers()         { return this.openedTabsLIs[0]}
     get currentAmountOfOpenedTabs() { return this.openedTabsLIs.length}
     get currentActiveTab()          { return this.navigationTabsContainer.$('li.active') }
-    get loadingCurrentTabIndicator(){ return this.currentActiveTab.$('div.spinner-loader') }
+    get loadingCurrentTabIndicator(){ return this.currentActiveTab.$('div[ng-show="tab.loading"]') }
     
     // define left-side header's elements - search input, "newWrestler" button and "Loading" indicator
-    get searchAndNewContainer()     {return browser.$('form div:nth-child(1)')}
-    get searchField()               {return this.searchAndNewContainer.$('input')}
-    get searchButton()              {return this.searchAndNewContainer.$('button[type="submit"]')}
-    get newWrestlerButton()         {return this.searchAndNewContainer.$('button[type="button"]')}
-    get loadingSearchIndicator()    {return this.searchAndNewContainer.$('div.spinner-loader')}
+    get searchField()               {return browser.$('input[ng-model="searchFor"]')}
+    get searchButton()              {return browser.$('button[ng-click="searchWrestler(searchFor)"]')}
+    get newWrestlerButton()         {return browser.$('button[ng-click="newWrestler()"]')}
+    get loadingSearchIndicator()    {return browser.$('div[ng-show="loading"]')}
 
     // define right-side filters menu 
-    get filtersContainer()          {return browser.$('form div:nth-child(2)')}
+    get filtersContainer()          {return browser.$('form div.form-group.pull-right')}
     get resetFiletersButton()       {return this.filtersContainer.$('button[ng-click="resetFilters()"]')}
     get regionsFilter()             {return this.filtersContainer.$('select[ng-model="filters.fregion"]')}
     get fstFilter()                 {return this.filtersContainer.$('select[ng-model="filters.ffst"]')}
@@ -49,7 +48,7 @@ export class MainPage extends Page{
 
     // methods of MainPage class
     open(): void {
-        super.open()
+        this.firstTabWrestlers.click()
     }
 
     openNewWrestlerTab(): void { 

@@ -1,12 +1,12 @@
-import { LoginPage } from '../pageobjects/Login.page' //importing the LoginPage class
+import { LoginPage } from '../pageobjects/Login.page' 
 import { MainPage } from '../pageobjects/Main.page'
 import { dataProvider } from '../test_data/dataProvider'
 
 describe('Login Page ', () => {
     
-    let loginPage = new LoginPage() //creating instance of the Login page
-    let validUser = dataProvider.users.validUser // user with valid credentials
-    let randomUser = dataProvider.users.randomUser // user with random credentials
+    let loginPage = new LoginPage() 
+    let validUser = dataProvider.users.validUser 
+    let randomUser = dataProvider.users.randomUser 
 
     beforeEach(()=>{
         loginPage.open()

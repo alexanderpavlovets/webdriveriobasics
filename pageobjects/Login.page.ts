@@ -1,6 +1,6 @@
 import { Page } from './Page.page' // importing abstact class Page for inheritance 
 import { frameTimeout } from '../test_data/frameTimeouts' // importing frameTimeouts for custom wait of elements
-import { Iuser } from '../test_data/dataProvider' // importing Iuser interface for login(user) method
+import { IUser } from '../test_data/dataProvider' // importing Iuser interface for login(user) method
 
 
 export class LoginPage extends Page {
@@ -30,7 +30,7 @@ export class LoginPage extends Page {
         super.open()
     }
 
-    login(user: Iuser): void {
+    login(user: IUser): void {
         this.loginField.setValue(user.login)
         this.passwordField.setValue(user.password)
         this.loginButton.click()
