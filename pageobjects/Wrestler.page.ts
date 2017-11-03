@@ -1,5 +1,5 @@
 import { frameTimeout } from '../test_data/frameTimeouts' // importing frameTimeouts for custom wait of elements
-import { dataProvider, IWrestlerRequiredFieldsOnly } from '../test_data/dataProvider'
+import { dataProvider, IWrestler } from '../test_data/dataProvider'
 
 
 export class WrestlerPage {
@@ -11,8 +11,9 @@ export class WrestlerPage {
     static isOpened(): boolean{
         let wrestlerInfoForm = browser.$('div.col-sm-8')
         let loadingCurrentTabIndicator = browser.$('ul.nav-tabs li.active div.spinner-loader')
-        return wrestlerInfoForm.waitForVisible(frameTimeout.m) &&  // waiting for "Wrestler info" form to be visible
-             loadingCurrentTabIndicator.waitForVisible(frameTimeout.l, true) //wait loading indicator to disappear
+        let isWrestlerFormVisible = wrestlerInfoForm.waitForVisible(frameTimeout.m)
+        let isLoadingIndicatorHidden = loadingCurrentTabIndicator.waitForVisible(frameTimeout.l, true)
+        return  isWrestlerFormVisible && isLoadingIndicatorHidden 
     }
 
 
@@ -42,31 +43,53 @@ export class WrestlerPage {
 
 
     // methods of NewWrestlerPage class
-    fillRequiredFields(wrestler: IWrestlerRequiredFieldsOnly) {
+    private fillAllWrestlerFields(wrestler: IWrestler) {
         this.lastName.setValue(wrestler.lastName)
         this.firstName.setValue(wrestler.firstName)
         this.dateOfBirth.setValue(wrestler.dateOfBirth)
         this.middleName.setValue(wrestler.middleName)
         this.region1.selectByAttribute('label', wrestler.region1)
+        this.region2.selectByAttribute('label', wrestler.region2)
         this.fst1.selectByAttribute('label', wrestler.fst1)
+        this.fst2.selectByAttribute('label', wrestler.fst2)
+        this.trainer1.setValue(wrestler.trainer1)
+        this.trainer2.setValue(wrestler.trainer2)
         this.style.selectByAttribute('label', wrestler.style)
         this.age.selectByAttribute('label', wrestler.age)
         this.year.selectByAttribute('label', wrestler.year)
+        this.cardState.selectByAttribute('label', wrestler.cardState)
     }
 
-    get requiredFieldsValues() {
-        let data = {
-
+    get fieldsCurrentValues(): IWrestler {
+        return {
+            lastName: this.lastName.getValue(),
+            firstName: this.firstName.getValue(),
+            dateOfBirth: this.dateOfBirth.getValue(),
+            middleName: this.middleName.getValue(),
+            region1: this.region1.getValue(),
+            region2: this.region2.getValue(),
+            fst1: this.fst1.getValue(),
+            fst2: this.fst2.getValue(),
+            trainer1: this.trainer1.getValue(),
+            trainer2: this.trainer2.getValue(),
+            style: this.style.getValue(),
+            age: this.age.getValue(),
+            year: this.year.getValue(),
+            cardState: this.cardState.getValue()
         }
-        return data
     }
 
-    createNewWrestler(wrestler) {
-
+    createNewWrestler(wrestler: IWrestler): IWrestler {
+        this.fillAllWrestlerFields(wrestler)
+        let createdWrestlerData = this.fieldsCurrentValues
+        this.clickSuccess()
+        browser.waitUntil(()=>{return WrestlerPage.isOpened()}, frameTimeout.l)
+        return createdWrestlerData
     }
 
     clickSuccess() {
-
+        this.successButton.waitForEnabled(frameTimeout.s)
+        this.successButton.click()
     }
 
 }

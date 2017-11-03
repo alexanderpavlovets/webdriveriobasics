@@ -11,38 +11,41 @@ describe('Wrestler CRUD', ()=>{
     let wrestlerPage = new WrestlerPage()
     let validUser = dataProvider.users.validUser
     let wrestler = dataProvider.wrestler
+    let providedDuringCreationWrestlerData
+    let displayedDataOfCreatedWrestler
     
     beforeAll(()=>{
         loginPage.open()
         loginPage.login(validUser)
     })
     
-    it('"New Wrestler" tab is opened ', ()=>{
+    fit('"New Wrestler" tab opens properly', ()=>{
         mainPage.openNewWrestlerTab()
-        wrestlerPage.fillRequiredFields(wrestler)
-        browser.pause(3000)
+        expect(WrestlerPage.isOpened()).toBeTruthy('"Wrestler info" from should be visible OR loading indicator should be hidden')
     })
 
-    // it('Wrestler page is opened after wrestler creation', ()=>{
-    //     wrestlerPage.openForCreation()
-    //     wrestlerPage.createNewWrestlerWithRandomData()
-    //     // createNewWrestler(wrestler) - it is random anyway
-    //     expect(WrestlerPage.isOpened()).toBeTruthy('"Wrestler info" form should be visible and no loading indicator shown')
-    //     expect(wrestlerPage.wrestler.photoAreaHeaderText).toContain('Photo', '"Photo" header should be visible on equal area')
-    //     expect(wrestlerPage.wrestler.docsAreaHeaderText).toContain('Documents', '"Documents" header should be visible on equal area')
-    // })
+    fit('It is possible to create new wrestler', () => {
+        mainPage.open()
+        browser.pause(2000)
+        mainPage.openNewWrestlerTab()
+        browser.pause(2000)
+        console.log('before the setValue')
+        browser.$('form[name="fWrestler"] fg-input[value="wr.fname"] input').setValue(123333333)
+        console.log('after setValue')
+        browser.pause(2000)
+        providedDuringCreationWrestlerData = wrestlerPage.createNewWrestler(wrestler)
+        expect(mainPage.currentActiveTab.getText()).toContain(providedDuringCreationWrestlerData.lastName,
+            'Provided during creation last name should be shown in created wrestler tab')
+        expect(wrestlerPage.photoDiv.isVisible()).toBeTruthy('"Photo" area should be visible after wrestler creation')
+        expect(wrestlerPage.docsDiv.isVisible()).toBeTruthy('"Documents" area should be visible after wrestler creation')
+    })
 
-    // it('Created wrestler data should match to inserted data during creation', ()=>{
-    //     wrestlerPage.openForCreation()
-    //     wrestlerPage.fillRequiredFieldsRandomly()
-    //     let dataBeforeCreation = JSON.stringify(wrestlerPage.requiredFieldsValues)
-    //     wrestlerPage.clickSuccess()
-    //     browser.waitUntil(()=>{return WrestlerPage.isOpened()}, 5000, '"Wrestler info" form should be visible and no loading indicator shown')
-    //     let dataAfterCreateion = JSON.stringify(wrestlerPage.requiredFieldsValues)
-    //     expect(dataBeforeCreation === dataAfterCreateion).toBeTruthy(
-    //                                                         'Data of created wrestler should match to inserted data during wrestler creation')
-    // })
-
-    // xit('')
-
+    xit('Wrestler data before and after creation are equal', ()=>{
+        mainPage.open()
+        mainPage.openNewWrestlerTab()
+        // browser.waitUntil(()=>{return WrestlerPage.isOpened()}, 2000)
+        providedDuringCreationWrestlerData = JSON.stringify(wrestlerPage.createNewWrestler(wrestler))
+        displayedDataOfCreatedWrestler = JSON.stringify(wrestlerPage.fieldsCurrentValues)
+        expect(providedDuringCreationWrestlerData === displayedDataOfCreatedWrestler).toBeTruthy()
+    })
 })
