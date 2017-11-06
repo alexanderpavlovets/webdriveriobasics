@@ -1,5 +1,6 @@
 import { Page } from './Page.page' // importing abstact class Page for inheritance 
 import { frameTimeout } from '../test_data/frameTimeouts' // importing frameTimeouts for custom wait of elements
+import { WrestlerPage } from './Wrestler.page'
 
 
 export class MainPage extends Page{
@@ -23,6 +24,7 @@ export class MainPage extends Page{
     get firstTabWrestlers()         { return this.openedTabsLIs[0]}
     get currentAmountOfOpenedTabs() { return this.openedTabsLIs.length}
     get currentActiveTab()          { return this.navigationTabsContainer.$('li.active') }
+    get closeButtonOfCurrentActiveTab() { return this.currentActiveTab.$('span.glyphicon.glyphicon-remove') }
     get loadingCurrentTabIndicator(){ return this.currentActiveTab.$('div[ng-show="tab.loading"]') }
     
     // define left-side header's elements - search input, "newWrestler" button and "Loading" indicator
@@ -49,9 +51,15 @@ export class MainPage extends Page{
     // methods of MainPage class
     open(): void {
         this.firstTabWrestlers.click()
+        browser.waitUntil(()=>{return MainPage.isOpened()}, frameTimeout.s)
     }
 
     openNewWrestlerTab(): void { 
         this.newWrestlerButton.click()
+        browser.waitUntil(()=>{return WrestlerPage.isOpened()}, frameTimeout.m)
+    }
+
+    closeCurrentActiveTab(): void {
+        this.closeButtonOfCurrentActiveTab.click()
     }
 }

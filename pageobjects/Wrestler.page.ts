@@ -43,7 +43,7 @@ export class WrestlerPage {
 
 
     // methods of NewWrestlerPage class
-    private fillAllWrestlerFields(wrestler: IWrestler) {
+    fillAllWrestlerFields(wrestler: IWrestler) {
         this.lastName.setValue(wrestler.lastName)
         this.firstName.setValue(wrestler.firstName)
         this.dateOfBirth.setValue(wrestler.dateOfBirth)
@@ -61,6 +61,18 @@ export class WrestlerPage {
     }
 
     get fieldsCurrentValues(): IWrestler {
+        // let dataOfDisplayedWrestler = {}
+        // for ( let key in dataProvider.wrestler) {
+        //     let wrestlerPage = new WrestlerPage()
+        //     dataOfDisplayedWrestler[key] = wrestlerPage[key].getValue()
+        // }
+        // return dataOfDisplayedWrestler
+
+        // let dataOfDisplayedWrestler = {}
+        // for (let key in dataProvider.wrestler) {
+        // } ask G - or get back here later - write several test for now
+        
+        browser.waitUntil(()=>{return WrestlerPage.isOpened()}, frameTimeout.l)
         return {
             lastName: this.lastName.getValue(),
             firstName: this.firstName.getValue(),

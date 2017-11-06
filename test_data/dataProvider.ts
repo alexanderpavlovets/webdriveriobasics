@@ -17,7 +17,7 @@ export interface IWrestler {
     dateOfBirth,
     middleName,
     region1,
-    region2?,
+    region2,
     fst1,
     fst2,
     trainer1,

@@ -12,5 +12,4 @@
  
 * iterate over objects
 * Interface can have optional property - try to create Wrestler with only required fields
-* ? Независимость тестов - что в before можно
-* ? что за пиздец с этим ангуляром ))
+* why wrestler is always equal in all tests

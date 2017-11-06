@@ -10,46 +10,50 @@ describe('Wrestler CRUD', ()=>{
     let mainPage = new MainPage() 
     let wrestlerPage = new WrestlerPage()
     let validUser = dataProvider.users.validUser
-    let wrestler = dataProvider.wrestler
     let providedDuringCreationWrestlerData
     let displayedDataOfCreatedWrestler
+    let displayedDataOfUpdatedWrestler
     
     beforeAll(()=>{
         loginPage.open()
         loginPage.login(validUser)
     })
-    
-    fit('"New Wrestler" tab opens properly', ()=>{
+
+    beforeEach(()=>{
+        mainPage.open()
         mainPage.openNewWrestlerTab()
+    })
+
+    afterEach(()=>{
+        mainPage.closeCurrentActiveTab()
+    })
+    
+    it('"New Wrestler" tab opens properly', ()=>{
         expect(WrestlerPage.isOpened()).toBeTruthy('"Wrestler info" from should be visible OR loading indicator should be hidden')
     })
 
-    fit('It is possible to create new wrestler', () => {
-        mainPage.open()
-        browser.pause(2000)
-        mainPage.openNewWrestlerTab()
-        browser.pause(2000)
-        console.log('before the setValue')
-        browser.$('form[name="fWrestler"] fg-input[value="wr.fname"] input').setValue(123333333) // falls here!
-        // maybe try to close current tab - but not the solution, as i think
-        // debug maybe??
-        // Сука !!! Унего все вкладки светятся!!! Закрывай предыдущие ! 
-        console.log('after setValue')
-        browser.pause(2000)
-        providedDuringCreationWrestlerData = wrestlerPage.createNewWrestler(wrestler)
+    it('It is possible to create new wrestler', () => {
+        providedDuringCreationWrestlerData = wrestlerPage.createNewWrestler(dataProvider.wrestler)
         expect(mainPage.currentActiveTab.getText()).toContain(providedDuringCreationWrestlerData.lastName,
             'Provided during creation last name should be shown in created wrestler tab')
         expect(wrestlerPage.photoDiv.isVisible()).toBeTruthy('"Photo" area should be visible after wrestler creation')
         expect(wrestlerPage.docsDiv.isVisible()).toBeTruthy('"Documents" area should be visible after wrestler creation')
     })
 
-    xit('Wrestler data before and after creation are equal', ()=>{
-        mainPage.open()
-        mainPage.openNewWrestlerTab()
-        // browser.waitUntil(()=>{return WrestlerPage.isOpened()}, 2000)
-        providedDuringCreationWrestlerData = JSON.stringify(wrestlerPage.createNewWrestler(wrestler))
+    it('Wrestler data before and after creation are equal', ()=>{
+        providedDuringCreationWrestlerData = JSON.stringify(wrestlerPage.createNewWrestler(dataProvider.wrestler))
         displayedDataOfCreatedWrestler = JSON.stringify(wrestlerPage.fieldsCurrentValues)
-        expect(providedDuringCreationWrestlerData === displayedDataOfCreatedWrestler).toBeTruthy()
-        // expect(1).toEqual(1) - add this check, but after problem fix
+        expect(providedDuringCreationWrestlerData).toEqual(displayedDataOfCreatedWrestler, 
+            'Wrestler data after creation should be equal to data provided during creation')
+    })
+
+    it('It is possible to change Wrestler data after the wrestler is created', ()=>{
+        wrestlerPage.createNewWrestler(dataProvider.wrestler)
+        wrestlerPage.fillAllWrestlerFields(dataProvider.wrestler)
+        displayedDataOfCreatedWrestler = JSON.stringify(wrestlerPage.fieldsCurrentValues)
+        wrestlerPage.clickSuccess()
+        displayedDataOfUpdatedWrestler = JSON.stringify(wrestlerPage.fieldsCurrentValues)
+        expect(displayedDataOfCreatedWrestler).toEqual(displayedDataOfUpdatedWrestler, 
+            'wrestler data after update should be changed properly')
     })
 })
