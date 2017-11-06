@@ -41,8 +41,8 @@ describe('Wrestler CRUD', ()=>{
     })
 
     it('Wrestler data before and after creation are equal', ()=>{
-        providedDuringCreationWrestlerData = JSON.stringify(wrestlerPage.createNewWrestler(dataProvider.wrestler))
-        displayedDataOfCreatedWrestler = JSON.stringify(wrestlerPage.fieldsCurrentValues)
+        providedDuringCreationWrestlerData = wrestlerPage.createNewWrestler(dataProvider.wrestler)
+        displayedDataOfCreatedWrestler = wrestlerPage.fieldsCurrentValues
         expect(providedDuringCreationWrestlerData).toEqual(displayedDataOfCreatedWrestler, 
             'Wrestler data after creation should be equal to data provided during creation')
     })
@@ -50,9 +50,11 @@ describe('Wrestler CRUD', ()=>{
     it('It is possible to change Wrestler data after the wrestler is created', ()=>{
         wrestlerPage.createNewWrestler(dataProvider.wrestler)
         wrestlerPage.fillAllWrestlerFields(dataProvider.wrestler)
-        displayedDataOfCreatedWrestler = JSON.stringify(wrestlerPage.fieldsCurrentValues)
+        displayedDataOfCreatedWrestler = wrestlerPage.fieldsCurrentValues
+        console.log(displayedDataOfCreatedWrestler)
         wrestlerPage.clickSuccess()
-        displayedDataOfUpdatedWrestler = JSON.stringify(wrestlerPage.fieldsCurrentValues)
+        displayedDataOfUpdatedWrestler = wrestlerPage.fieldsCurrentValues
+        console.log(displayedDataOfUpdatedWrestler)
         expect(displayedDataOfCreatedWrestler).toEqual(displayedDataOfUpdatedWrestler, 
             'wrestler data after update should be changed properly')
     })

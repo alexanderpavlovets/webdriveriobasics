@@ -12,4 +12,10 @@
  
 * iterate over objects
 * Interface can have optional property - try to create Wrestler with only required fields
-* why wrestler is always equal in all tests
+* why wrestler is always equal in all tests - because obj is created once
+
+#TODO:
+* create Navigator class
+* + приведение типов - casting TS
+* all inouts and selects are pageObjs 
+* + compare 2 obj without JSON

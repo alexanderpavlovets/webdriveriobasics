@@ -61,34 +61,31 @@ export class WrestlerPage {
     }
 
     get fieldsCurrentValues(): IWrestler {
-        // let dataOfDisplayedWrestler = {}
-        // for ( let key in dataProvider.wrestler) {
-        //     let wrestlerPage = new WrestlerPage()
-        //     dataOfDisplayedWrestler[key] = wrestlerPage[key].getValue()
-        // }
-        // return dataOfDisplayedWrestler
-
-        // let dataOfDisplayedWrestler = {}
-        // for (let key in dataProvider.wrestler) {
-        // } ask G - or get back here later - write several test for now
-        
         browser.waitUntil(()=>{return WrestlerPage.isOpened()}, frameTimeout.l)
-        return {
-            lastName: this.lastName.getValue(),
-            firstName: this.firstName.getValue(),
-            dateOfBirth: this.dateOfBirth.getValue(),
-            middleName: this.middleName.getValue(),
-            region1: this.region1.getValue(),
-            region2: this.region2.getValue(),
-            fst1: this.fst1.getValue(),
-            fst2: this.fst2.getValue(),
-            trainer1: this.trainer1.getValue(),
-            trainer2: this.trainer2.getValue(),
-            style: this.style.getValue(),
-            age: this.age.getValue(),
-            year: this.year.getValue(),
-            cardState: this.cardState.getValue()
+        let dataOfDisplayedWrestler = {}
+        let wrestlerPage = new WrestlerPage()
+        for ( let key in dataProvider.wrestler) {
+            dataOfDisplayedWrestler[key] = wrestlerPage[key].getValue()
         }
+        return dataOfDisplayedWrestler as IWrestler
+        
+        // Old implementation 
+        // return {
+        //     lastName: this.lastName.getValue(),
+        //     firstName: this.firstName.getValue(),
+        //     dateOfBirth: this.dateOfBirth.getValue(),
+        //     middleName: this.middleName.getValue(),
+        //     region1: this.region1.getValue(),
+        //     region2: this.region2.getValue(),
+        //     fst1: this.fst1.getValue(),
+        //     fst2: this.fst2.getValue(),
+        //     trainer1: this.trainer1.getValue(),
+        //     trainer2: this.trainer2.getValue(),
+        //     style: this.style.getValue(),
+        //     age: this.age.getValue(),
+        //     year: this.year.getValue(),
+        //     cardState: this.cardState.getValue()
+        // }
     }
 
     createNewWrestler(wrestler: IWrestler): IWrestler {

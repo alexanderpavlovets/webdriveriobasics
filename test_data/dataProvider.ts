@@ -54,20 +54,22 @@ export let dataProvider = {
         validUser: { login: 'auto', password: 'test' },
         randomUser: { login: randomFiveCharString(), password: randomFiveCharString() }
     },
-    wrestler: {
-        lastName: 'LastNameTest' + randomFiveCharString(),
-        firstName: 'FirstNameTest' + randomFiveCharString(),
-        dateOfBirth: randomDD_MM_YYYY(),
-        middleName: 'MiddleNameTest' + randomFiveCharString(),
-        region1: randomStringFromGivenArray(wrestlerSelects.region1),
-        region2: randomStringFromGivenArray(wrestlerSelects.region2),
-        fst1: randomStringFromGivenArray(wrestlerSelects.fst1),
-        fst2: randomStringFromGivenArray(wrestlerSelects.fst2),
-        trainer1: 'Trainer1Test' + randomFiveCharString(),
-        trainer2: 'Trainer2Test' + randomFiveCharString(),
-        style: randomStringFromGivenArray(wrestlerSelects.style),
-        age: randomStringFromGivenArray(wrestlerSelects.age),
-        year: randomStringFromGivenArray(wrestlerSelects.year),
-        cardState: randomStringFromGivenArray(wrestlerSelects.cardState)
+    get wrestler() { // via get, in order to make it unique each call 
+        return {
+            lastName: 'LastNameTest' + randomFiveCharString(),
+            firstName: 'FirstNameTest' + randomFiveCharString(),
+            dateOfBirth: randomDD_MM_YYYY(),
+            middleName: 'MiddleNameTest' + randomFiveCharString(),
+            region1: randomStringFromGivenArray(wrestlerSelects.region1),
+            region2: randomStringFromGivenArray(wrestlerSelects.region2),
+            fst1: randomStringFromGivenArray(wrestlerSelects.fst1),
+            fst2: randomStringFromGivenArray(wrestlerSelects.fst2),
+            trainer1: 'Trainer1Test' + randomFiveCharString(),
+            trainer2: 'Trainer2Test' + randomFiveCharString(),
+            style: randomStringFromGivenArray(wrestlerSelects.style),
+            age: randomStringFromGivenArray(wrestlerSelects.age),
+            year: randomStringFromGivenArray(wrestlerSelects.year),
+            cardState: randomStringFromGivenArray(wrestlerSelects.cardState)
+        }
     }
 }
