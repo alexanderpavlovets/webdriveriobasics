@@ -1,18 +1,8 @@
-import { Page } from './Page.page' // importing abstact class Page for inheritance 
-import { frameTimeout } from '../test_data/frameTimeouts' // importing frameTimeouts for custom wait of elements
 import { IUser } from '../test_data/dataProvider' // importing Iuser interface for login(user) method
 
 
-export class LoginPage extends Page {
+export class LoginPage {
     constructor() {
-        super()
-    }
-
-
-    //static methods of LoginPage class - not used, maybe will be for "logOut" test
-    static isOpened(): boolean { 
-        let loginForm = browser.$('.panel,.panel-primary')
-        return loginForm.waitForVisible(frameTimeout.m) // waiting for login form to be visible
     }
 
 
@@ -26,10 +16,6 @@ export class LoginPage extends Page {
 
 
     // methods of LoginPage class
-    open(): void {
-        super.open()
-    }
-
     login(user: IUser): void {
         this.loginField.setValue(user.login)
         this.passwordField.setValue(user.password)

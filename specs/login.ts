@@ -1,20 +1,23 @@
 import { LoginPage } from '../pageobjects/Login.page' 
-import { MainPage } from '../pageobjects/Main.page'
+import { Navigator } from '../pageobjects/objects/Navigator'
 import { dataProvider } from '../test_data/dataProvider'
+
 
 describe('Login Page ', () => {
     
     let loginPage = new LoginPage() 
+    let navigator = new Navigator()
     let validUser = dataProvider.users.validUser 
-    let randomUser = dataProvider.users.randomUser 
+    let randomUser = dataProvider.users.randomUser
+    
 
     beforeEach(()=>{
-        loginPage.open()
+        navigator.openLoginPage()
     })
 
     it('Logging in, after correct credentials are provided', ()=> {
         loginPage.login(validUser)
-        expect(MainPage.isOpened()).toBeTruthy('Main page should be opened it\'s header should be visible after login')
+        expect(Navigator.isLoginPageOpened()).toBeTruthy('Main page should be opened it\'s header should be visible after login')
     })
 
     it('Shows an error, when invalid credentials are provided', ()=>{

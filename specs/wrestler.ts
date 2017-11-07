@@ -1,6 +1,7 @@
 import { LoginPage } from '../pageobjects/Login.page'
 import { MainPage } from '../pageobjects/Main.page'
 import { WrestlerPage } from '../pageobjects/Wrestler.page'
+import { Navigator } from '../pageobjects/objects/Navigator'
 import { dataProvider } from '../test_data/dataProvider';
 
 
@@ -9,32 +10,33 @@ describe('Wrestler CRUD', ()=>{
     let loginPage = new LoginPage()
     let mainPage = new MainPage() 
     let wrestlerPage = new WrestlerPage()
+    let navigator = new Navigator()
     let validUser = dataProvider.users.validUser
     let providedDuringCreationWrestlerData
     let displayedDataOfCreatedWrestler
     let displayedDataOfUpdatedWrestler
     
     beforeAll(()=>{
-        loginPage.open()
+        navigator.openLoginPage()
         loginPage.login(validUser)
     })
 
     beforeEach(()=>{
-        mainPage.open()
-        mainPage.openNewWrestlerTab()
+        // navigator.openMainPage()
+        navigator.openNewWrestlerTab()
     })
 
     afterEach(()=>{
-        mainPage.closeCurrentActiveTab()
+        navigator.closeCurrentActiveTab()
     })
     
     it('"New Wrestler" tab opens properly', ()=>{
-        expect(WrestlerPage.isOpened()).toBeTruthy('"Wrestler info" from should be visible OR loading indicator should be hidden')
+        expect(Navigator.isWrestlerPageOpened()).toBeTruthy('"Wrestler info" from should be visible OR loading indicator should be hidden')
     })
 
     it('It is possible to create new wrestler', () => {
         providedDuringCreationWrestlerData = wrestlerPage.createNewWrestler(dataProvider.wrestler)
-        expect(mainPage.currentActiveTab.getText()).toContain(providedDuringCreationWrestlerData.lastName,
+        expect(navigator.currentActiveTab.getText()).toContain(providedDuringCreationWrestlerData.lastName,
             'Provided during creation last name should be shown in created wrestler tab')
         expect(wrestlerPage.photoDiv.isVisible()).toBeTruthy('"Photo" area should be visible after wrestler creation')
         expect(wrestlerPage.docsDiv.isVisible()).toBeTruthy('"Documents" area should be visible after wrestler creation')
@@ -51,10 +53,8 @@ describe('Wrestler CRUD', ()=>{
         wrestlerPage.createNewWrestler(dataProvider.wrestler)
         wrestlerPage.fillAllWrestlerFields(dataProvider.wrestler)
         displayedDataOfCreatedWrestler = wrestlerPage.fieldsCurrentValues
-        console.log(displayedDataOfCreatedWrestler)
         wrestlerPage.clickSuccess()
         displayedDataOfUpdatedWrestler = wrestlerPage.fieldsCurrentValues
-        console.log(displayedDataOfUpdatedWrestler)
         expect(displayedDataOfCreatedWrestler).toEqual(displayedDataOfUpdatedWrestler, 
             'wrestler data after update should be changed properly')
     })

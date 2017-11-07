@@ -10,12 +10,18 @@
 * тесты пиши тольео те, что нужны 
 * структура - дата провайдер
  
-* iterate over objects
+* + iterate over objects
 * Interface can have optional property - try to create Wrestler with only required fields
-* why wrestler is always equal in all tests - because obj is created once
+* + why wrestler is always equal in all tests - because obj is created once
 
 #TODO:
-* create Navigator class
+* + create Navigator class
 * + приведение типов - casting TS
-* all inouts and selects are pageObjs 
+* all iputs and selects are pageObjs 
 * + compare 2 obj without JSON
+* all tabs are connected to 'active' ... smth like this (rewrite constructors)
+* mine: rewrite static methods of Navigator - to have good locators and conditions (now - almost spike)
+* mine: rewrite date generator with /momentjs.com
+
+* ? what for do i need abstract class Page ? 
+

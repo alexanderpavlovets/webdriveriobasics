@@ -1,32 +1,10 @@
-import { Page } from './Page.page' // importing abstact class Page for inheritance 
-import { frameTimeout } from '../test_data/frameTimeouts' // importing frameTimeouts for custom wait of elements
-import { WrestlerPage } from './Wrestler.page'
 
-
-export class MainPage extends Page{
+export class MainPage {
     constructor(){
-        super()
     }
 
 
-    //static methods of MainPage class
-    static isOpened() :boolean { 
-        let header = browser.$('ul.nav-tabs')
-        return header.waitForVisible(frameTimeout.m)   // waiting for header to be visible
-    }
-
-
-    // setting elements via get, in order to make lazy search of the elements:
-    // define header with navigation tabs
-    get navigationTabsContainer()   { return browser.$('ul.nav-tabs')}
-    get openedTabsLIs()             { return this.navigationTabsContainer.$$('li')}
-    get lastOpenedTab()             { return this.openedTabsLIs[this.openedTabsLIs.length - 1]}
-    get firstTabWrestlers()         { return this.openedTabsLIs[0]}
-    get currentAmountOfOpenedTabs() { return this.openedTabsLIs.length}
-    get currentActiveTab()          { return this.navigationTabsContainer.$('li.active') }
-    get closeButtonOfCurrentActiveTab() { return this.currentActiveTab.$('span.glyphicon.glyphicon-remove') }
-    get loadingCurrentTabIndicator(){ return this.currentActiveTab.$('div[ng-show="tab.loading"]') }
-    
+    // setting elements via get, in order to make lazy search of the elements:    
     // define left-side header's elements - search input, "newWrestler" button and "Loading" indicator
     get searchField()               {return browser.$('input[ng-model="searchFor"]')}
     get searchButton()              {return browser.$('button[ng-click="searchWrestler(searchFor)"]')}
@@ -49,17 +27,5 @@ export class MainPage extends Page{
 
 
     // methods of MainPage class
-    open(): void {
-        this.firstTabWrestlers.click()
-        browser.waitUntil(()=>{return MainPage.isOpened()}, frameTimeout.s)
-    }
 
-    openNewWrestlerTab(): void { 
-        this.newWrestlerButton.click()
-        browser.waitUntil(()=>{return WrestlerPage.isOpened()}, frameTimeout.m)
-    }
-
-    closeCurrentActiveTab(): void {
-        this.closeButtonOfCurrentActiveTab.click()
-    }
 }

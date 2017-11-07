@@ -1,19 +1,10 @@
-import { frameTimeout } from '../test_data/frameTimeouts' // importing frameTimeouts for custom wait of elements
-import { dataProvider, IWrestler } from '../test_data/dataProvider'
+import { Navigator } from './objects/Navigator'
+import { frameTimeout } from '../test_data/frameTimeouts' // for custom wait of elements
+import { dataProvider, IWrestler } from '../test_data/dataProvider' // for data of wrestler
 
 
 export class WrestlerPage {
     constructor(){
-    }
-
-
-    // static methods of NewWrestler class
-    static isOpened(): boolean{
-        let wrestlerInfoForm = browser.$('div.col-sm-8')
-        let loadingCurrentTabIndicator = browser.$('ul.nav-tabs li.active div.spinner-loader')
-        let isWrestlerFormVisible = wrestlerInfoForm.waitForVisible(frameTimeout.m)
-        let isLoadingIndicatorHidden = loadingCurrentTabIndicator.waitForVisible(frameTimeout.l, true)
-        return  isWrestlerFormVisible && isLoadingIndicatorHidden 
     }
 
 
@@ -61,38 +52,20 @@ export class WrestlerPage {
     }
 
     get fieldsCurrentValues(): IWrestler {
-        browser.waitUntil(()=>{return WrestlerPage.isOpened()}, frameTimeout.l)
+        browser.waitUntil(()=>{return Navigator.isWrestlerPageOpened()}, frameTimeout.l)
         let dataOfDisplayedWrestler = {}
         let wrestlerPage = new WrestlerPage()
         for ( let key in dataProvider.wrestler) {
             dataOfDisplayedWrestler[key] = wrestlerPage[key].getValue()
         }
         return dataOfDisplayedWrestler as IWrestler
-        
-        // Old implementation 
-        // return {
-        //     lastName: this.lastName.getValue(),
-        //     firstName: this.firstName.getValue(),
-        //     dateOfBirth: this.dateOfBirth.getValue(),
-        //     middleName: this.middleName.getValue(),
-        //     region1: this.region1.getValue(),
-        //     region2: this.region2.getValue(),
-        //     fst1: this.fst1.getValue(),
-        //     fst2: this.fst2.getValue(),
-        //     trainer1: this.trainer1.getValue(),
-        //     trainer2: this.trainer2.getValue(),
-        //     style: this.style.getValue(),
-        //     age: this.age.getValue(),
-        //     year: this.year.getValue(),
-        //     cardState: this.cardState.getValue()
-        // }
     }
 
     createNewWrestler(wrestler: IWrestler): IWrestler {
         this.fillAllWrestlerFields(wrestler)
         let createdWrestlerData = this.fieldsCurrentValues
         this.clickSuccess()
-        browser.waitUntil(()=>{return WrestlerPage.isOpened()}, frameTimeout.l)
+        browser.waitUntil(()=>{return Navigator.isWrestlerPageOpened()}, frameTimeout.l)
         return createdWrestlerData
     }
 
