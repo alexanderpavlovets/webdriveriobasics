@@ -6,10 +6,11 @@ import { dataProvider, IWrestler } from '../test_data/dataProvider' // for data 
 export class WrestlerPage {
     constructor(){
     }
-
+    navigator = new Navigator()
 
     // defining elements of Wrestler page
     get wrestlerDataForm()  { return browser.$('form[name="fWrestler"]')}
+    // get wrestlerDataForm()  { return  this.navigator.currentActiveTab.$('form[name="fWrestler"]')}
     // "Wrestler info" form
     get lastName()          { return this.wrestlerDataForm.$('fg-input[value="wr.lname"] input')}
     get firstName()         { return this.wrestlerDataForm.$('fg-input[value="wr.fname"] input')}

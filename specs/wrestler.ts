@@ -22,7 +22,7 @@ describe('Wrestler CRUD', ()=>{
     })
 
     beforeEach(()=>{
-        // navigator.openMainPage()
+        navigator.openMainPage()
         navigator.openNewWrestlerTab()
     })
 
@@ -36,6 +36,7 @@ describe('Wrestler CRUD', ()=>{
 
     it('It is possible to create new wrestler', () => {
         providedDuringCreationWrestlerData = wrestlerPage.createNewWrestler(dataProvider.wrestler)
+        // console.log(providedDuringCreationWrestlerData)
         expect(navigator.currentActiveTab.getText()).toContain(providedDuringCreationWrestlerData.lastName,
             'Provided during creation last name should be shown in created wrestler tab')
         expect(wrestlerPage.photoDiv.isVisible()).toBeTruthy('"Photo" area should be visible after wrestler creation')
@@ -45,6 +46,8 @@ describe('Wrestler CRUD', ()=>{
     it('Wrestler data before and after creation are equal', ()=>{
         providedDuringCreationWrestlerData = wrestlerPage.createNewWrestler(dataProvider.wrestler)
         displayedDataOfCreatedWrestler = wrestlerPage.fieldsCurrentValues
+        // console.log(providedDuringCreationWrestlerData)
+        // console.log(displayedDataOfCreatedWrestler)
         expect(providedDuringCreationWrestlerData).toEqual(displayedDataOfCreatedWrestler, 
             'Wrestler data after creation should be equal to data provided during creation')
     })

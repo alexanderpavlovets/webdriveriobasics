@@ -17,7 +17,7 @@ describe('Login Page ', () => {
 
     it('Logging in, after correct credentials are provided', ()=> {
         loginPage.login(validUser)
-        expect(Navigator.isLoginPageOpened()).toBeTruthy('Main page should be opened it\'s header should be visible after login')
+        expect(Navigator.isMainPageOpened()).toBeTruthy('Main page should be opened it\'s header should be visible after login')
     })
 
     it('Shows an error, when invalid credentials are provided', ()=>{

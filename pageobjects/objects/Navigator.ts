@@ -52,7 +52,6 @@ export class Navigator extends Page{
     }
 
     openNewWrestlerTab(){
-        this.openMainPage()
         this.mainPage.newWrestlerButton.click()
         browser.waitUntil(()=>{ return Navigator.isWrestlerPageOpened() }, frameTimeout.l, '"New Wrestler" tab is not opened')
     }
