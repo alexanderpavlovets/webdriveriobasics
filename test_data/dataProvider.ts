@@ -54,7 +54,7 @@ export let dataProvider = {
         validUser: { login: 'auto', password: 'test' },
         randomUser: { login: randomFiveCharString(), password: randomFiveCharString() }
     },
-    get wrestler() { // via get, in order to make it unique each call 
+    getWrestler() {
         return {
             lastName: 'LastNameTest' + randomFiveCharString(),
             firstName: 'FirstNameTest' + randomFiveCharString(),

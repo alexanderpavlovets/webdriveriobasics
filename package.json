@@ -5,6 +5,7 @@
     "license": "ISC",
     "keywords": [],
     "scripts": {
+        "postinstall": "webdriver-manager update",
         "tsc": "tsc",
         "wdio": "wdio",
         "pretest": "npm run tsc",
@@ -24,6 +25,8 @@
         "pg-promise": "^6.3.6"
     },
     "dependencies": {
+        "moment": "^2.19.1",
+        "moment-random": "^1.0.3",
         "npm-run-all": "^4.1.1"
     }
 }

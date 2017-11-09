@@ -1,3 +1,6 @@
+import * as moment from 'moment'
+import * as momentRandom from 'moment-random'
+
 // generator of random values, includes functions:
 // randomFiveCharString(): string
 // randomIntFromGivenRange(lowerIntIncludive: number, higherIntIncludive: number): number
@@ -20,19 +23,9 @@ export function randomIntFromGivenRange(lowerIntIncludive: number, higherIntIncl
     return Math.floor(Math.random() * (higherIntIncludive - lowerIntIncludive + 1) + lowerIntIncludive)
 }
 
-// function returns random date string in format DD-MM-YYYY for years 1900 - 2015
+// function returns random date string in format DD-MM-YYYY from 0 UNIX-time till today
 export function randomDD_MM_YYYY(): string{
-    let randomDateNumber: string = Math.floor((Math.random() * 31) + 1).toString() // 1-31
-    let randomMonthNumber: string = Math.floor(Math.random() * 12).toString() // 0-11
-    let randomYYYY = function(): number{
-        return randomIntFromGivenRange(1900,2015)
-    }
-
-    let date = randomDateNumber.length > 1 ? randomDateNumber : '0' + randomDateNumber
-    let month = randomMonthNumber.length > 1 ? randomMonthNumber : '0' + randomMonthNumber
-    let year = randomYYYY()
-
-    return `${date}-${month}-${year}`
+    return moment(momentRandom()).format('DD-MM-YYYY')
 }
 
 export function randomStringFromGivenArray(array: Array<string>): string {

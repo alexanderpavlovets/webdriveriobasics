@@ -11,17 +11,23 @@ export class Navigator extends Page{
 
     // static methods of Navigator class
     static isLoginPageOpened(): boolean { 
-        let loginForm = browser.$('.panel,.panel-primary')
-        return loginForm.waitForVisible(frameTimeout.m) // waiting for login form to be visible
+        let loginForm = browser.$('div.panel,.panel-primary')
+        let loginHeaderText: string = loginForm.$('div.panel-heading.ng-binding').getText()
+        let isLoginFormVisible: boolean = loginForm.waitForVisible(frameTimeout.m)
+        let isLoginHeaderShown: boolean = loginHeaderText === 'Login'
+        return isLoginFormVisible && isLoginHeaderShown 
     }
 
     static isMainPageOpened() :boolean { 
-        let header = browser.$('ul.nav-tabs')
-        return header.waitForVisible(frameTimeout.m)   // waiting for header to be visible
+        let searchContainer = browser.$('form div.form-group')
+        let filtersContainer = browser.$('form div.form-group.pull-right')
+        let isSearchContainerVisible = searchContainer.waitForVisible(frameTimeout.m)
+        let isFiltersContainerVisible = filtersContainer.waitForVisible(frameTimeout.m)
+        return isSearchContainerVisible && isFiltersContainerVisible
     }
 
     static isWrestlerPageOpened(): boolean{
-        let wrestlerInfoForm = browser.$('div.col-sm-8')
+        let wrestlerInfoForm = browser.$('div.active form[name="fWrestler"]')
         let loadingCurrentTabIndicator = browser.$('ul.nav-tabs li.active div.spinner-loader')
         let isWrestlerFormVisible = wrestlerInfoForm.waitForVisible(frameTimeout.m)
         let isLoadingIndicatorHidden = loadingCurrentTabIndicator.waitForVisible(frameTimeout.l, true)
@@ -41,19 +47,31 @@ export class Navigator extends Page{
 
 
     // methods of Navigator class
-    openLoginPage() {
+    waitForLoginPageOpened(): void {
+        browser.waitUntil(() => Navigator.isLoginPageOpened(), frameTimeout.l, 'Login page is not opened')
+    }
+
+    waitForMainPageOpened(): void {
+        browser.waitUntil(()=>Navigator.isMainPageOpened(), frameTimeout.l, 'Main page is not opened')
+    }
+
+    waitForWrestlerPageOpened(): void {
+        browser.waitUntil(()=> Navigator.isWrestlerPageOpened(), frameTimeout.l, '"Wrestler" page is not opened')
+    }
+
+    openLoginPage(): void {
         super.open()
-        browser.waitUntil(()=>{return Navigator.isLoginPageOpened()}, frameTimeout.l, 'Login page is not opened')
+        this.waitForLoginPageOpened()
     }
 
-    openMainPage() {
+    openMainPage(): void {
         this.firstTabWrestlers.click()
-        browser.waitUntil(()=>{ return Navigator.isMainPageOpened() }, frameTimeout.l, 'Main page is not opened')
+        this.waitForMainPageOpened()
     }
 
-    openNewWrestlerTab(){
+    openNewWrestlerTab(): void {
         this.mainPage.newWrestlerButton.click()
-        browser.waitUntil(()=>{ return Navigator.isWrestlerPageOpened() }, frameTimeout.l, '"New Wrestler" tab is not opened')
+        this.waitForWrestlerPageOpened()
     }
 
     closeCurrentActiveTab(): void {
