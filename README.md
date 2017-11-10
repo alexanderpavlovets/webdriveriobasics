@@ -17,12 +17,12 @@
 #TODO:
 * + create Navigator class
 * + приведение типов - casting TS
-* all iputs and selects are pageObjs 
+* + all iputs and selects are pageObjs 
 * + compare 2 obj without JSON
 * + all tabs are connected to 'active' 
 * + mine: rewrite static methods of Navigator - to have good locators and conditions (now - almost spike)
 * + mine: rewrite date generator with /momentjs.com - continue with momentRandom
-* rewrite objIterator - maybe standalone class
+* + create objIterator of get/set data for WrestlerPage
 
 * ? mine: make browser window a little bit bigger - weird, but impossible.
 /** @deprecated in favour of /session/{session id}/window/rect */ - read it later

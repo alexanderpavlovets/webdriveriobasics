@@ -1,4 +1,4 @@
-import { RawResult } from "webdriverio";
+// Redefined input element class 
 
 export class MyInputField {
     inputElement: WebdriverIO.Client<WebdriverIO.RawResult<WebdriverIO.Element>>
@@ -9,9 +9,12 @@ export class MyInputField {
         this.inputElement = inputElement
     }
 
-    setData(data: string) {
+
+    setData(data: string): void {
         this.inputElement.setValue(data)
     }
-}
 
-// Add +1 overload to parameter type
+    getData(): string {
+        return this.inputElement.getValue()
+    }
+}

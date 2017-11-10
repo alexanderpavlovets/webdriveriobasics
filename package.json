@@ -1,7 +1,7 @@
 {
     "name": "webdriver_io_basics",
-    "version": "0.0.1",
-    "description": "This is WebDriverIO investigation project",
+    "version": "1.0.0",
+    "description": "This is WebDriverIO investigation project for Wrestler sandbox",
     "license": "ISC",
     "keywords": [],
     "scripts": {
