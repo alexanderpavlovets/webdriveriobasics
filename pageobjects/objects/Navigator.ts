@@ -6,7 +6,7 @@ export class Navigator extends Page{
     constructor(){
         super()
     }
-    mainPage = new MainPage()
+    mainPage = new MainPage() // instance of MainPage for opening "New Wrestler" tab
 
 
     // static methods of Navigator class
