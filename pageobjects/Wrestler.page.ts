@@ -1,5 +1,6 @@
 import { frameTimeout } from '../test_data/frameTimeouts' // for custom wait of elements
 import { dataProvider, IWrestler } from '../test_data/dataProvider' // for data of wrestler
+import { MyInputField } from './objects/MyInput';
 
 
 export class WrestlerPage {
@@ -9,7 +10,8 @@ export class WrestlerPage {
     // defining elements of Wrestler page
     get wrestlerDataForm()  { return browser.$('div.active form[name="fWrestler"]')}
     // "Wrestler info" form
-    get lastName()          { return this.wrestlerDataForm.$('fg-input[value="wr.lname"] input')}
+    // get lastName()          { return this.wrestlerDataForm.$('fg-input[value="wr.lname"] input')}
+    get lastName()          { return new MyInputField(this.wrestlerDataForm.$('fg-input[value="wr.lname"] input'))}
     get firstName()         { return this.wrestlerDataForm.$('fg-input[value="wr.fname"] input')}
     get dateOfBirth()       { return this.wrestlerDataForm.$('fg-date[value="wr.dob"] input')}
     get middleName()        { return this.wrestlerDataForm.$('fg-input[value="wr.mname"] input')}
@@ -33,7 +35,8 @@ export class WrestlerPage {
 
     // methods of NewWrestlerPage class
     setWrestlerFields(wrestler: IWrestler) {
-        this.lastName.setValue(wrestler.lastName)
+        // this.lastName.setValue(wrestler.lastName)
+        this.lastName.setData(wrestler.lastName)
         this.firstName.setValue(wrestler.firstName)
         this.dateOfBirth.setValue(wrestler.dateOfBirth)
         this.middleName.setValue(wrestler.middleName)

@@ -30,7 +30,7 @@ describe('Wrestler CRUD', ()=>{
     })
     
 
-    it('It is possible to create new wrestler', () => {
+    fit('It is possible to create new wrestler', () => {
         wrestlerPage.setWrestlerFields(makeNewWrestler())
         creationData = wrestlerPage.getWrestlerFields()
         wrestlerPage.clickSaveButton()

@@ -29,3 +29,7 @@
 * ? what for do i need abstract class Page ? 
 
 * TypeScript/JavaScript: //#region and //#endregion and //region and //endregion
+
+* Verbose - log level to understand wjat returns as element
+* seleneium standalone - dosc/change/install - set own server. 
+* try to avoid services. 
