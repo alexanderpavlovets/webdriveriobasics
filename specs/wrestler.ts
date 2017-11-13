@@ -61,4 +61,9 @@ describe('Wrestler CRUD', ()=>{
         updatedData = wrestlerPage.getWrestlerFields()
         expect(visibleData).toEqual(updatedData, 'Wrestler data after update should be changed accordingly')
     })
+
+    fit('fuck', ()=>{
+        browser.windowHandleMaximize()
+        browser.pause(5000)
+    })
 })

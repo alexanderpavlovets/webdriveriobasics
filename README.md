@@ -12,15 +12,16 @@
 * + mine: rewrite static methods of Navigator - to have good locators and conditions (now - almost spike)
 * + mine: rewrite date generator with /momentjs.com - continue with momentRandom
 * + create objIterator of get/set data for WrestlerPage
-* Verbose - log level to understand wjat returns as element
+* mine: write some tests 
 * seleneium standalone - dosc/change/install - set own server. 
 * try to avoid services. 
 
 
 #Questions:
 * ? what for do i need abstract class Page ?
-* ? mine: make browser window a little bit bigger - weird, but impossible.
+* ? make browser window a little bit bigger - weird, but impossible - downgrade the version of driver! 
 
 
 #Info:
 * TypeScript/JavaScript: //#region and //#endregion and //region and //endregion
+* Verbose - log level to understand what returns as element
