@@ -1,5 +1,41 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "name" : "categories",
-  "children" : [ ]
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "Error: Timeout - Async callback was not invoked within timeout specified by jasmine.DEFAULT_TIMEOUT_INTERVAL.",
+      "children" : [ {
+        "name" : "1",
+        "uid" : "a8bdb648b8aad465",
+        "parentUid" : "caa143319e0bd4a77f31da8f1242b554",
+        "status" : "broken",
+        "time" : {
+          "start" : 1507895922900,
+          "stop" : 1507895932905,
+          "duration" : 10005
+        },
+        "flaky" : true,
+        "parameters" : [ ]
+      } ],
+      "uid" : "caa143319e0bd4a77f31da8f1242b554"
+    }, {
+      "name" : "Failed: unknown command: session/708002c3caf47c38dac9f32858647c07/window/maximize",
+      "children" : [ {
+        "name" : "fuck",
+        "uid" : "27a1c01bd9f95678",
+        "parentUid" : "95f2c19884d16c200a7e4260349cac30",
+        "status" : "broken",
+        "time" : {
+          "start" : 1510583917940,
+          "stop" : 1510583921785,
+          "duration" : 3845
+        },
+        "flaky" : true,
+        "parameters" : [ ]
+      } ],
+      "uid" : "95f2c19884d16c200a7e4260349cac30"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
 }

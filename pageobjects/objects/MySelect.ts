@@ -1,11 +1,10 @@
+import { MyElementType } from "./MyElementType";
+
 // Redefined select element class 
-
 export class MySelectField {
-    selectElement: WebdriverIO.Client<WebdriverIO.RawResult<WebdriverIO.Element>>
-        & WebdriverIO.RawResult<WebdriverIO.Element>
+    selectElement: MyElementType
 
-    constructor(selectElement: WebdriverIO.Client<WebdriverIO.RawResult<WebdriverIO.Element>>
-        & WebdriverIO.RawResult<WebdriverIO.Element>) {
+    constructor(selectElement: MyElementType) {
         this.selectElement = selectElement
     }
 

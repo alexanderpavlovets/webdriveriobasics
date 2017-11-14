@@ -24,7 +24,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './specs/wrestler.js'
+        './specs/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -52,14 +52,20 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
-    capabilities: [{
-        // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-        // grid with only 5 firefox instances available you can make sure that not more than
-        // 5 instances get started at a time.
-        maxInstances: 1,
-        //
-        browserName: 'chrome'
-    }],
+    capabilities: 
+    [
+        {
+            // maxInstances can get overwritten per capability. So if you have an in-house Selenium
+            // grid with only 5 firefox instances available you can make sure that not more than
+            // 5 instances get started at a time.
+            maxInstances: 1,
+            browserName: 'chrome'
+        },
+        // {
+        //     maxInstances: 1,
+        //     browserName: 'firefox'
+        // }
+    ],
     //
     // ===================
     // Test Configurations
@@ -184,7 +190,7 @@ exports.config = {
      */
     before: function (capabilities, specs) {
         browser.timeouts('implicit', 5000) // setting implicit wait for middle timeout
-        browser.windowHandleMaximize()
+        // browser.windowHandleMaximize()
         // This function will make lazy element search via $ - provided by J.K. - need to understand and test. 
         // const orig$ = $;
         // $ = new Proxy($, {

@@ -10,7 +10,10 @@
         "pretest": "npm run tsc",
         "test": "npm-run-all wdio",
         "prereport": "allure generate --clean",
-        "report": "allure open"
+        "report": "allure open",
+        "standalone": "webdriver-manager start",
+        "hub": "java -jar C:\\Users\\olpav\\AppData\\Roaming\\npm\\node_modules\\webdriver-manager\\selenium\\selenium-server-standalone-3.7.1.jar -role hub",
+        "node": "java -jar C:\\Users\\olpav\\AppData\\Roaming\\npm\\node_modules\\webdriver-manager\\selenium\\selenium-server-standalone-3.7.1.jar -role node -hub http://localhost:4444/grid/register"
     },
     "devDependencies": {
         "@types/jasmine": "^2.6.0",
