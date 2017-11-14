@@ -1,4 +1,18 @@
 exports.config = {
+    //
+    // =====================
+    // Server Configurations
+    // =====================
+    // Host address of the running Selenium server. This information is usually obsolete as
+    // WebdriverIO automatically connects to localhost. Also, if you are using one of the
+    // supported cloud services like Sauce Labs, Browserstack, or Testing Bot you don't
+    // need to define host and port information because WebdriverIO can figure that out
+    // according to your user and key information. However, if you are using a private Selenium
+    // backend you should define the host address, port, and path here.
+    //
+    host: '127.0.0.1',
+    port: 4444,
+    path: '/wd/hub',
     
     //
     // ==================
@@ -43,6 +57,7 @@ exports.config = {
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
         maxInstances: 1,
+        //
         browserName: 'chrome'
     }],
     //
@@ -105,7 +120,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['selenium-standalone'],//
+    // services: [selenium-standalone],// need to be installed additionally
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: http://webdriver.io/guide/testrunner/frameworks.html
@@ -123,7 +138,6 @@ exports.config = {
             outputDir: './allure-results'
         }
     },
-    //
     // Options to be passed to Jasmine.
     jasmineNodeOpts: {
         //
@@ -162,16 +176,15 @@ exports.config = {
      */
     // beforeSession: function (config, capabilities, specs) {
     // },
-
     /**
      * Gets executed before test execution begins. At this point you can access to all global
      * variables like `browser`. It is the perfect place to define custom commands.
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    before: function () {
-        // setting implicit wait for middle timeout
-        browser.timeouts('implicit', 5000)
+    before: function (capabilities, specs) {
+        browser.timeouts('implicit', 5000) // setting implicit wait for middle timeout
+        browser.windowHandleMaximize()
         // This function will make lazy element search via $ - provided by J.K. - need to understand and test. 
         // const orig$ = $;
         // $ = new Proxy($, {
@@ -180,7 +193,7 @@ exports.config = {
         //     }
         // })
     },
-    
+    //
     /**
      * Hook that gets executed before the suite starts
      * @param {Object} suite suite details
@@ -240,9 +253,8 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that ran
      */
-    after: function (result, capabilities, specs) {
-        
-    },
+    // after: function (result, capabilities, specs) {
+    // },
     /**
      * Gets executed right after terminating the webdriver session.
      * @param {Object} config wdio configuration object

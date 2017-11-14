@@ -13,13 +13,12 @@
 * + mine: rewrite date generator with /momentjs.com - continue with momentRandom
 * + create objIterator of get/set data for WrestlerPage
 * mine: write some tests 
-* seleneium standalone - dosc/change/install - set own server. 
-* try to avoid services. 
+* + seleneium standalone - dosc/change/install - set own server. 
 
 
 #Questions:
 * ? what for do i need abstract class Page ?
-* ? make browser window a little bit bigger - weird, but impossible - downgrade the version of driver! 
+* + ? make browser window a little bit bigger - works with selenium standalone only. service - not working
 
 
 #Info:

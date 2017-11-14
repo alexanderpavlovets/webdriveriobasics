@@ -5,7 +5,6 @@
     "license": "ISC",
     "keywords": [],
     "scripts": {
-        "postinstall": "webdriver-manager update",
         "tsc": "tsc",
         "wdio": "wdio",
         "pretest": "npm run tsc",
@@ -17,12 +16,11 @@
         "@types/jasmine": "^2.6.0",
         "@types/webdriverio": "^4.8.6",
         "allure-commandline": "^2.3.5",
+        "pg-promise": "^6.3.6",
         "typescript": "^2.5.3",
         "wdio-allure-reporter": "^0.1.2",
         "wdio-jasmine-framework": "^0.3.2",
-        "wdio-selenium-standalone-service": "0.0.9",
-        "webdriverio": "^4.8.0",
-        "pg-promise": "^6.3.6"
+        "webdriverio": "^4.8.0"
     },
     "dependencies": {
         "moment": "^2.19.1",
