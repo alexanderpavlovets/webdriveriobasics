@@ -11,9 +11,10 @@
         "test": "npm-run-all wdio",
         "prereport": "allure generate --clean",
         "report": "allure open",
-        "standalone": "webdriver-manager start",
-        "hub": "java -jar C:\\Users\\olpav\\AppData\\Roaming\\npm\\node_modules\\webdriver-manager\\selenium\\selenium-server-standalone-3.7.1.jar -role hub",
-        "node": "java -jar C:\\Users\\olpav\\AppData\\Roaming\\npm\\node_modules\\webdriver-manager\\selenium\\selenium-server-standalone-3.7.1.jar -role node -hub http://localhost:4444/grid/register"
+        "standalone": "selenium-standalone start",
+        "hub": "selenium-standalone start -- -role hub",
+        "nodeChrome": "selenium-standalone start -- -role node -hub http://localhost:4444/grid/register -port 5555 -browser \"browserName=chrome, maxInstances=5\"",
+        "nodeFF": "selenium-standalone start -- -role node -hub http://localhost:4444/grid/register -port 5556 -browser \"browserName=firefox, maxInstances=5\""
     },
     "devDependencies": {
         "@types/jasmine": "^2.6.0",

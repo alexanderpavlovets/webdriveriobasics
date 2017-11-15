@@ -1,7 +1,7 @@
 # webdriveriobasics
 * Add 'report --continue-on-error' to 'test' script in package.json, to launch allure, if necessary
 * | - parallel run of npm scripts, || - one by one run of npm scripts- Won't work on MAC - using 'npm-run-all'
-* please up selenium grid before usage.
+
 
 
 #TODO:
@@ -16,7 +16,6 @@
 * mine: write some tests 
 * + seleneium standalone - dosc/change/install - set own server
 * + selenium grid 
-* - wdio own standalone - try to integrate into tests, maybe via npm scripts. No own standalone if service isn't setup
 
 
 #Questions:
@@ -28,5 +27,4 @@
 #Info:
 * TypeScript/JavaScript: //#region and //#endregion and //region and //endregion
 * Verbose - log level to understand what returns as element
-* GRID: webdriver-manager commands https://www.npmjs.com/package/webdriver-manager. WebDriver-manager should be dowloaded separately
-* GRID: GRID is runned by npm scripts, uses selenium, downloaded by webdriver-manager
+* GRID: run standalone or GRID, via npm scripts before usage. Selenium-standalone npm package should be setup -g https://www.npmjs.com/package/selenium-standalone
