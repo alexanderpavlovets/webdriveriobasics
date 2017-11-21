@@ -2,376 +2,76 @@
   "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
   "name" : "timeline",
   "children" : [ {
-    "name" : "Wrestler page is opened after wrestler creation",
-    "uid" : "765d64b490e1f39",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1509616818199,
-      "stop" : 1509616823717,
-      "duration" : 5518
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
     "name" : "Shows an error, when invalid credentials are provided",
-    "uid" : "8ae9477b1e8d7ee1",
+    "uid" : "d174ef0b5dfe38e7",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "passed",
     "time" : {
-      "start" : 1510228462004,
-      "stop" : 1510228462933,
-      "duration" : 929
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "Logging in, after correct credentials are provided",
-    "uid" : "af6072a305c976f1",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1510228459582,
-      "stop" : 1510228462003,
-      "duration" : 2421
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "",
-    "uid" : "cec257fe09883bce",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "unknown",
-    "time" : {
-      "start" : 1509614285984,
-      "stop" : 0,
-      "duration" : -1509614285984
+      "start" : 1511268631368,
+      "stop" : 1511268632704,
+      "duration" : 1336
     },
     "flaky" : false,
     "parameters" : [ ]
   }, {
     "name" : "Wrestler data before and after creation are equal",
-    "uid" : "dbe7ffd63e89c773",
+    "uid" : "48162ffef336f17e",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "passed",
     "time" : {
-      "start" : 1510588240733,
-      "stop" : 1510588252528,
-      "duration" : 11795
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "test",
-    "uid" : "b47acc02dabfaafd",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1509453396746,
-      "stop" : 1509453400967,
-      "duration" : 4221
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "Logging in after correct credentials are provided",
-    "uid" : "38f99789db31a255",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "unknown",
-    "time" : {
-      "start" : 1508504842683,
-      "stop" : 0,
-      "duration" : -1508504842683
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "\"New Wrestler\" tab is opened properly",
-    "uid" : "d5f083b3fe56801b",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1509465574511,
-      "stop" : 1509465577502,
-      "duration" : 2991
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "\"New Wrestler\" tab is opened ",
-    "uid" : "19ee7121d41e9388",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1509711273366,
-      "stop" : 1509711274175,
-      "duration" : 809
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "Created wrestler data should match to inserted data during creation",
-    "uid" : "c89bdf4a1d827487",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1509616823718,
-      "stop" : 1509616829376,
-      "duration" : 5658
+      "start" : 1511268649416,
+      "stop" : 1511268660180,
+      "duration" : 10764
     },
     "flaky" : false,
     "parameters" : [ ]
   }, {
-    "name" : "\"Success\" button becomes active after all required fields are filled",
-    "uid" : "256cb4232eac89cf",
+    "name" : "it will be a miracle!",
+    "uid" : "251ccff2fce9d28b",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "passed",
     "time" : {
-      "start" : 1509465577502,
-      "stop" : 1509465581713,
-      "duration" : 4211
+      "start" : 1511282193663,
+      "stop" : 1511282195169,
+      "duration" : 1506
     },
     "flaky" : true,
     "parameters" : [ ]
   }, {
-    "name" : "2",
-    "uid" : "2796d08b275619c7",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "unknown",
-    "time" : {
-      "start" : 1507893841182,
-      "stop" : 0,
-      "duration" : -1507893841182
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "\"New Wrestler tab is opened properly\"",
-    "uid" : "7d73ac2cfb709be2",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "unknown",
-    "time" : {
-      "start" : 1509378092768,
-      "stop" : 0,
-      "duration" : -1509378092768
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "It is possible to create new wrestler",
-    "uid" : "5d2ca0b0fb36db9",
+    "name" : "Logging in, after correct credentials are provided",
+    "uid" : "8baf559b8e293290",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "passed",
     "time" : {
-      "start" : 1510588228270,
-      "stop" : 1510588240732,
-      "duration" : 12462
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "test",
-    "uid" : "ae1957f2a87868f8",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1509970967302,
-      "stop" : 1509970968193,
-      "duration" : 891
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "Shows an error, when wrong credentials are provided",
-    "uid" : "caf8942de9e20c2c",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1508341686812,
-      "stop" : 1508341686899,
-      "duration" : 87
+      "start" : 1511268628851,
+      "stop" : 1511268631364,
+      "duration" : 2513
     },
     "flaky" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : "Create",
-    "uid" : "91baf6ffea57eb6a",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1509099742153,
-      "stop" : 1509099744619,
-      "duration" : 2466
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "\"New Wrestler\" tab is opened properly",
-    "uid" : "9e9c062041dac1aa",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1509616810808,
-      "stop" : 1509616813994,
-      "duration" : 3186
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "\"Success\" button becomes active after all required fields are filled",
-    "uid" : "ab7ceaa4e77206b3",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1509616813995,
-      "stop" : 1509616818198,
-      "duration" : 4203
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "undefined",
-    "uid" : "806efc85cffb85a1",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "unknown",
-    "time" : {
-      "start" : 1509969541056,
-      "stop" : 0,
-      "duration" : -1509969541056
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "create",
-    "uid" : "123a4c6d11d50548",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1509465581714,
-      "stop" : 1509465589630,
-      "duration" : 7916
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "fuck",
-    "uid" : "27a1c01bd9f95678",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "broken",
-    "time" : {
-      "start" : 1510583917940,
-      "stop" : 1510583921785,
-      "duration" : 3845
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "\"New Wrestler\" tab opens properly",
-    "uid" : "a249df41f80a3d12",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "unknown",
-    "time" : {
-      "start" : 1510150694425,
-      "stop" : 0,
-      "duration" : -1510150694425
-    },
-    "flaky" : true,
     "parameters" : [ ]
   }, {
     "name" : "It is possible to change Wrestler data after the wrestler is created",
-    "uid" : "d8de587e30d3bd67",
+    "uid" : "cd657cadc301b460",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "passed",
     "time" : {
-      "start" : 1510588252529,
-      "stop" : 1510588268503,
-      "duration" : 15974
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "Has \"Login and \"Password\" fields visible",
-    "uid" : "9ede5880d7ebc34",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1509616804013,
-      "stop" : 1509616804651,
-      "duration" : 638
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "get data attempt",
-    "uid" : "69cb29228f241609",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1509550973810,
-      "stop" : 1509550980254,
-      "duration" : 6444
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "1",
-    "uid" : "a8bdb648b8aad465",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "broken",
-    "time" : {
-      "start" : 1507895922900,
-      "stop" : 1507895932905,
-      "duration" : 10005
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "Has \"Login and \"Password\" fields",
-    "uid" : "a5c05bc0c16ffe9a",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1507899353397,
-      "stop" : 1507899354062,
-      "duration" : 665
+      "start" : 1511268660180,
+      "stop" : 1511268677991,
+      "duration" : 17811
     },
     "flaky" : false,
     "parameters" : [ ]
   }, {
-    "name" : "second wrestler",
-    "uid" : "e60a06c89ae61563",
+    "name" : "It is possible to create new wrestler",
+    "uid" : "67bfba012bfce0ed",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "passed",
     "time" : {
-      "start" : 1509703091915,
-      "stop" : 1509703094919,
-      "duration" : 3004
+      "start" : 1511268638741,
+      "stop" : 1511268649416,
+      "duration" : 10675
     },
     "flaky" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : "",
-    "uid" : "84156b1c7099354d",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "unknown",
-    "time" : {
-      "start" : 1509454376904,
-      "stop" : 0,
-      "duration" : -1509454376904
-    },
-    "flaky" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : "Is openeing properly after base URL provided",
-    "uid" : "ba73bc31a54072df",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1509616803169,
-      "stop" : 1509616804012,
-      "duration" : 843
-    },
-    "flaky" : true,
     "parameters" : [ ]
   } ]
 }

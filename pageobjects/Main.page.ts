@@ -1,5 +1,6 @@
 import { MyInputField } from "./objects/MyInput" // for custom input elements
 import { MySelectField } from "./objects/MySelect" // for custom select elements
+import { WrestlersTable } from "./objects/WrestlersTable";
 
 
 export class MainPage {
@@ -28,7 +29,14 @@ export class MainPage {
     get shownResultsPerPageFilter() {return new MySelectField(this.paginationContainer.$('select[ng-model="perPage"]'))}
     get pagesArray()                {return this.paginationContainer.$$('a').slice(2,-2)} // removing << < > >> pointers
 
+    //define table of shown wrestlers
+    get wrestlersTableHeader()      { return browser.$('thead')}
+    get wrestlersTableBody()        { return browser.$('tbody') }
+
 
     // methods of MainPage class
-
+    get firstWrestler(){
+        let wrestlerTable = new WrestlersTable(this.wrestlersTableHeader, this.wrestlersTableBody)
+        return wrestlerTable.headerValuesArray
+    }
 }

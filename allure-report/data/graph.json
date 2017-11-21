@@ -1,310 +1,60 @@
 [ {
-  "uid" : "765d64b490e1f39",
-  "name" : "Wrestler page is opened after wrestler creation",
-  "time" : {
-    "start" : 1509616818199,
-    "stop" : 1509616823717,
-    "duration" : 5518
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "8ae9477b1e8d7ee1",
+  "uid" : "d174ef0b5dfe38e7",
   "name" : "Shows an error, when invalid credentials are provided",
   "time" : {
-    "start" : 1510228462004,
-    "stop" : 1510228462933,
-    "duration" : 929
+    "start" : 1511268631368,
+    "stop" : 1511268632704,
+    "duration" : 1336
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "af6072a305c976f1",
-  "name" : "Logging in, after correct credentials are provided",
-  "time" : {
-    "start" : 1510228459582,
-    "stop" : 1510228462003,
-    "duration" : 2421
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "cec257fe09883bce",
-  "name" : "",
-  "time" : {
-    "start" : 1509614285984,
-    "stop" : 0,
-    "duration" : -1509614285984
-  },
-  "status" : "unknown",
-  "severity" : "normal"
-}, {
-  "uid" : "dbe7ffd63e89c773",
+  "uid" : "48162ffef336f17e",
   "name" : "Wrestler data before and after creation are equal",
   "time" : {
-    "start" : 1510588240733,
-    "stop" : 1510588252528,
-    "duration" : 11795
+    "start" : 1511268649416,
+    "stop" : 1511268660180,
+    "duration" : 10764
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "b47acc02dabfaafd",
-  "name" : "test",
+  "uid" : "251ccff2fce9d28b",
+  "name" : "it will be a miracle!",
   "time" : {
-    "start" : 1509453396746,
-    "stop" : 1509453400967,
-    "duration" : 4221
+    "start" : 1511282193663,
+    "stop" : 1511282195169,
+    "duration" : 1506
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "38f99789db31a255",
-  "name" : "Logging in after correct credentials are provided",
+  "uid" : "8baf559b8e293290",
+  "name" : "Logging in, after correct credentials are provided",
   "time" : {
-    "start" : 1508504842683,
-    "stop" : 0,
-    "duration" : -1508504842683
-  },
-  "status" : "unknown",
-  "severity" : "normal"
-}, {
-  "uid" : "d5f083b3fe56801b",
-  "name" : "\"New Wrestler\" tab is opened properly",
-  "time" : {
-    "start" : 1509465574511,
-    "stop" : 1509465577502,
-    "duration" : 2991
+    "start" : 1511268628851,
+    "stop" : 1511268631364,
+    "duration" : 2513
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "19ee7121d41e9388",
-  "name" : "\"New Wrestler\" tab is opened ",
-  "time" : {
-    "start" : 1509711273366,
-    "stop" : 1509711274175,
-    "duration" : 809
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "c89bdf4a1d827487",
-  "name" : "Created wrestler data should match to inserted data during creation",
-  "time" : {
-    "start" : 1509616823718,
-    "stop" : 1509616829376,
-    "duration" : 5658
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "256cb4232eac89cf",
-  "name" : "\"Success\" button becomes active after all required fields are filled",
-  "time" : {
-    "start" : 1509465577502,
-    "stop" : 1509465581713,
-    "duration" : 4211
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "2796d08b275619c7",
-  "name" : "2",
-  "time" : {
-    "start" : 1507893841182,
-    "stop" : 0,
-    "duration" : -1507893841182
-  },
-  "status" : "unknown",
-  "severity" : "normal"
-}, {
-  "uid" : "7d73ac2cfb709be2",
-  "name" : "\"New Wrestler tab is opened properly\"",
-  "time" : {
-    "start" : 1509378092768,
-    "stop" : 0,
-    "duration" : -1509378092768
-  },
-  "status" : "unknown",
-  "severity" : "normal"
-}, {
-  "uid" : "5d2ca0b0fb36db9",
-  "name" : "It is possible to create new wrestler",
-  "time" : {
-    "start" : 1510588228270,
-    "stop" : 1510588240732,
-    "duration" : 12462
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "ae1957f2a87868f8",
-  "name" : "test",
-  "time" : {
-    "start" : 1509970967302,
-    "stop" : 1509970968193,
-    "duration" : 891
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "caf8942de9e20c2c",
-  "name" : "Shows an error, when wrong credentials are provided",
-  "time" : {
-    "start" : 1508341686812,
-    "stop" : 1508341686899,
-    "duration" : 87
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "91baf6ffea57eb6a",
-  "name" : "Create",
-  "time" : {
-    "start" : 1509099742153,
-    "stop" : 1509099744619,
-    "duration" : 2466
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "9e9c062041dac1aa",
-  "name" : "\"New Wrestler\" tab is opened properly",
-  "time" : {
-    "start" : 1509616810808,
-    "stop" : 1509616813994,
-    "duration" : 3186
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "ab7ceaa4e77206b3",
-  "name" : "\"Success\" button becomes active after all required fields are filled",
-  "time" : {
-    "start" : 1509616813995,
-    "stop" : 1509616818198,
-    "duration" : 4203
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "806efc85cffb85a1",
-  "name" : "undefined",
-  "time" : {
-    "start" : 1509969541056,
-    "stop" : 0,
-    "duration" : -1509969541056
-  },
-  "status" : "unknown",
-  "severity" : "normal"
-}, {
-  "uid" : "123a4c6d11d50548",
-  "name" : "create",
-  "time" : {
-    "start" : 1509465581714,
-    "stop" : 1509465589630,
-    "duration" : 7916
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "27a1c01bd9f95678",
-  "name" : "fuck",
-  "time" : {
-    "start" : 1510583917940,
-    "stop" : 1510583921785,
-    "duration" : 3845
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "a249df41f80a3d12",
-  "name" : "\"New Wrestler\" tab opens properly",
-  "time" : {
-    "start" : 1510150694425,
-    "stop" : 0,
-    "duration" : -1510150694425
-  },
-  "status" : "unknown",
-  "severity" : "normal"
-}, {
-  "uid" : "d8de587e30d3bd67",
+  "uid" : "cd657cadc301b460",
   "name" : "It is possible to change Wrestler data after the wrestler is created",
   "time" : {
-    "start" : 1510588252529,
-    "stop" : 1510588268503,
-    "duration" : 15974
+    "start" : 1511268660180,
+    "stop" : 1511268677991,
+    "duration" : 17811
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "9ede5880d7ebc34",
-  "name" : "Has \"Login and \"Password\" fields visible",
+  "uid" : "67bfba012bfce0ed",
+  "name" : "It is possible to create new wrestler",
   "time" : {
-    "start" : 1509616804013,
-    "stop" : 1509616804651,
-    "duration" : 638
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "69cb29228f241609",
-  "name" : "get data attempt",
-  "time" : {
-    "start" : 1509550973810,
-    "stop" : 1509550980254,
-    "duration" : 6444
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "a8bdb648b8aad465",
-  "name" : "1",
-  "time" : {
-    "start" : 1507895922900,
-    "stop" : 1507895932905,
-    "duration" : 10005
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "a5c05bc0c16ffe9a",
-  "name" : "Has \"Login and \"Password\" fields",
-  "time" : {
-    "start" : 1507899353397,
-    "stop" : 1507899354062,
-    "duration" : 665
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "e60a06c89ae61563",
-  "name" : "second wrestler",
-  "time" : {
-    "start" : 1509703091915,
-    "stop" : 1509703094919,
-    "duration" : 3004
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "84156b1c7099354d",
-  "name" : "",
-  "time" : {
-    "start" : 1509454376904,
-    "stop" : 0,
-    "duration" : -1509454376904
-  },
-  "status" : "unknown",
-  "severity" : "normal"
-}, {
-  "uid" : "ba73bc31a54072df",
-  "name" : "Is openeing properly after base URL provided",
-  "time" : {
-    "start" : 1509616803169,
-    "stop" : 1509616804012,
-    "duration" : 843
+    "start" : 1511268638741,
+    "stop" : 1511268649416,
+    "duration" : 10675
   },
   "status" : "passed",
   "severity" : "normal"
