@@ -1,4 +1,18 @@
 exports.config = {
+    //
+    // =====================
+    // Server Configurations
+    // =====================
+    // Host address of the running Selenium server. This information is usually obsolete as
+    // WebdriverIO automatically connects to localhost. Also, if you are using one of the
+    // supported cloud services like Sauce Labs, Browserstack, or Testing Bot you don't
+    // need to define host and port information because WebdriverIO can figure that out
+    // according to your user and key information. However, if you are using a private Selenium
+    // backend you should define the host address, port, and path here.
+    //
+    host: '127.0.0.1',
+    port: 4444,
+    path: '/wd/hub',
     
     //
     // ==================
@@ -10,7 +24,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './specs/wrestler.js'
+        './specs/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -32,19 +46,26 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 1,
+    maxInstances: 2,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
-    capabilities: [{
+    capabilities:
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
-        maxInstances: 1,
-        browserName: 'chrome'
-    }],
+        [
+            {
+                maxInstances: 1,
+                browserName: 'chrome',
+            },
+            // {
+            //     maxInstances: 1,
+            //     browserName: 'firefox'
+            // }
+        ],
     //
     // ===================
     // Test Configurations
@@ -74,7 +95,7 @@ exports.config = {
     baseUrl: 'http://streamtv.net.ua/base/',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 30000,
     //
     // Default timeout in milliseconds for request
     // if Selenium Grid doesn't send response
@@ -105,7 +126,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['selenium-standalone'],//
+    // services: [selenium-standalone],// need to be installed additionally
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: http://webdriver.io/guide/testrunner/frameworks.html
@@ -123,12 +144,11 @@ exports.config = {
             outputDir: './allure-results'
         }
     },
-    //
     // Options to be passed to Jasmine.
     jasmineNodeOpts: {
         //
         // Jasmine default timeout
-        defaultTimeoutInterval: 20000,
+        defaultTimeoutInterval: 30000,
         //
         // The Jasmine framework allows interception of each assertion in order to log the state of the application
         // or website depending on the result. For example, it is pretty handy to take a screenshot every time
@@ -162,16 +182,15 @@ exports.config = {
      */
     // beforeSession: function (config, capabilities, specs) {
     // },
-
     /**
      * Gets executed before test execution begins. At this point you can access to all global
      * variables like `browser`. It is the perfect place to define custom commands.
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    before: function () {
-        // setting implicit wait for middle timeout
-        browser.timeouts('implicit', 5000)
+    before: function (capabilities, specs) {
+        browser.timeouts('implicit', 5000) // setting implicit wait for middle timeout
+        browser.windowHandleMaximize()
         // This function will make lazy element search via $ - provided by J.K. - need to understand and test. 
         // const orig$ = $;
         // $ = new Proxy($, {
@@ -180,7 +199,7 @@ exports.config = {
         //     }
         // })
     },
-    
+    //
     /**
      * Hook that gets executed before the suite starts
      * @param {Object} suite suite details
@@ -240,9 +259,8 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that ran
      */
-    after: function (result, capabilities, specs) {
-        
-    },
+    // after: function (result, capabilities, specs) {
+    // },
     /**
      * Gets executed right after terminating the webdriver session.
      * @param {Object} config wdio configuration object

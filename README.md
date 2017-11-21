@@ -3,6 +3,7 @@
 * | - parallel run of npm scripts, || - one by one run of npm scripts- Won't work on MAC - using 'npm-run-all'
 
 
+
 #TODO:
 * + create Navigator class
 * + приведение типов - casting TS
@@ -13,15 +14,21 @@
 * + mine: rewrite date generator with /momentjs.com - continue with momentRandom
 * + create objIterator of get/set data for WrestlerPage
 * mine: write some tests 
-* seleneium standalone - dosc/change/install - set own server. 
-* try to avoid services. 
+* + seleneium standalone - dosc/change/install - set own server
+* + selenium grid 
+* + Docker - selenium grid 
+* + Docker compose
+* + Add resourses to docker - it is really slow when 2 browsers are run with docker-grid. By default containers use (inf) - whatever they need 
 
 
 #Questions:
 * ? what for do i need abstract class Page ?
-* ? make browser window a little bit bigger - weird, but impossible - downgrade the version of driver! 
+* ? difference between devdependencies and dependencies - npm 
+* + ? make browser window a little bit bigger - works with selenium standalone only. service - not working
 
 
 #Info:
 * TypeScript/JavaScript: //#region and //#endregion and //region and //endregion
 * Verbose - log level to understand what returns as element
+* GRID: run standalone or GRID, via npm scripts before usage. Selenium-standalone npm package should be setup -g https://www.npmjs.com/package/selenium-standalone
+* Docker - use docker-compose - file is in the root, NOT USE VSCODE console - won't work

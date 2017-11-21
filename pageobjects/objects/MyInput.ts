@@ -1,11 +1,10 @@
+import { MyElementType } from "./MyElementType";
+
 // Redefined input element class 
-
 export class MyInputField {
-    inputElement: WebdriverIO.Client<WebdriverIO.RawResult<WebdriverIO.Element>>
-        & WebdriverIO.RawResult<WebdriverIO.Element>
+    inputElement: MyElementType
 
-    constructor(inputElement: WebdriverIO.Client<WebdriverIO.RawResult<WebdriverIO.Element>>
-        & WebdriverIO.RawResult<WebdriverIO.Element>) {
+    constructor(inputElement: MyElementType) {
         this.inputElement = inputElement
     }
 
