@@ -16,6 +16,9 @@
 * mine: write some tests 
 * + seleneium standalone - dosc/change/install - set own server
 * + selenium grid 
+* + Docker - selenium grid 
+* + Docker compose
+* + Add resourses to docker - it is really slow when 2 browsers are run with docker-grid. By default containers use (inf) - whatever they need 
 
 
 #Questions:
@@ -28,3 +31,4 @@
 * TypeScript/JavaScript: //#region and //#endregion and //region and //endregion
 * Verbose - log level to understand what returns as element
 * GRID: run standalone or GRID, via npm scripts before usage. Selenium-standalone npm package should be setup -g https://www.npmjs.com/package/selenium-standalone
+* Docker - use docker-compose - file is in the root, NOT USE VSCODE console - won't work
