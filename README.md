@@ -23,6 +23,7 @@
 * ? what for do i need abstract class Page ?
 * ? difference between devdependencies and dependencies - npm 
 * + ? make browser window a little bit bigger - works with selenium standalone only. service - not working
+* ? return this.tHead.$$('th').forEach((element) => {return element.getText()}); WTF ???
 
 
 #Info:

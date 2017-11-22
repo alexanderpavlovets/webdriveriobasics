@@ -1,7 +1,7 @@
 import { randomFiveCharString, randomDD_MM_YYYY, randomStringFromGivenArray } from '../helpers/random_generator' // importing random string generator'
 
 // data provider for "Wrestler" project, includes:
-// interfaces: Iuser, IWrestler
+// interfaces: Iuser, IWrestler, IWrestlerFromMainTable 
 // mainPageTableHeaders array
 // wrestlerSelects object
 // dataProvider object
@@ -27,6 +27,17 @@ export interface IWrestler {
     age,
     year,
     cardState
+}
+
+export interface IWrestlerFromMainTable {
+    Num,
+    FIO,
+    Region,
+    FST,
+    License,
+    Photo,
+    Style,
+    Changed
 }
 
 

@@ -1,58 +1,34 @@
-import { mainPageTableHeaders } from '../../test_data/dataProvider'
+import { mainPageTableHeaders, IWrestlerFromMainTable } from '../../test_data/dataProvider'
 
 // defining the "Wrestlers" table from the main page
 
 export class WrestlersTable{
-    tableHeader
+    tableHeader = mainPageTableHeaders
     tableRows
-    constructor(tHeadRowElement, tBodyRowsElements){
-        this.tableHeader = tHeadRowElement
-        this.tableRows = tBodyRowsElements
+    constructor(wrestlersAsTableRowsElements){
+        this.tableRows = wrestlersAsTableRowsElements
     }
 
-
-    private getHeaderValuesArray() {  // making array of header values, from <th> elements
-        let headerElementsArray = this.tableHeader.$$('th')
-        let headerValuesArray = []
-        for (let headerCell of headerElementsArray){
-            headerValuesArray.push(headerCell.getText())
+    private getWrestlerData(wrestlerRow) {  // making array of wrestler values, from wrestler <td> elements
+        let wrestlerRowAsWebElementsArray = wrestlerRow.$$('td')
+        let wrestlerDataArray = []
+        for (let eachCell of wrestlerRowAsWebElementsArray){
+            wrestlerDataArray.push(eachCell.getText())
         }
-        return headerValuesArray
-        // return this.tHead.$$('th').forEach((element) => {return element.getText()}); WTF ???
-        // let fuck = this.tHead.$$('th')
-        // let result = fuck.forEach((i)=> i.getText())
-        // return result
+        return wrestlerDataArray
     }
 
-    private getWrestlerRowValues(tableRowElement) {  // making array of wrestler values, from wrestler <td> elements
-        let tableRowElementsArray = tableRowElement.$$('td')
-        let tableRowValues = []
-        for (let rowCell of tableRowElementsArray){
-            tableRowValues.push(rowCell.getText())
-        }
-        return tableRowValues
-    }
-
-    private makeWrestlerObject(headerValuesArray, wrestlerValuesArray){
+    private makeWrestlerObject(headerDataArray, wrestlerDataArray): IWrestlerFromMainTable{ // combining header and wrestler data into object
         let wrestler = {}
-        for (let i = 0; i < headerValuesArray.length; i ++) {
-            wrestler[headerValuesArray[i]] = wrestlerValuesArray[i]
+        for (let i = 0; i < headerDataArray.length; i ++) {
+            wrestler[headerDataArray[i]] = wrestlerDataArray[i]
         }
-        return wrestler
+        return wrestler as IWrestlerFromMainTable
     }
 
-    getFirstWrestler(){
-        let headerValues = this.getHeaderValuesArray()
-        let firstWrestlerValues = this.getWrestlerRowValues(this.tableRows[0])
-        return this.makeWrestlerObject(headerValues, firstWrestlerValues)
+    getFirstWrestler(): IWrestlerFromMainTable{
+        let firstWrestlerData = this.getWrestlerData(this.tableRows[0])
+        return this.makeWrestlerObject(this.tableHeader, firstWrestlerData)
     }
 
-    getAllWrestlers(){
-        let headerValues = this.getHeaderValuesArray()
-        let allWrestlersValues = []
-        for (let wrestlerRow of this.tableRows) {
-            allWrestlersValues.push(this.getWrestlerRowValues(wrestlerRow))
-        }
-        return allWrestlersValues
-    }
 }

@@ -6,7 +6,7 @@ export class Navigator extends Page{
     constructor(){
         super()
     }
-    mainPage = new MainPage() // instance of MainPage for opening "New Wrestler" tab
+    mainPage = new MainPage() // instance of MainPage for opening "New Wrestler" tab and existing wrestlers
 
 
     // static methods of Navigator class
@@ -76,5 +76,10 @@ export class Navigator extends Page{
 
     closeCurrentActiveTab(): void {
         this.closeButtonOfCurrentActiveTab.click()
+    }
+
+    openWrestlerByIndex(wrestlerIndex){
+        this.mainPage.wrestlersTableBody[wrestlerIndex].click()
+        this.waitForWrestlerPageOpened()
     }
 }

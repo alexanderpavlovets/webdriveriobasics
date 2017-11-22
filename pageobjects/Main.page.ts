@@ -36,12 +36,8 @@ export class MainPage {
 
     // methods of MainPage class
     get firstWrestler(){
-        let wrestlerTable = new WrestlersTable(this.wrestlersTableHeader, this.wrestlersTableBody)
+        let wrestlerTable = new WrestlersTable(this.wrestlersTableBody)
         return wrestlerTable.getFirstWrestler()
     }
 
-    get allWrestlers(){
-        let wrestlerTable = new WrestlersTable(this.wrestlersTableHeader, this.wrestlersTableBody)
-        return wrestlerTable.getAllWrestlers()
-    }
 }

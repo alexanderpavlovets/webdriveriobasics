@@ -1,25 +1,25 @@
 [ {
-  "uid" : "fc62cf4e2ced2d9a",
-  "name" : "Logging in, after correct credentials are provided",
+  "uid" : "cbb5bf61dc56f55e",
+  "name" : "Wrestler data before and after creation are equal",
   "time" : {
-    "start" : 1511268628851,
-    "stop" : 1511268631364,
-    "duration" : 2513
+    "start" : 1511365375547,
+    "stop" : 0,
+    "duration" : -1511365375547
   },
-  "status" : "passed",
+  "status" : "unknown",
   "severity" : "normal"
 }, {
-  "uid" : "12a5599638fd5c40",
-  "name" : "it will be a miracle!",
+  "uid" : "76eed7ff33a5ed2c",
+  "name" : "It is possible to delete existing wrestler",
   "time" : {
-    "start" : 1511353609255,
-    "stop" : 1511353623037,
-    "duration" : 13782
+    "start" : 1511365369289,
+    "stop" : 1511365375545,
+    "duration" : 6256
   },
-  "status" : "passed",
+  "status" : "broken",
   "severity" : "normal"
 }, {
-  "uid" : "fb830a3f1a66f4d7",
+  "uid" : "2510cc04ead0d6aa",
   "name" : "Shows an error, when invalid credentials are provided",
   "time" : {
     "start" : 1511268631368,
@@ -29,32 +29,42 @@
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "799eb18c0a7e5f63",
+  "uid" : "18881c0463638a3a",
   "name" : "It is possible to change Wrestler data after the wrestler is created",
   "time" : {
-    "start" : 1511268660180,
-    "stop" : 1511268677991,
-    "duration" : 17811
+    "start" : 1511365375547,
+    "stop" : 0,
+    "duration" : -1511365375547
   },
-  "status" : "passed",
+  "status" : "unknown",
   "severity" : "normal"
 }, {
-  "uid" : "50bbdb4eedd36519",
-  "name" : "Wrestler data before and after creation are equal",
-  "time" : {
-    "start" : 1511268649416,
-    "stop" : 1511268660180,
-    "duration" : 10764
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "c4de2eb46f46332d",
+  "uid" : "544e2413caa69c8d",
   "name" : "It is possible to create new wrestler",
   "time" : {
-    "start" : 1511268638741,
-    "stop" : 1511268649416,
-    "duration" : 10675
+    "start" : 1511365375546,
+    "stop" : 0,
+    "duration" : -1511365375546
+  },
+  "status" : "unknown",
+  "severity" : "normal"
+}, {
+  "uid" : "c8e976d80bf55208",
+  "name" : "it will be a miracle!",
+  "time" : {
+    "start" : 1511360209695,
+    "stop" : 1511360211212,
+    "duration" : 1517
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6478f402438ed7c9",
+  "name" : "Logging in, after correct credentials are provided",
+  "time" : {
+    "start" : 1511268628851,
+    "stop" : 1511268631364,
+    "duration" : 2513
   },
   "status" : "passed",
   "severity" : "normal"

@@ -1,5 +1,25 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "name" : "categories",
-  "children" : [ ]
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "Failed: element not visible",
+      "children" : [ {
+        "name" : "It is possible to delete existing wrestler",
+        "uid" : "76eed7ff33a5ed2c",
+        "parentUid" : "173dbb973f619d7e3122b5b1ac68461e",
+        "status" : "broken",
+        "time" : {
+          "start" : 1511365369289,
+          "stop" : 1511365375545,
+          "duration" : 6256
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "173dbb973f619d7e3122b5b1ac68461e"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
 }

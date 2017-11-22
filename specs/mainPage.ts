@@ -19,6 +19,6 @@ describe('ha!', ()=>{
     it('it will be a miracle!', ()=>{
         browser.pause(1000)
         console.log('i am starting')
-        console.log(mainPage.firstWrestler)
+        console.log(mainPage.firstWrestler.FIO)
     })
 })
