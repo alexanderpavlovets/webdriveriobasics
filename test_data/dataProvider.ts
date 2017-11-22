@@ -2,6 +2,7 @@ import { randomFiveCharString, randomDD_MM_YYYY, randomStringFromGivenArray } fr
 
 // data provider for "Wrestler" project, includes:
 // interfaces: Iuser, IWrestler
+// mainPageTableHeaders array
 // wrestlerSelects object
 // dataProvider object
 
@@ -28,6 +29,9 @@ export interface IWrestler {
     cardState
 }
 
+
+// values from main page table header  
+export const mainPageTableHeaders = ['Num', 'FIO', 'Region', 'FST', 'License', 'Photo', 'Style', 'Changed']
 
 // this is possible values of all "select" tags in "Wrestler Info" area
 // all values are equal to "label" attribute

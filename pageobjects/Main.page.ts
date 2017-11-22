@@ -30,13 +30,18 @@ export class MainPage {
     get pagesArray()                {return this.paginationContainer.$$('a').slice(2,-2)} // removing << < > >> pointers
 
     //define table of shown wrestlers
-    get wrestlersTableHeader()      { return browser.$('thead')}
-    get wrestlersTableBody()        { return browser.$('tbody') }
+    get wrestlersTableHeader()      { return browser.$('thead tr')} // header row
+    get wrestlersTableBody()        { return browser.$$('tbody tr')} // body rows 
 
 
     // methods of MainPage class
     get firstWrestler(){
         let wrestlerTable = new WrestlersTable(this.wrestlersTableHeader, this.wrestlersTableBody)
-        return wrestlerTable.headerValuesArray
+        return wrestlerTable.getFirstWrestler()
+    }
+
+    get allWrestlers(){
+        let wrestlerTable = new WrestlersTable(this.wrestlersTableHeader, this.wrestlersTableBody)
+        return wrestlerTable.getAllWrestlers()
     }
 }

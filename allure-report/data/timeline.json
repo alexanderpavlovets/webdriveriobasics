@@ -2,44 +2,8 @@
   "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
   "name" : "timeline",
   "children" : [ {
-    "name" : "Shows an error, when invalid credentials are provided",
-    "uid" : "d174ef0b5dfe38e7",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1511268631368,
-      "stop" : 1511268632704,
-      "duration" : 1336
-    },
-    "flaky" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : "Wrestler data before and after creation are equal",
-    "uid" : "48162ffef336f17e",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1511268649416,
-      "stop" : 1511268660180,
-      "duration" : 10764
-    },
-    "flaky" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : "it will be a miracle!",
-    "uid" : "251ccff2fce9d28b",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1511282193663,
-      "stop" : 1511282195169,
-      "duration" : 1506
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
     "name" : "Logging in, after correct credentials are provided",
-    "uid" : "8baf559b8e293290",
+    "uid" : "fc62cf4e2ced2d9a",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "passed",
     "time" : {
@@ -50,8 +14,32 @@
     "flaky" : false,
     "parameters" : [ ]
   }, {
+    "name" : "it will be a miracle!",
+    "uid" : "12a5599638fd5c40",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1511353609255,
+      "stop" : 1511353623037,
+      "duration" : 13782
+    },
+    "flaky" : true,
+    "parameters" : [ ]
+  }, {
+    "name" : "Shows an error, when invalid credentials are provided",
+    "uid" : "fb830a3f1a66f4d7",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1511268631368,
+      "stop" : 1511268632704,
+      "duration" : 1336
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
     "name" : "It is possible to change Wrestler data after the wrestler is created",
-    "uid" : "cd657cadc301b460",
+    "uid" : "799eb18c0a7e5f63",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "passed",
     "time" : {
@@ -62,8 +50,20 @@
     "flaky" : false,
     "parameters" : [ ]
   }, {
+    "name" : "Wrestler data before and after creation are equal",
+    "uid" : "50bbdb4eedd36519",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1511268649416,
+      "stop" : 1511268660180,
+      "duration" : 10764
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
     "name" : "It is possible to create new wrestler",
-    "uid" : "67bfba012bfce0ed",
+    "uid" : "c4de2eb46f46332d",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "passed",
     "time" : {

@@ -1,35 +1,5 @@
 [ {
-  "uid" : "d174ef0b5dfe38e7",
-  "name" : "Shows an error, when invalid credentials are provided",
-  "time" : {
-    "start" : 1511268631368,
-    "stop" : 1511268632704,
-    "duration" : 1336
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "48162ffef336f17e",
-  "name" : "Wrestler data before and after creation are equal",
-  "time" : {
-    "start" : 1511268649416,
-    "stop" : 1511268660180,
-    "duration" : 10764
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "251ccff2fce9d28b",
-  "name" : "it will be a miracle!",
-  "time" : {
-    "start" : 1511282193663,
-    "stop" : 1511282195169,
-    "duration" : 1506
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "8baf559b8e293290",
+  "uid" : "fc62cf4e2ced2d9a",
   "name" : "Logging in, after correct credentials are provided",
   "time" : {
     "start" : 1511268628851,
@@ -39,7 +9,27 @@
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "cd657cadc301b460",
+  "uid" : "12a5599638fd5c40",
+  "name" : "it will be a miracle!",
+  "time" : {
+    "start" : 1511353609255,
+    "stop" : 1511353623037,
+    "duration" : 13782
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "fb830a3f1a66f4d7",
+  "name" : "Shows an error, when invalid credentials are provided",
+  "time" : {
+    "start" : 1511268631368,
+    "stop" : 1511268632704,
+    "duration" : 1336
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "799eb18c0a7e5f63",
   "name" : "It is possible to change Wrestler data after the wrestler is created",
   "time" : {
     "start" : 1511268660180,
@@ -49,7 +39,17 @@
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "67bfba012bfce0ed",
+  "uid" : "50bbdb4eedd36519",
+  "name" : "Wrestler data before and after creation are equal",
+  "time" : {
+    "start" : 1511268649416,
+    "stop" : 1511268660180,
+    "duration" : 10764
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c4de2eb46f46332d",
   "name" : "It is possible to create new wrestler",
   "time" : {
     "start" : 1511268638741,
