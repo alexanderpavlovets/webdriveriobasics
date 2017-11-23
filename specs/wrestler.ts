@@ -13,6 +13,8 @@ describe('Wrestler CRUD', ()=>{
     let mainPage = new MainPage()
     let validUser = dataProvider.users.validUser
     function makeNewWrestler() { return dataProvider.getWrestler() }
+    // ? variables for tests - declare here or in tests
+    // the last one test - has declaration in it - seems more logcal, than vars would be declaired here
     let creationData
     let visibleData
     let updatedData
@@ -26,9 +28,10 @@ describe('Wrestler CRUD', ()=>{
         navigator.waitForMainPageOpened()
     })
 
-    afterEach(()=>{
-        navigator.closeCurrentActiveTab()
-    })
+    // afterEach(()=>{
+    //     navigator.closeCurrentActiveTab()
+    // })
+    // ? ask if it is acceptable to navigator.closeCurrentActiveTab in 3 tests except last one 
     
 
     it('It is possible to create new wrestler', () => {
@@ -41,6 +44,7 @@ describe('Wrestler CRUD', ()=>{
              'Provided during creation last name should be shown in created wrestler tab')
         expect(wrestlerPage.photoDiv.isVisible()).toBeTruthy('"Photo" area should be visible after wrestler creation')
         expect(wrestlerPage.docsDiv.isVisible()).toBeTruthy('"Documents" area should be visible after wrestler creation')
+        navigator.closeCurrentActiveTab()
     })
 
     it('Wrestler data before and after creation are equal', ()=>{
@@ -51,6 +55,7 @@ describe('Wrestler CRUD', ()=>{
         navigator.waitForWrestlerPageOpened()
         visibleData = wrestlerPage.getWrestlerFields()
         expect(creationData).toEqual(visibleData, 'Wrestler data after creation should be equal to data provided during creation')
+        navigator.closeCurrentActiveTab()
     })
 
     it('It is possible to change Wrestler data after the wrestler is created', ()=>{
@@ -64,13 +69,17 @@ describe('Wrestler CRUD', ()=>{
         navigator.waitForWrestlerPageOpened()
         updatedData = wrestlerPage.getWrestlerFields()
         expect(visibleData).toEqual(updatedData, 'Wrestler data after update should be changed accordingly')
+        navigator.closeCurrentActiveTab()
     })
 
     fit('It is possible to delete existing wrestler', ()=>{
+        let firstWrestlerNumberBeforeDeletion = mainPage.getFirstWrestler().Num
         navigator.openWrestlerByIndex(0)
-        browser.pause(2000)
-        navigator.closeCurrentActiveTab()
-        browser.pause(2000)
-        // continue from here - rewrite close current active tab method of Navigator - it brekes current test - because of  after each 
+        navigator.waitForWrestlerPageOpened()
+        wrestlerPage.deleteWrestler()
+        navigator.waitForMainPageOpened()
+        let firstWrestlerNumberAfterDeletion = mainPage.getFirstWrestler().Num
+        expect(firstWrestlerNumberBeforeDeletion).not.toEqual(firstWrestlerNumberAfterDeletion, 
+            'First Wrestler should be deleted from wrestlers list on main page')
     })
 })

@@ -31,4 +31,9 @@ export class WrestlersTable{
         return this.makeWrestlerObject(this.tableHeader, firstWrestlerData)
     }
 
+    getWrestlerByIndex(wrestlerIndex): IWrestlerFromMainTable{
+        let wrestlerData = this.getWrestlerData(this.tableRows[wrestlerIndex])
+        return this.makeWrestlerObject(this.tableHeader,wrestlerData)
+    }
+
 }

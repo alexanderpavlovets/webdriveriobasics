@@ -13,12 +13,14 @@ describe('ha!', ()=>{
     beforeAll(()=>{
         navigator.openLoginPage()
         loginPage.login(validUser)
+    })
+
+    beforeEach(()=>{
         navigator.waitForMainPageOpened()
     })
 
     it('it will be a miracle!', ()=>{
-        browser.pause(1000)
         console.log('i am starting')
-        console.log(mainPage.firstWrestler.FIO)
+        console.log(mainPage.getFirstWrestler().FIO)
     })
 })

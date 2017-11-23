@@ -4,21 +4,21 @@
   "children" : [ {
     "name" : "Test defects",
     "children" : [ {
-      "name" : "Failed: element not visible",
+      "name" : "Expected '10012' not to equal '10012', 'First Wrestler should be deleted from wrestlers list on main page'.",
       "children" : [ {
         "name" : "It is possible to delete existing wrestler",
-        "uid" : "76eed7ff33a5ed2c",
-        "parentUid" : "173dbb973f619d7e3122b5b1ac68461e",
+        "uid" : "87c8289517154e08",
+        "parentUid" : "d60a4a1b74d8ff6e3b7caf92a010fb5a",
         "status" : "broken",
         "time" : {
-          "start" : 1511365369289,
-          "stop" : 1511365375545,
-          "duration" : 6256
+          "start" : 1511436385203,
+          "stop" : 1511436389606,
+          "duration" : 4403
         },
-        "flaky" : false,
+        "flaky" : true,
         "parameters" : [ ]
       } ],
-      "uid" : "173dbb973f619d7e3122b5b1ac68461e"
+      "uid" : "d60a4a1b74d8ff6e3b7caf92a010fb5a"
     } ],
     "uid" : "bdbf199525818fae7a8651db9eafe741"
   } ]

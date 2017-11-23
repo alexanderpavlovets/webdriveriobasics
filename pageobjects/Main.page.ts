@@ -27,7 +27,7 @@ export class MainPage {
     // define "results per page" picker, and pagination
     get paginationContainer()       {return browser.$('div.paging')}
     get shownResultsPerPageFilter() {return new MySelectField(this.paginationContainer.$('select[ng-model="perPage"]'))}
-    get pagesArray()                {return this.paginationContainer.$$('a').slice(2,-2)} // removing << < > >> pointers
+    get shownPagesElementsArray()   {return this.paginationContainer.$$('a').slice(2,-2)} // removing << < > >> pointers
 
     //define table of shown wrestlers
     get wrestlersTableHeader()      { return browser.$('thead tr')} // header row
@@ -35,9 +35,14 @@ export class MainPage {
 
 
     // methods of MainPage class
-    get firstWrestler(){
+    getFirstWrestler(){
         let wrestlerTable = new WrestlersTable(this.wrestlersTableBody)
         return wrestlerTable.getFirstWrestler()
+    }
+
+    getWrestlerByIndex(wrestlerIndex){
+        let wrestlerTable = new WrestlersTable(this.wrestlersTableBody)
+        return wrestlerTable.getWrestlerByIndex(wrestlerIndex)
     }
 
 }
