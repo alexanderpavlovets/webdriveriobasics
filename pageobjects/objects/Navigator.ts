@@ -6,7 +6,8 @@ export class Navigator extends Page{
     constructor(){
         super()
     }
-    mainPage = new MainPage() // instance of MainPage for opening "New Wrestler" tab and existing wrestlers
+    
+    get mainPage() {return new MainPage()} // instance of MainPage for opening "New Wrestler" tab and existing wrestlers
 
 
     // static methods of Navigator class
@@ -46,6 +47,19 @@ export class Navigator extends Page{
     get loadingCurrentTabIndicator(){ return this.currentActiveTab.$('div[ng-show="tab.loading"]') }
 
 
+    // methods for confirmation modal
+    acceptModal():void {
+        super.confirmationModal.waitForExist(frameTimeout.m)
+        super.confirmYesButton.waitForEnabled(frameTimeout.s)
+        super.confirmYesButton.click()
+    }
+
+    declineModal(): void {
+        super.confirmationModal.waitForExist(frameTimeout.m)
+        super.confirmNoButton.waitForEnabled(frameTimeout.s)
+        super.confirmNoButton.click()
+    }    
+
     // methods of Navigator class
     waitForLoginPageOpened(): void {
         browser.waitUntil(() => Navigator.isLoginPageOpened(), frameTimeout.l, 'Login page is not opened')
@@ -76,10 +90,5 @@ export class Navigator extends Page{
 
     closeCurrentActiveTab(): void {
         this.closeButtonOfCurrentActiveTab.click()
-    }
-
-    openWrestlerByIndex(wrestlerIndex){
-        this.mainPage.wrestlersTableBody[wrestlerIndex].click()
-        this.waitForWrestlerPageOpened()
     }
 }

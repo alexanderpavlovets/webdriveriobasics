@@ -1,6 +1,7 @@
 import { MyInputField } from "./objects/MyInput" // for custom input elements
 import { MySelectField } from "./objects/MySelect" // for custom select elements
 import { WrestlersTable } from "./objects/WrestlersTable";
+import { IWrestlerFromMainTable } from "../test_data/dataProvider";
 
 
 export class MainPage {
@@ -35,14 +36,19 @@ export class MainPage {
 
 
     // methods of MainPage class
-    getFirstWrestler(){
+    getFirstWrestler(): IWrestlerFromMainTable{
         let wrestlerTable = new WrestlersTable(this.wrestlersTableBody)
         return wrestlerTable.getFirstWrestler()
     }
 
-    getWrestlerByIndex(wrestlerIndex){
+    getWrestlerByIndex(wrestlerIndex: number): IWrestlerFromMainTable{
         let wrestlerTable = new WrestlersTable(this.wrestlersTableBody)
         return wrestlerTable.getWrestlerByIndex(wrestlerIndex)
+    }
+
+    openWrestlerByIndex(wrestlerIndex: number): void{
+        let wrestlerTable = new WrestlersTable(this.wrestlersTableBody)
+        wrestlerTable.openWrestlerByIndex(wrestlerIndex)
     }
 
 }

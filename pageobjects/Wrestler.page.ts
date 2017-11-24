@@ -31,10 +31,7 @@ export class WrestlerPage {
     // created wrestler areas
     get photoDiv()          { return this.wrestlerDataForm.$('div.col-sm-4[ng-hide="wr.new"]') }
     get docsDiv()           { return this.wrestlerDataForm.$('div.col-sm-12[ng-hide="wr.new"]') }
-    // confirmation modal-dialog
-    get confirmationModal() { return browser.$('div.modal-content')}
-    get confirmYesButton()  { return this.confirmationModal.$('button.btn.btn-success')}
-    get confirmNoButton()   { return this.confirmationModal.$('button.btn.btn-warning')}
+
 
 
     // methods of NewWrestlerPage class
@@ -58,10 +55,8 @@ export class WrestlerPage {
         this.saveButton.click()
     }
 
-    deleteWrestler(): void {
+    clickCancelButton(): void {
         this.cancelButton.waitForEnabled(frameTimeout.s)
         this.cancelButton.click()
-        this.confirmYesButton.waitForEnabled(frameTimeout.m)
-        this.confirmYesButton.click()
     }
 }

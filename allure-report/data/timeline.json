@@ -2,68 +2,8 @@
   "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
   "name" : "timeline",
   "children" : [ {
-    "name" : "It is possible to create new wrestler",
-    "uid" : "a7e87e1e788b8d9a",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "unknown",
-    "time" : {
-      "start" : 1511436389606,
-      "stop" : 0,
-      "duration" : -1511436389606
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "it will be a miracle!",
-    "uid" : "458862b6c646f833",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1511360209695,
-      "stop" : 1511360211212,
-      "duration" : 1517
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "Shows an error, when invalid credentials are provided",
-    "uid" : "a62c68988afe4f98",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1511268631368,
-      "stop" : 1511268632704,
-      "duration" : 1336
-    },
-    "flaky" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : "It is possible to change Wrestler data after the wrestler is created",
-    "uid" : "ecbb66f1d824b5a7",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "unknown",
-    "time" : {
-      "start" : 1511436389607,
-      "stop" : 0,
-      "duration" : -1511436389607
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "It is possible to delete existing wrestler",
-    "uid" : "87c8289517154e08",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "broken",
-    "time" : {
-      "start" : 1511436385203,
-      "stop" : 1511436389606,
-      "duration" : 4403
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
     "name" : "Logging in, after correct credentials are provided",
-    "uid" : "1421a84e5ffec5a9",
+    "uid" : "b37f27b4afb106c7",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "passed",
     "time" : {
@@ -74,14 +14,74 @@
     "flaky" : false,
     "parameters" : [ ]
   }, {
-    "name" : "Wrestler data before and after creation are equal",
-    "uid" : "22628941ce739524",
+    "name" : "It is possible to change Wrestler data after the wrestler is created",
+    "uid" : "6855337b2645903b",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "unknown",
+    "status" : "passed",
     "time" : {
-      "start" : 1511436389607,
-      "stop" : 0,
-      "duration" : -1511436389607
+      "start" : 1511528680348,
+      "stop" : 1511528695875,
+      "duration" : 15527
+    },
+    "flaky" : true,
+    "parameters" : [ ]
+  }, {
+    "name" : "It is possible to delete existing wrestler",
+    "uid" : "36ba6432ede6dbd0",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "broken",
+    "time" : {
+      "start" : 1511528695875,
+      "stop" : 1511528699521,
+      "duration" : 3646
+    },
+    "flaky" : true,
+    "parameters" : [ ]
+  }, {
+    "name" : "Shows an error, when invalid credentials are provided",
+    "uid" : "90858d17f2dfdc39",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1511268631368,
+      "stop" : 1511268632704,
+      "duration" : 1336
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "It is possible to create new wrestler",
+    "uid" : "d3d12bbf9f30a142",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1511528658630,
+      "stop" : 1511528669474,
+      "duration" : 10844
+    },
+    "flaky" : true,
+    "parameters" : [ ]
+  }, {
+    "name" : "Wrestler data before and after creation are equal",
+    "uid" : "3e492588eb6287b6",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1511528669475,
+      "stop" : 1511528680348,
+      "duration" : 10873
+    },
+    "flaky" : true,
+    "parameters" : [ ]
+  }, {
+    "name" : "it will be a miracle!",
+    "uid" : "ed4aa64684ac5f09",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1511360209695,
+      "stop" : 1511360211212,
+      "duration" : 1517
     },
     "flaky" : true,
     "parameters" : [ ]

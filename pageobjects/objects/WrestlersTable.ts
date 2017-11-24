@@ -1,4 +1,5 @@
 import { mainPageTableHeaders, IWrestlerFromMainTable } from '../../test_data/dataProvider'
+import { MyElementType } from './MyElementType';
 
 // defining the "Wrestlers" table from the main page
 
@@ -31,9 +32,13 @@ export class WrestlersTable{
         return this.makeWrestlerObject(this.tableHeader, firstWrestlerData)
     }
 
-    getWrestlerByIndex(wrestlerIndex): IWrestlerFromMainTable{
+    getWrestlerByIndex(wrestlerIndex: number): IWrestlerFromMainTable{
         let wrestlerData = this.getWrestlerData(this.tableRows[wrestlerIndex])
         return this.makeWrestlerObject(this.tableHeader,wrestlerData)
+    }
+
+    openWrestlerByIndex(wrestlerIndex: number): void{
+        this.tableRows[wrestlerIndex].click()
     }
 
 }

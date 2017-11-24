@@ -17,13 +17,21 @@
 * + Docker - selenium grid 
 * + Docker compose
 * + Add resourses to docker - it is really slow when 2 browsers are run with docker-grid. By default containers use (inf) - whatever they need 
+* use 'chance' lib for test data generation. 
+* for modal dialog - with accept/decline only, maybe in basePage (а-ля this.getModal ...) - use in navigator!!!!
+* WDIO file input cases - look and implement for photos/docs upload
+* download vanilla .jar selenium - and nodes, create shell-script (not .bat) to run it, with variables (not just 3 rows)
+add here also 
+* Linux commands - atleast basics for console
+* Linux the same as windows .jar config with automated download (according to provided vars with versions HUB/Node/Drivers)
+* SauceLab or BrowserStack - make sure, that FF is working (talk to Anton). Maybe use WDIO services.
+* Pull all frame into Docker image, run it on create Ubuntu inside own container
+* search tests by fio and number 
+
 
 
 #Questions:
-* ? what for do i need abstract class Page ?
-* ? difference between devdependencies and dependencies - npm 
-* + ? make browser window a little bit bigger - works with selenium standalone only. service - not working
-* ? return this.tHead.$$('th').forEach((element) => {return element.getText()}); WTF ???
+* ? return browser.$$('a').forEach((element) => {return element.getText()}); WTF ??? - try to cast to MyElem and then .forEach()
 
 
 #Info:

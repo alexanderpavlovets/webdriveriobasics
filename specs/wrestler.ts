@@ -12,12 +12,7 @@ describe('Wrestler CRUD', ()=>{
     let navigator = new Navigator()
     let mainPage = new MainPage()
     let validUser = dataProvider.users.validUser
-    function makeNewWrestler() { return dataProvider.getWrestler() }
-    // ? variables for tests - declare here or in tests
-    // the last one test - has declaration in it - seems more logcal, than vars would be declaired here
-    let creationData
-    let visibleData
-    let updatedData
+
     
     beforeAll(()=>{
         navigator.openLoginPage()
@@ -31,13 +26,13 @@ describe('Wrestler CRUD', ()=>{
     // afterEach(()=>{
     //     navigator.closeCurrentActiveTab()
     // })
-    // ? ask if it is acceptable to navigator.closeCurrentActiveTab in 3 tests except last one 
+    // ? ask if it is acceptable to navigator.closeCurrentActiveTab in 3 tests except last one - USE ONE MORE DESCRIBE as variant
     
 
     it('It is possible to create new wrestler', () => {
         navigator.openNewWrestlerTab()
-        wrestlerPage.setWrestlerFields(makeNewWrestler())
-        creationData = wrestlerPage.getWrestlerFields()
+        wrestlerPage.setWrestlerFields(dataProvider.getWrestler())
+        let creationData = wrestlerPage.getWrestlerFields()
         wrestlerPage.clickSaveButton()
         navigator.waitForWrestlerPageOpened()
         expect(navigator.currentActiveTab.getText()).toContain(creationData.lastName,
@@ -49,34 +44,35 @@ describe('Wrestler CRUD', ()=>{
 
     it('Wrestler data before and after creation are equal', ()=>{
         navigator.openNewWrestlerTab()
-        wrestlerPage.setWrestlerFields(makeNewWrestler())
-        creationData = wrestlerPage.getWrestlerFields()
+        wrestlerPage.setWrestlerFields(dataProvider.getWrestler())
+        let creationData = wrestlerPage.getWrestlerFields()
         wrestlerPage.clickSaveButton()
         navigator.waitForWrestlerPageOpened()
-        visibleData = wrestlerPage.getWrestlerFields()
+        let visibleData = wrestlerPage.getWrestlerFields()
         expect(creationData).toEqual(visibleData, 'Wrestler data after creation should be equal to data provided during creation')
         navigator.closeCurrentActiveTab()
     })
 
     it('It is possible to change Wrestler data after the wrestler is created', ()=>{
         navigator.openNewWrestlerTab()
-        wrestlerPage.setWrestlerFields(makeNewWrestler())
+        wrestlerPage.setWrestlerFields(dataProvider.getWrestler())
         wrestlerPage.clickSaveButton()
         navigator.waitForWrestlerPageOpened()
-        wrestlerPage.setWrestlerFields(makeNewWrestler())
-        visibleData = wrestlerPage.getWrestlerFields()
+        wrestlerPage.setWrestlerFields(dataProvider.getWrestler())
+        let visibleData = wrestlerPage.getWrestlerFields()
         wrestlerPage.clickSaveButton()
         navigator.waitForWrestlerPageOpened()
-        updatedData = wrestlerPage.getWrestlerFields()
+        let updatedData = wrestlerPage.getWrestlerFields()
         expect(visibleData).toEqual(updatedData, 'Wrestler data after update should be changed accordingly')
         navigator.closeCurrentActiveTab()
     })
 
-    fit('It is possible to delete existing wrestler', ()=>{
+    it('It is possible to delete existing wrestler', ()=>{
         let firstWrestlerNumberBeforeDeletion = mainPage.getFirstWrestler().Num
-        navigator.openWrestlerByIndex(0)
+        mainPage.openWrestlerByIndex(0)
         navigator.waitForWrestlerPageOpened()
-        wrestlerPage.deleteWrestler()
+        wrestlerPage.clickCancelButton()
+        navigator.acceptModal()
         navigator.waitForMainPageOpened()
         let firstWrestlerNumberAfterDeletion = mainPage.getFirstWrestler().Num
         expect(firstWrestlerNumberBeforeDeletion).not.toEqual(firstWrestlerNumberAfterDeletion, 
