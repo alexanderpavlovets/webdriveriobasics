@@ -4,21 +4,57 @@
   "children" : [ {
     "name" : "Test defects",
     "children" : [ {
-      "name" : "Expected '9777' not to equal '9777', 'First Wrestler should be deleted from wrestlers list on main page'.",
+      "name" : "Error: Promise was rejected with the following reason: ",
       "children" : [ {
-        "name" : "It is possible to delete existing wrestler",
-        "uid" : "36ba6432ede6dbd0",
-        "parentUid" : "02ba2bd4112895f7e44f2718a7d1a3a9",
+        "name" : "It is possible to create new wrestler",
+        "uid" : "a97f2a6fe2de1ef8",
+        "parentUid" : "bef7ddb1b1e4c40de9f230d8acf3c35a",
         "status" : "broken",
         "time" : {
-          "start" : 1511528695875,
-          "stop" : 1511528699521,
-          "duration" : 3646
+          "start" : 1511533960515,
+          "stop" : 1511533977473,
+          "duration" : 16958
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Wrestler data before and after creation are equal",
+        "uid" : "db81b668de5f4762",
+        "parentUid" : "bef7ddb1b1e4c40de9f230d8acf3c35a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1511533977474,
+          "stop" : 1511533992299,
+          "duration" : 14825
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "It is possible to change Wrestler data after the wrestler is created",
+        "uid" : "daec2e117aecb2da",
+        "parentUid" : "bef7ddb1b1e4c40de9f230d8acf3c35a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1511533992299,
+          "stop" : 1511534016425,
+          "duration" : 24126
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "It is possible to delete existing wrestler",
+        "uid" : "5af1f310b85c7144",
+        "parentUid" : "bef7ddb1b1e4c40de9f230d8acf3c35a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1511534016774,
+          "stop" : 1511534025606,
+          "duration" : 8832
         },
         "flaky" : true,
         "parameters" : [ ]
       } ],
-      "uid" : "02ba2bd4112895f7e44f2718a7d1a3a9"
+      "uid" : "bef7ddb1b1e4c40de9f230d8acf3c35a"
     } ],
     "uid" : "bdbf199525818fae7a8651db9eafe741"
   } ]

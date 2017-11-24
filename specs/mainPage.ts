@@ -3,23 +3,23 @@ import { LoginPage } from "../pageobjects/Login.page"
 import { Navigator } from '../pageobjects/objects/Navigator'
 import { dataProvider } from '../test_data/dataProvider';
 
-describe('ha!', ()=>{
+describe('ha!', () => {
 
     let mainPage = new MainPage()
     let loginPage = new LoginPage()
     let navigator = new Navigator()
     let validUser = dataProvider.users.validUser
 
-    beforeAll(()=>{
+    beforeAll(() => {
         navigator.openLoginPage()
         loginPage.login(validUser)
     })
 
-    beforeEach(()=>{
+    beforeEach(() => {
         navigator.waitForMainPageOpened()
     })
 
-    it('it will be a miracle!', ()=>{
+    it('it will be a miracle!', () => {
         console.log('i am starting')
         console.log(mainPage.getFirstWrestler().FIO)
     })
