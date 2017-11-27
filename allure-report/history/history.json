@@ -1,5 +1,5 @@
 {
-  "df136c3dc00e141024841c0f8b385f25" : {
+  "5a681de91bb7aad1893311156a61bad4" : {
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
@@ -9,38 +9,18 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "635b6205a8a5a8f9",
+      "uid" : "395659c3e1779317",
       "status" : "passed",
       "time" : {
-        "start" : 1511360209695,
-        "stop" : 1511360211212,
-        "duration" : 1517
+        "start" : 1511792439401,
+        "stop" : 1511792450481,
+        "duration" : 11080
       }
     } ]
   },
   "6230ef18436331a5234ce6b597d2d8de" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
-      "skipped" : 0,
-      "passed" : 0,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "daec2e117aecb2da",
-      "status" : "broken",
-      "statusDetails" : "Error: Promise was rejected with the following reason: ",
-      "time" : {
-        "start" : 1511533992299,
-        "stop" : 1511534016425,
-        "duration" : 24126
-      }
-    } ]
-  },
-  "bb060aff3d0233c96082e301ff68e1d5" : {
-    "statistic" : {
-      "failed" : 0,
       "broken" : 0,
       "skipped" : 0,
       "passed" : 1,
@@ -48,12 +28,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "bb1efa71284db574",
+      "uid" : "201cb7c491669114",
       "status" : "passed",
       "time" : {
-        "start" : 1511528669475,
-        "stop" : 1511528680348,
-        "duration" : 10873
+        "start" : 1511792461424,
+        "stop" : 1511792478406,
+        "duration" : 16982
       }
     } ]
   },
@@ -67,17 +47,17 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "5af1f310b85c7144",
+      "uid" : "7012d37d2406fcb3",
       "status" : "broken",
-      "statusDetails" : "Error: Promise was rejected with the following reason: ",
+      "statusDetails" : "Expected '10040' not to equal '10040', 'First Wrestler should be deleted from wrestlers list on main page'.",
       "time" : {
-        "start" : 1511534016774,
-        "stop" : 1511534025606,
-        "duration" : 8832
+        "start" : 1511792478765,
+        "stop" : 1511792482698,
+        "duration" : 3933
       }
     } ]
   },
-  "fa91124385a6e7265da2e3fe15a8d07e" : {
+  "5de0a95a5f6ef65f4332b29534711458" : {
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
@@ -87,57 +67,18 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "e6a516e328554243",
+      "uid" : "bcbc5cfcb1e4e2c3",
       "status" : "passed",
       "time" : {
-        "start" : 1511268628851,
-        "stop" : 1511268631364,
-        "duration" : 2513
-      }
-    } ]
-  },
-  "688492a12620e3793ea9afe35db88cd8" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "d0a687e15f76a9ff",
-      "status" : "passed",
-      "time" : {
-        "start" : 1511528680348,
-        "stop" : 1511528695875,
-        "duration" : 15527
+        "start" : 1511792482698,
+        "stop" : 1511792487927,
+        "duration" : 5229
       }
     } ]
   },
   "d241d1688c8d3546df63b454340ffa7d" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
-      "skipped" : 0,
-      "passed" : 0,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "db81b668de5f4762",
-      "status" : "broken",
-      "statusDetails" : "Error: Promise was rejected with the following reason: ",
-      "time" : {
-        "start" : 1511533977474,
-        "stop" : 1511533992299,
-        "duration" : 14825
-      }
-    } ]
-  },
-  "7939d9590dd6f51afd52989da4f194b3" : {
-    "statistic" : {
-      "failed" : 0,
       "broken" : 0,
       "skipped" : 0,
       "passed" : 1,
@@ -145,51 +86,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "603607c9a8b6ac02",
+      "uid" : "cbd2780da3bf5b64",
       "status" : "passed",
       "time" : {
-        "start" : 1511528658630,
-        "stop" : 1511528669474,
-        "duration" : 10844
-      }
-    } ]
-  },
-  "5a681de91bb7aad1893311156a61bad4" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 1,
-      "skipped" : 0,
-      "passed" : 0,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "a97f2a6fe2de1ef8",
-      "status" : "broken",
-      "statusDetails" : "Error: Promise was rejected with the following reason: ",
-      "time" : {
-        "start" : 1511533960515,
-        "stop" : 1511533977473,
-        "duration" : 16958
-      }
-    } ]
-  },
-  "a4a561ca6f6c5f32e3d199732891ab79" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "8d28dbf06da6b17b",
-      "status" : "passed",
-      "time" : {
-        "start" : 1511268631368,
-        "stop" : 1511268632704,
-        "duration" : 1336
+        "start" : 1511792450482,
+        "stop" : 1511792461423,
+        "duration" : 10941
       }
     } ]
   }

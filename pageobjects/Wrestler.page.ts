@@ -1,7 +1,7 @@
 import { frameTimeout } from '../test_data/frameTimeouts' // for custom wait of elements
 import { dataProvider, IWrestler } from '../test_data/dataProvider' // for data of wrestler
-import { MyInputField } from './objects/MyInput' // for custom imput elements
-import { MySelectField } from './objects/MySelect' // for custom select elements
+import { MyInputField } from './objects/MyInput' // for custom 'imput' elements
+import { MySelectField } from './objects/MySelect' // for custom 'select' elements
 
 
 export class WrestlerPage {
@@ -31,6 +31,8 @@ export class WrestlerPage {
     // created wrestler areas
     get photoDiv()          { return this.wrestlerDataForm.$('div.col-sm-4[ng-hide="wr.new"]') }
     get docsDiv()           { return this.wrestlerDataForm.$('div.col-sm-12[ng-hide="wr.new"]') }
+    get uploadPhotoInput()  { return this.photoDiv.$('input[type="file"]')}
+    get uploadDocsInput()   { return this.docsDiv.$('input[type="file"]')}
 
 
 

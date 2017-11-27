@@ -1,13 +1,10 @@
 import { Page } from '../Page.page' // for inheritance
 import { frameTimeout } from '../../test_data/frameTimeouts' // for custom wait of elements
-import { MainPage } from '../Main.page'
 
 export class Navigator extends Page{
     constructor(){
         super()
     }
-    
-    get mainPage() {return new MainPage()} // instance of MainPage for opening "New Wrestler" tab and existing wrestlers
 
 
     // static methods of Navigator class
@@ -81,11 +78,6 @@ export class Navigator extends Page{
     openMainPage(): void {
         this.firstTabWrestlers.click()
         this.waitForMainPageOpened()
-    }
-
-    openNewWrestlerTab(): void {
-        this.mainPage.newWrestlerButton.click()
-        this.waitForWrestlerPageOpened()
     }
 
     closeCurrentActiveTab(): void {

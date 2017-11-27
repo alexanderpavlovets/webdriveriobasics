@@ -4,6 +4,8 @@ import { MainPage } from '../pageobjects/Main.page'
 import { Navigator } from '../pageobjects/objects/Navigator'
 import { dataProvider } from '../test_data/dataProvider'
 
+import * as path  from 'path'
+
 
 describe('Wrestler CRUD', () => {
 
@@ -12,6 +14,7 @@ describe('Wrestler CRUD', () => {
     let navigator = new Navigator()
     let mainPage = new MainPage()
     let validUser = dataProvider.users.validUser
+    let pathToPhoto = path.join(__dirname, '..', 'test_data','images','dwayne.jpg')
 
 
     beforeAll(() => {
@@ -26,7 +29,8 @@ describe('Wrestler CRUD', () => {
 
     describe('Create, Read, Update tests', () => {
         beforeEach(() => {
-            navigator.openNewWrestlerTab()
+            mainPage.openNewWrestlerTab()
+            navigator.waitForWrestlerPageOpened()
         })
 
         afterEach(() => {
@@ -76,5 +80,16 @@ describe('Wrestler CRUD', () => {
         let firstWrestlerNumberAfterDeletion = mainPage.getFirstWrestler().Num
         expect(firstWrestlerNumberBeforeDeletion).not.toEqual(firstWrestlerNumberAfterDeletion,
             'First Wrestler should be deleted from wrestlers list on main page')
+    })
+
+    it('Upload wrestler photo', ()=>{
+        mainPage.openWrestlerByIndex(1) // not 0 because of lags in the system itself(prev it deletes wrestler - impossible t o attach photo)
+        navigator.waitForWrestlerPageOpened()
+        let inputElem = browser.$('div.col-sm-4[ng-hide="wr.new"] input[type="file"]')
+        inputElem.chooseFile(pathToPhoto)
+        // browser.chooseFile('div.col-sm-4[ng-hide="wr.new"] input[type="file"]', pathToPhoto) // this works
+        let photo = browser.$('div.col-sm-4[ng-hide="wr.new"] img.center-block')
+        browser.pause(4000)
+        expect(photo.isVisible()).toBeTruthy('Photo is not visible')
     })
 })

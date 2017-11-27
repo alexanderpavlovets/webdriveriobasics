@@ -36,6 +36,10 @@ export class MainPage {
 
 
     // methods of MainPage class
+    openNewWrestlerTab(): void {
+        this.newWrestlerButton.click()
+    }
+
     getFirstWrestler(): IWrestlerFromMainTable{
         let wrestlerTable = new WrestlersTable(this.wrestlersTableBody)
         return wrestlerTable.getFirstWrestler()
