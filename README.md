@@ -28,11 +28,14 @@ add here also
 * SauceLab or BrowserStack - make sure, that FF is working (talk to Anton). Maybe use WDIO services.
 * Pull all frame into Docker image, run it on create Ubuntu inside own container
 * search tests by fio and number 
+* mine "throw"/"Throws" - how to handle mistake with this features
+* + mine - rewrite WrestlersTable, to have all locators (now they are getted from mainPage - stupid )
 
 
 
 #Questions:
-* ? return browser.$$('a').forEach((element) => {return element.getText()}); WTF ??? - try to cast to MyElem and then .forEach()
+* + ? return browser.$$('a').forEach((element) => {return element.getText()}); WTF ??? - try to cast to MyElem and then .forEach()
+* ? maybe 1 spec file should contain 1 it - it will increase readablity. BUT may reduce maintainability (changes)  
 
 
 #Info:

@@ -29,10 +29,11 @@ export class WrestlerPage {
     get saveButton()        { return this.wrestlerDataForm.$('button.btn-success')}
     get cancelButton()      { return this.wrestlerDataForm.$('button.btn-danger')}
     // created wrestler areas
-    get photoDiv()          { return this.wrestlerDataForm.$('div.col-sm-4[ng-hide="wr.new"]') }
-    get docsDiv()           { return this.wrestlerDataForm.$('div.col-sm-12[ng-hide="wr.new"]') }
-    get uploadPhotoInput()  { return this.photoDiv.$('input[type="file"]')}
-    get uploadDocsInput()   { return this.docsDiv.$('input[type="file"]')}
+    get photoAreaDiv()      { return this.wrestlerDataForm.$('div.col-sm-4[ng-hide="wr.new"]') }
+    get docsAreaDiv()       { return this.wrestlerDataForm.$('div.col-sm-12[ng-hide="wr.new"]') }
+    get uploadPhotoInput()  { return this.photoAreaDiv.$('input[type="file"]')}
+    get uploadDocsInput()   { return this.docsAreaDiv.$('input[type="file"]')}
+    get wrestlerPhoto()     { return this.photoAreaDiv.$('img.center-block')}
 
 
 

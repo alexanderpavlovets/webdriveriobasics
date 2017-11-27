@@ -1,25 +1,5 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "name" : "categories",
-  "children" : [ {
-    "name" : "Test defects",
-    "children" : [ {
-      "name" : "Expected '10040' not to equal '10040', 'First Wrestler should be deleted from wrestlers list on main page'.",
-      "children" : [ {
-        "name" : "It is possible to delete existing wrestler",
-        "uid" : "7012d37d2406fcb3",
-        "parentUid" : "9b158bdb6c45b91e242330f1ef59c612",
-        "status" : "broken",
-        "time" : {
-          "start" : 1511792478765,
-          "stop" : 1511792482698,
-          "duration" : 3933
-        },
-        "flaky" : true,
-        "parameters" : [ ]
-      } ],
-      "uid" : "9b158bdb6c45b91e242330f1ef59c612"
-    } ],
-    "uid" : "bdbf199525818fae7a8651db9eafe741"
-  } ]
+  "children" : [ ]
 }

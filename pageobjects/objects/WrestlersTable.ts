@@ -1,14 +1,16 @@
-import { mainPageTableHeaders, IWrestlerFromMainTable } from '../../test_data/dataProvider'
+import { wrestlersTableHeader, IWrestlerFromMainTable } from '../../test_data/dataProvider'
 import { MyElementType } from './MyElementType';
 
 // defining the "Wrestlers" table from the main page
 
 export class WrestlersTable{
-    tableHeader = mainPageTableHeaders
-    tableRows
-    constructor(wrestlersAsTableRowsElements){
-        this.tableRows = wrestlersAsTableRowsElements
+    constructor(){
     }
+
+    //define table of shown wrestlers
+    get wrestlersTableHeader()      { return browser.$('thead tr')} // header row
+    get wrestlersTableBody()        { return browser.$$('tbody tr')} // body rows 
+    
 
     private getWrestlerData(wrestlerRow) {  // making array of wrestler values, from wrestler <td> elements
         let wrestlerRowAsWebElementsArray = wrestlerRow.$$('td')
@@ -19,26 +21,26 @@ export class WrestlersTable{
         return wrestlerDataArray
     }
 
-    private makeWrestlerObject(headerDataArray, wrestlerDataArray): IWrestlerFromMainTable{ // combining header and wrestler data into object
+    private makeWrestlerObject(wrestlerDataArray): IWrestlerFromMainTable{ // combining header and wrestler data into object
         let wrestler = {}
-        for (let i = 0; i < headerDataArray.length; i ++) {
-            wrestler[headerDataArray[i]] = wrestlerDataArray[i]
+        for (let i = 0; i < wrestlersTableHeader.length; i ++) {
+            wrestler[wrestlersTableHeader[i]] = wrestlerDataArray[i]
         }
         return wrestler as IWrestlerFromMainTable
     }
 
-    getFirstWrestler(): IWrestlerFromMainTable{
-        let firstWrestlerData = this.getWrestlerData(this.tableRows[0])
-        return this.makeWrestlerObject(this.tableHeader, firstWrestlerData)
+    // methods od WrestlersTable class
+    getFirstWrestlerObj(): IWrestlerFromMainTable{
+        let firstWrestlerData = this.getWrestlerData(this.wrestlersTableBody[0])
+        return this.makeWrestlerObject(firstWrestlerData)
     }
 
-    getWrestlerByIndex(wrestlerIndex: number): IWrestlerFromMainTable{
-        let wrestlerData = this.getWrestlerData(this.tableRows[wrestlerIndex])
-        return this.makeWrestlerObject(this.tableHeader,wrestlerData)
+    getWrestlerObjByIndex(wrestlerIndex: number): IWrestlerFromMainTable{
+        let wrestlerData = this.getWrestlerData(this.wrestlersTableBody[wrestlerIndex])
+        return this.makeWrestlerObject(wrestlerData)
     }
 
     openWrestlerByIndex(wrestlerIndex: number): void{
-        this.tableRows[wrestlerIndex].click()
+        this.wrestlersTableBody[wrestlerIndex].click()
     }
-
 }

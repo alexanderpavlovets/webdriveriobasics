@@ -30,29 +30,9 @@ export class MainPage {
     get shownResultsPerPageFilter() {return new MySelectField(this.paginationContainer.$('select[ng-model="perPage"]'))}
     get shownPagesElementsArray()   {return this.paginationContainer.$$('a').slice(2,-2)} // removing << < > >> pointers
 
-    //define table of shown wrestlers
-    get wrestlersTableHeader()      { return browser.$('thead tr')} // header row
-    get wrestlersTableBody()        { return browser.$$('tbody tr')} // body rows 
-
 
     // methods of MainPage class
     openNewWrestlerTab(): void {
         this.newWrestlerButton.click()
     }
-
-    getFirstWrestler(): IWrestlerFromMainTable{
-        let wrestlerTable = new WrestlersTable(this.wrestlersTableBody)
-        return wrestlerTable.getFirstWrestler()
-    }
-
-    getWrestlerByIndex(wrestlerIndex: number): IWrestlerFromMainTable{
-        let wrestlerTable = new WrestlersTable(this.wrestlersTableBody)
-        return wrestlerTable.getWrestlerByIndex(wrestlerIndex)
-    }
-
-    openWrestlerByIndex(wrestlerIndex: number): void{
-        let wrestlerTable = new WrestlersTable(this.wrestlersTableBody)
-        wrestlerTable.openWrestlerByIndex(wrestlerIndex)
-    }
-
 }

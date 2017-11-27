@@ -1,21 +1,23 @@
 import { LoginPage } from '../pageobjects/Login.page'
 import { WrestlerPage } from '../pageobjects/Wrestler.page'
 import { MainPage } from '../pageobjects/Main.page'
+import { WrestlersTable } from '../pageobjects/objects/WrestlersTable';
 import { Navigator } from '../pageobjects/objects/Navigator'
+import { Uploader } from '../pageobjects/objects/Uploader'
 import { dataProvider } from '../test_data/dataProvider'
 
-import * as path  from 'path'
+
 
 
 describe('Wrestler CRUD', () => {
 
     let loginPage = new LoginPage()
     let wrestlerPage = new WrestlerPage()
-    let navigator = new Navigator()
     let mainPage = new MainPage()
+    let wrestlersTable = new WrestlersTable()
+    let navigator = new Navigator()
+    let uploader = new Uploader()
     let validUser = dataProvider.users.validUser
-    let pathToPhoto = path.join(__dirname, '..', 'test_data','images','dwayne.jpg')
-
 
     beforeAll(() => {
         navigator.openLoginPage()
@@ -44,8 +46,8 @@ describe('Wrestler CRUD', () => {
             navigator.waitForWrestlerPageOpened()
             expect(navigator.currentActiveTab.getText()).toContain(creationData.lastName,
                 'Provided during creation last name should be shown in created wrestler tab')
-            expect(wrestlerPage.photoDiv.isVisible()).toBeTruthy('"Photo" area should be visible after wrestler creation')
-            expect(wrestlerPage.docsDiv.isVisible()).toBeTruthy('"Documents" area should be visible after wrestler creation')
+            expect(wrestlerPage.photoAreaDiv.isVisible()).toBeTruthy('"Photo" area should be visible after wrestler creation')
+            expect(wrestlerPage.docsAreaDiv.isVisible()).toBeTruthy('"Documents" area should be visible after wrestler creation')
         })
 
         it('Wrestler data before and after creation are equal', () => {
@@ -71,25 +73,22 @@ describe('Wrestler CRUD', () => {
     })
 
     it('It is possible to delete existing wrestler', () => {
-        let firstWrestlerNumberBeforeDeletion = mainPage.getFirstWrestler().Num
-        mainPage.openWrestlerByIndex(0)
+        let firstWrestlerNumberBeforeDeletion = wrestlersTable.getFirstWrestlerObj().Num
+        wrestlersTable.openWrestlerByIndex(0)
         navigator.waitForWrestlerPageOpened()
         wrestlerPage.clickCancelButton()
         navigator.acceptModal()
         navigator.waitForMainPageOpened()
-        let firstWrestlerNumberAfterDeletion = mainPage.getFirstWrestler().Num
+        let firstWrestlerNumberAfterDeletion = wrestlersTable.getFirstWrestlerObj().Num
         expect(firstWrestlerNumberBeforeDeletion).not.toEqual(firstWrestlerNumberAfterDeletion,
             'First Wrestler should be deleted from wrestlers list on main page')
     })
 
     it('Upload wrestler photo', ()=>{
-        mainPage.openWrestlerByIndex(1) // not 0 because of lags in the system itself(prev it deletes wrestler - impossible t o attach photo)
+        wrestlersTable.openWrestlerByIndex(1) // not 0 because of lags in the system itself(prev 'it' deletes wrestler - impossible t o attach photo)
         navigator.waitForWrestlerPageOpened()
-        let inputElem = browser.$('div.col-sm-4[ng-hide="wr.new"] input[type="file"]')
-        inputElem.chooseFile(pathToPhoto)
-        // browser.chooseFile('div.col-sm-4[ng-hide="wr.new"] input[type="file"]', pathToPhoto) // this works
-        let photo = browser.$('div.col-sm-4[ng-hide="wr.new"] img.center-block')
-        browser.pause(4000)
-        expect(photo.isVisible()).toBeTruthy('Photo is not visible')
+        uploader.uploadPhoto(wrestlerPage.uploadPhotoInput)
+        uploader.waitForPhotoToBeUploaded(wrestlerPage.wrestlerPhoto)
+        expect(wrestlerPage.wrestlerPhoto.isVisible()).toBeTruthy('Wrestler photo should be visible after it\'s upload')
     })
 })

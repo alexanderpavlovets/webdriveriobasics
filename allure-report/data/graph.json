@@ -1,5 +1,15 @@
 [ {
-  "uid" : "bcbc5cfcb1e4e2c3",
+  "uid" : "8aa99adc7e89adff",
+  "name" : "It is possible to change Wrestler data after the wrestler is created",
+  "time" : {
+    "start" : 1511802935206,
+    "stop" : 0,
+    "duration" : -1511802935206
+  },
+  "status" : "unknown",
+  "severity" : "normal"
+}, {
+  "uid" : "6d954b9a241636af",
   "name" : "Upload attempt",
   "time" : {
     "start" : 1511792482698,
@@ -9,43 +19,43 @@
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "395659c3e1779317",
-  "name" : "It is possible to create new wrestler",
-  "time" : {
-    "start" : 1511792439401,
-    "stop" : 1511792450481,
-    "duration" : 11080
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "201cb7c491669114",
-  "name" : "It is possible to change Wrestler data after the wrestler is created",
-  "time" : {
-    "start" : 1511792461424,
-    "stop" : 1511792478406,
-    "duration" : 16982
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "7012d37d2406fcb3",
+  "uid" : "56b0334f48c9d9dc",
   "name" : "It is possible to delete existing wrestler",
   "time" : {
-    "start" : 1511792478765,
-    "stop" : 1511792482698,
-    "duration" : 3933
+    "start" : 1511802935218,
+    "stop" : 0,
+    "duration" : -1511802935218
   },
-  "status" : "broken",
+  "status" : "unknown",
   "severity" : "normal"
 }, {
-  "uid" : "cbd2780da3bf5b64",
+  "uid" : "259cd677a9d21e0b",
   "name" : "Wrestler data before and after creation are equal",
   "time" : {
-    "start" : 1511792450482,
-    "stop" : 1511792461423,
-    "duration" : 10941
+    "start" : 1511802935206,
+    "stop" : 0,
+    "duration" : -1511802935206
+  },
+  "status" : "unknown",
+  "severity" : "normal"
+}, {
+  "uid" : "ea1a3ebd2e2151e8",
+  "name" : "Upload wrestler photo",
+  "time" : {
+    "start" : 1511802931136,
+    "stop" : 1511802935205,
+    "duration" : 4069
   },
   "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "36b2f9a8d2ee6e1c",
+  "name" : "It is possible to create new wrestler",
+  "time" : {
+    "start" : 1511802935206,
+    "stop" : 0,
+    "duration" : -1511802935206
+  },
+  "status" : "unknown",
   "severity" : "normal"
 } ]

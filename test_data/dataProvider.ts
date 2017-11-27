@@ -42,7 +42,7 @@ export interface IWrestlerFromMainTable {
 
 
 // values from main page table header  
-export const mainPageTableHeaders = ['Num', 'FIO', 'Region', 'FST', 'License', 'Photo', 'Style', 'Changed']
+export const wrestlersTableHeader = ['Num', 'FIO', 'Region', 'FST', 'License', 'Photo', 'Style', 'Changed']
 
 // this is possible values of all "select" tags in "Wrestler Info" area
 // all values are equal to "label" attribute

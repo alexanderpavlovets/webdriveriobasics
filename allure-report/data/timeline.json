@@ -2,8 +2,20 @@
   "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
   "name" : "timeline",
   "children" : [ {
+    "name" : "It is possible to change Wrestler data after the wrestler is created",
+    "uid" : "8aa99adc7e89adff",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "unknown",
+    "time" : {
+      "start" : 1511802935206,
+      "stop" : 0,
+      "duration" : -1511802935206
+    },
+    "flaky" : true,
+    "parameters" : [ ]
+  }, {
     "name" : "Upload attempt",
-    "uid" : "bcbc5cfcb1e4e2c3",
+    "uid" : "6d954b9a241636af",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "passed",
     "time" : {
@@ -14,50 +26,50 @@
     "flaky" : true,
     "parameters" : [ ]
   }, {
-    "name" : "It is possible to create new wrestler",
-    "uid" : "395659c3e1779317",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1511792439401,
-      "stop" : 1511792450481,
-      "duration" : 11080
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "It is possible to change Wrestler data after the wrestler is created",
-    "uid" : "201cb7c491669114",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1511792461424,
-      "stop" : 1511792478406,
-      "duration" : 16982
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
     "name" : "It is possible to delete existing wrestler",
-    "uid" : "7012d37d2406fcb3",
+    "uid" : "56b0334f48c9d9dc",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "broken",
+    "status" : "unknown",
     "time" : {
-      "start" : 1511792478765,
-      "stop" : 1511792482698,
-      "duration" : 3933
+      "start" : 1511802935218,
+      "stop" : 0,
+      "duration" : -1511802935218
     },
     "flaky" : true,
     "parameters" : [ ]
   }, {
     "name" : "Wrestler data before and after creation are equal",
-    "uid" : "cbd2780da3bf5b64",
+    "uid" : "259cd677a9d21e0b",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "unknown",
+    "time" : {
+      "start" : 1511802935206,
+      "stop" : 0,
+      "duration" : -1511802935206
+    },
+    "flaky" : true,
+    "parameters" : [ ]
+  }, {
+    "name" : "Upload wrestler photo",
+    "uid" : "ea1a3ebd2e2151e8",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "passed",
     "time" : {
-      "start" : 1511792450482,
-      "stop" : 1511792461423,
-      "duration" : 10941
+      "start" : 1511802931136,
+      "stop" : 1511802935205,
+      "duration" : 4069
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "It is possible to create new wrestler",
+    "uid" : "36b2f9a8d2ee6e1c",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "unknown",
+    "time" : {
+      "start" : 1511802935206,
+      "stop" : 0,
+      "duration" : -1511802935206
     },
     "flaky" : true,
     "parameters" : [ ]
