@@ -3,10 +3,7 @@ import { WrestlerPage } from '../pageobjects/Wrestler.page'
 import { MainPage } from '../pageobjects/Main.page'
 import { WrestlersTable } from '../pageobjects/objects/WrestlersTable';
 import { Navigator } from '../pageobjects/objects/Navigator'
-import { Uploader } from '../pageobjects/objects/Uploader'
 import { dataProvider } from '../test_data/dataProvider'
-
-
 
 
 describe('Wrestler CRUD', () => {
@@ -16,7 +13,6 @@ describe('Wrestler CRUD', () => {
     let mainPage = new MainPage()
     let wrestlersTable = new WrestlersTable()
     let navigator = new Navigator()
-    let uploader = new Uploader()
     let validUser = dataProvider.users.validUser
 
     beforeAll(() => {
@@ -82,13 +78,5 @@ describe('Wrestler CRUD', () => {
         let firstWrestlerNumberAfterDeletion = wrestlersTable.getFirstWrestlerObj().Num
         expect(firstWrestlerNumberBeforeDeletion).not.toEqual(firstWrestlerNumberAfterDeletion,
             'First Wrestler should be deleted from wrestlers list on main page')
-    })
-
-    it('Upload wrestler photo', ()=>{
-        wrestlersTable.openWrestlerByIndex(1) // not 0 because of lags in the system itself(prev 'it' deletes wrestler - impossible t o attach photo)
-        navigator.waitForWrestlerPageOpened()
-        uploader.uploadPhoto(wrestlerPage.uploadPhotoInput)
-        uploader.waitForPhotoToBeUploaded(wrestlerPage.wrestlerPhoto)
-        expect(wrestlerPage.wrestlerPhoto.isVisible()).toBeTruthy('Wrestler photo should be visible after it\'s upload')
     })
 })

@@ -5,41 +5,43 @@ import { MySelectField } from './objects/MySelect' // for custom 'select' elemen
 
 
 export class WrestlerPage {
-    constructor(){
+    constructor() {
     }
 
     // defining elements of Wrestler page
-    get wrestlerDataForm()  { return browser.$('div.active form[name="fWrestler"]')}
+    get wrestlerDataForm() { return browser.$('div.active form[name="fWrestler"]') }
     // "Wrestler info" form
-    get lastName()          { return new MyInputField(this.wrestlerDataForm.$('fg-input[value="wr.lname"] input'))}
-    get firstName()         { return new MyInputField(this.wrestlerDataForm.$('fg-input[value="wr.fname"] input'))}
-    get dateOfBirth()       { return new MyInputField(this.wrestlerDataForm.$('fg-date[value="wr.dob"] input'))}
-    get middleName()        { return new MyInputField(this.wrestlerDataForm.$('fg-input[value="wr.mname"] input'))}
-    get region1()           { return new MySelectField(this.wrestlerDataForm.$('fg-select[value="wr.region1"] select'))}
-    get region2()           { return new MySelectField(this.wrestlerDataForm.$('fg-select[value="wr.region2"] select'))}
-    get fst1()              { return new MySelectField(this.wrestlerDataForm.$('fg-select[value="wr.fst1"] select'))}
-    get fst2()              { return new MySelectField(this.wrestlerDataForm.$('fg-select[value="wr.fst2"] select'))}
-    get trainer1()          { return new MyInputField(this.wrestlerDataForm.$('fg-typeahead[value="wr.trainer1"] input'))}
-    get trainer2()          { return new MyInputField(this.wrestlerDataForm.$('fg-typeahead[value="wr.trainer2"] input'))}
-    get style()             { return new MySelectField(this.wrestlerDataForm.$('fg-select[value="wr.style"] select'))}
-    get age()               { return new MySelectField(this.wrestlerDataForm.$('fg-select[value="wr.lictype"] select'))}
-    get year()              { return new MySelectField(this.wrestlerDataForm.$('fg-select[value="wr.expires"] select'))}
-    get cardState()         { return new MySelectField(this.wrestlerDataForm.$('f-select[value="wr.card_state"] select'))}
+    get lastName() { return new MyInputField(this.wrestlerDataForm.$('fg-input[value="wr.lname"] input')) }
+    get firstName() { return new MyInputField(this.wrestlerDataForm.$('fg-input[value="wr.fname"] input')) }
+    get dateOfBirth() { return new MyInputField(this.wrestlerDataForm.$('fg-date[value="wr.dob"] input')) }
+    get middleName() { return new MyInputField(this.wrestlerDataForm.$('fg-input[value="wr.mname"] input')) }
+    get region1() { return new MySelectField(this.wrestlerDataForm.$('fg-select[value="wr.region1"] select')) }
+    get region2() { return new MySelectField(this.wrestlerDataForm.$('fg-select[value="wr.region2"] select')) }
+    get fst1() { return new MySelectField(this.wrestlerDataForm.$('fg-select[value="wr.fst1"] select')) }
+    get fst2() { return new MySelectField(this.wrestlerDataForm.$('fg-select[value="wr.fst2"] select')) }
+    get trainer1() { return new MyInputField(this.wrestlerDataForm.$('fg-typeahead[value="wr.trainer1"] input')) }
+    get trainer2() { return new MyInputField(this.wrestlerDataForm.$('fg-typeahead[value="wr.trainer2"] input')) }
+    get style() { return new MySelectField(this.wrestlerDataForm.$('fg-select[value="wr.style"] select')) }
+    get age() { return new MySelectField(this.wrestlerDataForm.$('fg-select[value="wr.lictype"] select')) }
+    get year() { return new MySelectField(this.wrestlerDataForm.$('fg-select[value="wr.expires"] select')) }
+    get cardState() { return new MySelectField(this.wrestlerDataForm.$('f-select[value="wr.card_state"] select')) }
     // wrestler "V" and "X" buttons
-    get saveButton()        { return this.wrestlerDataForm.$('button.btn-success')}
-    get cancelButton()      { return this.wrestlerDataForm.$('button.btn-danger')}
+    get saveButton() { return this.wrestlerDataForm.$('button.btn-success') }
+    get cancelButton() { return this.wrestlerDataForm.$('button.btn-danger') }
     // created wrestler areas
-    get photoAreaDiv()      { return this.wrestlerDataForm.$('div.col-sm-4[ng-hide="wr.new"]') }
-    get docsAreaDiv()       { return this.wrestlerDataForm.$('div.col-sm-12[ng-hide="wr.new"]') }
-    get uploadPhotoInput()  { return this.photoAreaDiv.$('input[type="file"]')}
-    get uploadDocsInput()   { return this.docsAreaDiv.$('input[type="file"]')}
-    get wrestlerPhoto()     { return this.photoAreaDiv.$('img.center-block')}
+    get photoAreaDiv() { return this.wrestlerDataForm.$('div.col-sm-4[ng-hide="wr.new"]') }
+    get docsAreaDiv() { return this.wrestlerDataForm.$('div.col-sm-12[ng-hide="wr.new"]') }
+    get uploadPhotoInput() { return this.photoAreaDiv.$('input[type="file"]') }
+    get uploadDocsInput() { return this.docsAreaDiv.$('input[type="file"]') }
+    get wrestlerPhoto() { return this.photoAreaDiv.$('img.center-block') }
+    get attachedDocumentsAmount() { return this.docsAreaDiv.$$('tr').length }
+    get attachedDocumentsArray() { return this.docsAreaDiv.$$('tr')}
 
 
 
     // methods of NewWrestlerPage class
     setWrestlerFields(wrestler: IWrestler) {
-        for ( let key in wrestler) {
+        for (let key in wrestler) {
             this[key].setData(wrestler[key])
         }
     }
@@ -47,7 +49,7 @@ export class WrestlerPage {
     getWrestlerFields(): IWrestler {
         let dataOfDisplayedWrestler = {}
         let wrestler = dataProvider.getWrestler()
-        for ( let key in wrestler) {
+        for (let key in wrestler) {
             dataOfDisplayedWrestler[key] = this[key].getData()
         }
         return dataOfDisplayedWrestler as IWrestler

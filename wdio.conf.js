@@ -24,7 +24,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './specs/wrestler.js'
+        './specs/upload.js'
     ],
     // Patterns to exclude.
     exclude: [

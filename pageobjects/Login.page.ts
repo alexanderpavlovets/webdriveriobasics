@@ -8,12 +8,12 @@ export class LoginPage {
 
 
     //setting elements via get, in order to make lazy search of the elements
-    get primaryPanel()          { return browser.$('.panel-primary') }
-    get primaryPanelHeader()    { return this.primaryPanel.$('.panel-heading') }
-    get loginForm()             { return this.primaryPanel.$('form[name="loginform"]') }
-    get loginField()            { return new MyInputField(this.loginForm.$('input[placeholder = "Login"]')) }
-    get passwordField()         { return new MyInputField(this.loginForm.$('input[placeholder = "Password"]')) }
-    get loginButton()           { return browser.$('button[ng-click="Login()"]') }
+    get primaryPanel() { return browser.$('.panel-primary') }
+    get primaryPanelHeader() { return this.primaryPanel.$('.panel-heading') }
+    get loginForm() { return this.primaryPanel.$('form[name="loginform"]') }
+    get loginField() { return new MyInputField(this.loginForm.$('input[placeholder = "Login"]')) }
+    get passwordField() { return new MyInputField(this.loginForm.$('input[placeholder = "Password"]')) }
+    get loginButton() { return browser.$('button[ng-click="Login()"]') }
 
 
     // methods of LoginPage class

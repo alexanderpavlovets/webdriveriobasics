@@ -1,4 +1,4 @@
-import { LoginPage } from '../pageobjects/Login.page' 
+import { LoginPage } from '../pageobjects/Login.page'
 import { Navigator } from '../pageobjects/objects/Navigator'
 import { dataProvider } from '../test_data/dataProvider'
 
