@@ -20,7 +20,7 @@
 * + Add resourses to docker - it is really slow when 2 browsers are run with docker-grid. By default containers use (inf) - whatever they need 
 * + use 'chance' lib for test data generation. 
 * + for modal dialog - with accept/decline only, maybe in basePage (а-ля this.getModal ...) - use in navigator!!!!
-* WDIO file input cases - look and implement for photos/docs upload
+* + WDIO file input cases - look and implement for photos/docs upload
 * download vanilla .jar selenium - and nodes, create shell-script (not .bat) to run it, with variables (not just 3 rows)
 add here also 
 * Linux commands - atleast basics for console
