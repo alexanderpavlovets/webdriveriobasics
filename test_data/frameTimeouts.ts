@@ -4,4 +4,4 @@ export const frameTimeout = {
     s: ms,
     m: 3 * ms,
     l: 7 * ms
-}
+} 

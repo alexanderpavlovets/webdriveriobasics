@@ -38,7 +38,6 @@ export class WrestlerPage {
     get attachedDocumentsArray() { return this.docsAreaDiv.$$('tr')}
 
 
-
     // methods of NewWrestlerPage class
     setWrestlerFields(wrestler: IWrestler) {
         for (let key in wrestler) {
