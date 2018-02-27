@@ -43,6 +43,3 @@ add here also
 * Verbose - log level to understand what returns as element
 * GRID: run standalone or GRID, via npm scripts before usage. Selenium-standalone npm package should be setup -g https://www.npmjs.com/package/selenium-standalone
 * Docker - use docker-compose - file is in the root, NOT USE VSCODE console - won't work
-
-
-# Test modification for git 
